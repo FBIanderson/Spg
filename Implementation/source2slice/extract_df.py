@@ -1515,94 +1515,11 @@ def integeroverflow_slice(store_slice_path,load_point_path,store_record_path,sto
 
 
 if __name__ == "__main__":
-        # i = 9
-        # store_slice_path = "/home/zheng/Desktop/FFMrecord/pointrecord_new/"+str(i)+"/JOERN_slices.txt"
-        # load_point_path = "/home/zheng/Desktop/FFmpoint/"+str(i)+"/pointuse_slice_points_new.pkl"
-        # store_record_path = "/home/zheng/Desktop/FFMrecord/pointrecord_new/"+str(i)+"/JOERNrecord.txt"
-        # store_real_path = "/home/zheng/Desktop/FFMrecord/pointrecord_new/"+str(i)+"/JOERNreal-mvd.txt"
-        # pointers_slice(store_slice_path,load_point_path,store_record_path,store_real_path)
-
-
-        i = 26
-    #for i in range(25):
+        i = 18
         print i
-        store_slice_path = "/home/zheng/Desktop/locator_record/real_record/apirecord/"+str(i)+"/JOERN_slices.txt"
-        load_point_path = "/home/zheng/Desktop/locator_point/"+str(i)+"/sensifunc_slice_points.pkl"
-        store_record_path = "/home/zheng/Desktop/locator_record/real_record/apirecord/"+str(i)+"/JOERNrecord.txt"
-        store_real_path = "/home/zheng/Desktop/locator_record/real_record/apirecord/"+str(i)+"/JOERNreal-mvd.txt"
+        #os.makedirs("/home/anderson/Desktop/locator_record/real_record/apirecord/"+str(i)+"/")
+        store_slice_path = "/home/anderson/Desktop/locator_record/real_record/apirecord/"+str(i)+"/JOERN_slices.txt"
+        load_point_path = "/home/anderson/Desktop/locator_point/"+str(i)+"/sensifunc_slice_points.pkl"
+        store_record_path = "/home/anderson/Desktop/locator_record/real_record/apirecord/"+str(i)+"/JOERNrecord.txt"
+        store_real_path = "/home/anderson/Desktop/locator_record/real_record/apirecord/"+str(i)+"/JOERNreal-mvd.txt"
         api_slice(store_slice_path,load_point_path,store_record_path,store_real_path)
-
-
-
-    #for i in range(1):
-        # store_slice_path = "/home/zheng/Desktop/locator_record/pointrecord/"+str(i)+"/JOERN_slices.txt"
-        # load_point_path = "/home/zheng/Desktop/locator_point/"+str(i)+"/pointuse_slice_points_new.pkl"
-        # store_record_path = "/home/zheng/Desktop/locator_record/pointrecord/"+str(i)+"/JOERNrecord.txt"
-        # store_real_path = "/home/zheng/Desktop/locator_record/pointrecord/"+str(i)+"/JOERNreal-mvd.txt"
-        # pointers_slice(store_slice_path,load_point_path,store_record_path,store_real_path)
-    #for i in range(1):
-        # store_slice_path = "/home/zheng/Desktop/locator_record/arrayrecord/"+str(i)+"/JOERN_slices.txt"
-        # load_point_path = "/home/zheng/Desktop/locator_point/"+str(i)+"/arrayuse_slice_points.pkl"
-        # store_record_path = "/home/zheng/Desktop/locator_record/arrayrecord/"+str(i)+"/JOERNrecord.txt"
-        # store_real_path = "/home/zheng/Desktop/locator_record/arrayrecord/"+str(i)+"/JOERNreal-mvd.txt"
-        # arrays_slice(store_slice_path,load_point_path,store_record_path,store_real_path)
-    #for i in range(1):
-        # store_slice_path = "/home/zheng/Desktop/locator_record/integerecord/"+str(i)+"/JOERN_slices.txt"
-        # load_point_path = "/home/zheng/Desktop/locator_point/"+str(i)+"/integeroverflow_slice_points_new.pkl"
-        # store_record_path = "/home/zheng/Desktop/locator_record/integerecord/"+str(i)+"/JOERNrecord.txt"
-        # store_real_path = "/home/zheng/Desktop/locator_record/integerecord/"+str(i)+"/JOERNreal-mvd.txt"
-        # if os.path.exists(load_point_path):
-        #     integeroverflow_slice(store_slice_path,load_point_path,store_record_path,store_real_path)
-
-        '''
-    #for i in range(1):
-        store_slice_path = "/home/zheng/Desktop/sardrecord/paramrecord/"+str(i)+"/JOERN_slices.txt"
-        load_point_path = "/home/zheng/Desktop/sardpoint/"+str(i)+"/param_slice_points_new.pkl"
-        store_record_path = "/home/zheng/Desktop/sardrecord/paramrecord/"+str(i)+"/JOERNrecord.txt"
-        store_real_path = "/home/zheng/Desktop/sardrecord/paramrecord/"+str(i)+"/JOERNreal-mvd.txt"
-        param_slice(store_slice_path,load_point_path,store_record_path,store_real_path)
-    #for i in range(1):
-        store_slice_path = "/home/zheng/Desktop/sardrecord/returnrecord/"+str(i)+"/JOERN_slices.txt"
-        load_point_path = "/home/zheng/Desktop/sardpoint/"+str(i)+"/return_slice_points_new.pkl"
-        store_record_path = "/home/zheng/Desktop/sardrecord/returnrecord/"+str(i)+"/JOERNrecord.txt"
-        store_real_path = "/home/zheng/Desktop/sardrecord/returnrecord/"+str(i)+"/JOERNreal-mvd.txt"
-        return_slice(store_slice_path,load_point_path,store_record_path,store_real_path)
-        '''
-
-        '''
-        store_slice_path = "/home/zheng/Desktop/cve_record/apirecord/JOERN_slices.txt"
-        load_point_path = "/home/zheng/Desktop/cve_point/sensifunc_slice_points.pkl"
-        store_record_path = "/home/zheng/Desktop/cve_record/apirecord/JOERNrecord.txt"
-        store_real_path = "/home/zheng/Desktop/cve_record/apirecord/JOERNreal-mvd.txt"
-        api_slice(store_slice_path,load_point_path,store_record_path,store_real_path)
-    #for i in range(1):
-        store_slice_path = "/home/zheng/Desktop/cve_record/pointrecord/JOERN_slices.txt"
-        load_point_path = "/home/zheng/Desktop/cve_point/pointuse_slice_points.pkl"
-        store_record_path = "/home/zheng/Desktop/cve_record/pointrecord/JOERNrecord.txt"
-        store_real_path = "/home/zheng/Desktop/cve_record/pointrecord/JOERNreal-mvd.txt"
-        pointers_slice(store_slice_path,load_point_path,store_record_path,store_real_path)
-    #for i in range(1):
-        store_slice_path = "/home/zheng/Desktop/cve_record/arrayrecord/JOERN_slices.txt"
-        load_point_path = "/home/zheng/Desktop/cve_point/arrayuse_slice_points.pkl"
-        store_record_path = "/home/zheng/Desktop/cve_record/arrayrecord/JOERNrecord.txt"
-        store_real_path = "/home/zheng/Desktop/cve_record/arrayrecord/JOERNreal-mvd.txt"
-        arrays_slice(store_slice_path,load_point_path,store_record_path,store_real_path)
-    #for i in range(1):
-        store_slice_path = "/home/zheng/Desktop/cve_record/integerecord/JOERN_slices.txt"
-        load_point_path = "/home/zheng/Desktop/cve_point/integeroverflow_slice_points_new.pkl"
-        store_record_path = "/home/zheng/Desktop/cve_record/integerecord/JOERNrecord.txt"
-        store_real_path = "/home/zheng/Desktop/cve_record/integerecord/JOERNreal-mvd.txt"
-        integeroverflow_slice(store_slice_path,load_point_path,store_record_path,store_real_path)
-    #for i in range(1):
-        store_slice_path = "/home/zheng/Desktop/cve_record/paramrecord/JOERN_slices.txt"
-        load_point_path = "/home/zheng/Desktop/cve_point/param_slice_points_new.pkl"
-        store_record_path = "/home/zheng/Desktop/cve_record/paramrecord/JOERNrecord.txt"
-        store_real_path = "/home/zheng/Desktop/cve_record/paramrecord/JOERNreal-mvd.txt"
-        param_slice(store_slice_path,load_point_path,store_record_path,store_real_path)
-    #for i in range(1):
-        store_slice_path = "/home/zheng/Desktop/cve_record/returnrecord/JOERN_slices.txt"
-        load_point_path = "/home/zheng/Desktop/cve_point/return_slice_points_new.pkl"
-        store_record_path = "/home/zheng/Desktop/cve_record/returnrecord/JOERNrecord.txt"
-        store_real_path = "/home/zheng/Desktop/cve_record/returnrecord/JOERNreal-mvd.txt"
-        return_slice(store_slice_path,load_point_path,store_record_path,store_real_path)
-        '''

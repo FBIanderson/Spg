@@ -547,7 +547,7 @@ def sortedNodesByLoc(list_node):
 
 
 def getFuncPDGById(testID, pdg_funcid):
-    file_dir = os.path.join("/home/zheng/Desktop/locator_pdg/26/pdg_db", testID)
+    file_dir = os.path.join("/home/anderson/Desktop/locator_pdg/31/pdg_db", testID)
 
     for _file in os.listdir(file_dir):
         func_id = _file.split('_')[-1]
@@ -585,7 +585,7 @@ def getFuncPDGById_noctrl(testID, pdg_funcid):
 
 
 def getFuncPDGByNameAndtestID(func_name, testID):
-    path = os.path.join("/home/zheng/Desktop/locator_pdg/26/pdg_db", testID)
+    path = os.path.join("/home/anderson/Desktop/locator_pdg/31/pdg_db", testID)
     pdg = False
     for _file in os.listdir(path):
         if '_'.join(_file.split('_')[:-1]) == func_name:
@@ -601,8 +601,8 @@ def getFuncPDGByNameAndtestID(func_name, testID):
 
 def getFuncPDGByNameAndtestID_noctrl(func_name, testID):
     pdg = False
-    for _dir in os.listdir("/home/zheng/Desktop/locator_pdg/26/pdg_db"):
-        list_testid = os.listdir(os.path.join("/home/zheng/Desktop/locator_pdg/26/pdg_db", _dir))
+    for _dir in os.listdir("/home/anderson/Desktop/locator_pdg/31/pdg_db"):
+        list_testid = os.listdir(os.path.join("/home/anderson/Desktop/locator_pdg/31/pdg_db", _dir))
 
         if testID not in list_testid:
             continue

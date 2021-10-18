@@ -286,28 +286,30 @@ if __name__ == '__main__':
     j = JoernSteps()
     j.connectToDatabase()
 
+    os.makedirs("/home/anderson/Desktop/locator_point/18")
+
     _dict = get_all_sensitiveAPI(j)
-    f = open("/home/zheng/Desktop/locator_point/18/sensifunc_slice_points.pkl", 'wb')
+    f = open("/home/anderson/Desktop/locator_point/18/sensifunc_slice_points.pkl", 'wb')
     pickle.dump(_dict, f, True)
     f.close()
     #print _dict
 
 
     _dict = get_all_pointer_use_new(j)
-    f = open("/home/zheng/Desktop/locator_point/18/pointuse_slice_points_new.pkl", 'wb')
+    f = open("/home/anderson/Desktop/locator_point/18/pointuse_slice_points_new.pkl", 'wb')
     pickle.dump(_dict, f, True)
     f.close()
     #print _dict
 
     _dict = get_all_array_use(j)
-    f = open("/home/zheng/Desktop/locator_point/18/arrayuse_slice_points.pkl", 'wb')
+    f = open("/home/anderson/Desktop/locator_point/18/arrayuse_slice_points.pkl", 'wb')
     pickle.dump(_dict, f, True)
     f.close()
     #print _dict
 
 
     _dict = get_all_integeroverflow_point(j)
-    f = open("/home/zheng/Desktop/locator_point/18/integeroverflow_slice_points_new.pkl", 'wb')
+    f = open("/home/anderson/Desktop/locator_point/18/integeroverflow_slice_points_new.pkl", 'wb')
     pickle.dump(_dict, f, True)
     f.close()
 

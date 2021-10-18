@@ -1,10 +1,13 @@
 ## -*- coding: utf-8 -*-
-from joern.all import JoernSteps
-from igraph import *
-from general_op import *
-import tqdm
+
 import pickle
+from igraph import Graph
+import tqdm
 from py2neo.packages.httpstream import http
+
+from general_op import *
+from joern.all import JoernSteps
+
 http.socket_timeout = 9999
 
 def get_all_use_bydefnode(db, node_id):
@@ -875,14 +878,14 @@ if __name__ == '__main__':
     j.connectToDatabase()
 
     #pdg_db_path = "/home/zheng/Desktop/qemupdg/31/pdg_db"
-    pdg_db_path = "/home/zheng/Desktop/locator_pdg/31/pdg_db"
+    pdg_db_path = "/home/anderson/Desktop/locator_pdg/31/pdg_db"
     list_testID = os.listdir(pdg_db_path)
     #print (list_testID)    
     for testID in tqdm.tqdm(list_testID):
         #if testID != '69055':
         #    continue
         #if os.path.exists(os.path.join("/home/zheng/Desktop/qemudict/31/dict_call2cfgNodeID_funcID", str(testID))):
-        if os.path.exists(os.path.join("/home/zheng/Desktop/locator_dict/31/dict_call2cfgNodeID_funcID", str(testID))):
+        if os.path.exists(os.path.join("/home/anderson/Desktop/locator_dict/31/dict_call2cfgNodeID_funcID", str(testID))):
             continue
         #print('start')
         call_g = getCallGraph(j, testID)
@@ -898,10 +901,10 @@ if __name__ == '__main__':
                 _dict[endnode['name']] = [(edge['var'], call_g.vs[edge.tuple[0]]['name'])]
             else:
                 _dict[endnode['name']].append((edge['var'], call_g.vs[edge.tuple[0]]['name']))
-        if not os.path.exists(os.path.join("/home/zheng/Desktop/locator_dict/31/dict_call2cfgNodeID_funcID", str(testID))):
+        if not os.path.exists(os.path.join("/home/anderson/Desktop/locator_dict/31/dict_call2cfgNodeID_funcID", str(testID))):
             #os.mkdir(os.path.join("/home/zheng/Desktop/qemudict/31/dict_call2cfgNodeID_funcID", str(testID)))
-            os.mkdir(os.path.join("/home/zheng/Desktop/locator_dict/31/dict_call2cfgNodeID_funcID", str(testID)))
-        filepath = os.path.join("/home/zheng/Desktop/locator_dict/31/dict_call2cfgNodeID_funcID", str(testID), "dict.pkl")
+            os.makedirs(os.path.join("/home/anderson/Desktop/locator_dict/31/dict_call2cfgNodeID_funcID", str(testID)))
+        filepath = os.path.join("/home/anderson/Desktop/locator_dict/31/dict_call2cfgNodeID_funcID", str(testID), "dict.pkl")
         #print (_dict)
         f = open(filepath, 'wb')
         pickle.dump(_dict, f, True)

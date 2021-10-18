@@ -276,13 +276,14 @@ def main():
     j.connectToDatabase()
     #获取函数节点
     all_func_node = getALLFuncNode(j)
+    print len(all_func_node)
     for node in tqdm.tqdm(all_func_node):
         #获取函数节点所在的文件ID的目录
         testID = getFuncFile(j, node._id).split('/')[-2]
         #
         #path = os.path.join("/home/zheng/Desktop/qemucfg/9/cfg_db", testID)
         #path = os.path.join("/home/zheng/Desktop/sardcfg/31/cfg_db", testID)
-        path = os.path.join("/home/zheng/Desktop/locator_cfg/31/cfg_db", testID)
+        path = os.path.join("/home/anderson/Desktop/locator_cfg/31/cfg_db", testID)
         store_file_name = node.properties['name'] + '_' + str(node._id)
         store_path = os.path.join(path, store_file_name)
         if os.path.exists(store_path):
@@ -306,18 +307,11 @@ def main():
         for key in _dict_node2ifstmt.keys():
             _dict_node2ifstmt[key] = list(set(_dict_node2ifstmt[key]))
 
-        i = 0
-        #print cfg.ecount
-
-        #while i < cfg.ecount():
-        #    print cfg.es[i]['label']
-        #    i = i + 1
-
         if not os.path.exists(path):
-            os.mkdir(path)
+            os.makedirs(path)
 
         if not os.path.exists(store_path):
-            os.mkdir(store_path)
+            os.makedirs(store_path)
         else:
             continue
 

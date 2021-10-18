@@ -469,7 +469,7 @@ def main():
 
         #path = os.path.join("/home/zheng/Desktop/pdg/2/pdg_db", testID)
         #path = os.path.join("/home/zheng/Desktop/qemupdg/9/pdg_db", testID)
-        path = os.path.join("/home/zheng/Desktop/locator_pdg/31/pdg_db", testID)
+        path = os.path.join("/home/anderson/Desktop/locator_pdg/31/pdg_db", testID)
         store_file_name = node.properties['name'] + '_' + str(node._id)
 
         store_path = os.path.join(path, store_file_name)
@@ -507,7 +507,7 @@ def main():
         '''
         opt_pdg_1 = modifyStmtNode(initpdg)#merge every statement node
 
-        cfg_path = os.path.join("/home/zheng/Desktop/locator_cfg/31/cfg_db", testID, store_file_name)
+        cfg_path = os.path.join("/home/anderson/Desktop/locator_cfg/31/cfg_db", testID, store_file_name)
         for _file in os.listdir(cfg_path):
             if _file == 'dict_if2cfgnode':
                 fin = open(os.path.join(cfg_path, _file))
@@ -556,7 +556,7 @@ def main():
 
         #continue
         if not os.path.exists(path):
-            os.mkdir(path)
+            os.makedirs(path)
 
 
         #print store_path, path
