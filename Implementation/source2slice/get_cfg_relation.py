@@ -4,12 +4,13 @@ from complete_PDG import *
 import re
 import tqdm
 from py2neo.packages.httpstream import http
+
 http.socket_timeout = 9999
 
 
 def getSubCFGGraph(startNode, list_node, not_scan_list):
-    #print "startNode", startNode['code']
-    #print ""
+    # print "startNode", startNode['code']
+    # print ""
     if startNode['name'] in not_scan_list or startNode['code'] == 'EXIT':
         return list_node, not_scan_list
 
@@ -20,14 +21,16 @@ def getSubCFGGraph(startNode, list_node, not_scan_list):
     successors = startNode.successors()
     if successors != []:
         for p_node in successors:
-            #print "P_node", p_node['name'], p_node['code']  
+            # print "P_node", p_node['name'], p_node['code']
             list_node, not_scan_list = getSubCFGGraph(p_node, list_node, not_scan_list)
 
     return list_node, not_scan_list
 
-print
-def getCtrlRealtionOfCFG(cfg):
 
+print
+
+
+def getCtrlRealtionOfCFG(cfg):
     list_ifstmt_nodes = []
     for node in cfg.vs:
         if node['type'] == 'Condition':
@@ -36,10 +39,10 @@ def getCtrlRealtionOfCFG(cfg):
             fin = open(filepath, 'r')
             content = fin.readlines()
             fin.close()
-            src_code = content[location_row-1]
+            src_code = content[location_row - 1]
 
             pattern = re.compile("(?:if|while|for|switch)")
-            #print src_code, node['name']
+            # print src_code, node['name']
             result = re.search(pattern, src_code)
             if result == None:
                 res = 'for'
@@ -51,7 +54,7 @@ def getCtrlRealtionOfCFG(cfg):
 
             elif res == 'if':
                 list_ifstmt_nodes.append(node)
-            
+
             else:
                 continue
 
@@ -64,15 +67,15 @@ def getCtrlRealtionOfCFG(cfg):
         list_falsestmt_nodes = []
         for es in cfg.es:
             if cfg.vs[es.tuple[0]] == if_node and es['var'] == 'True':
-                
+
                 start_node = cfg.vs[es.tuple[1]]
-                
+
                 not_scan_list = [if_node['name']]
                 list_truestmt_nodes, temp = getSubCFGGraph(start_node, list_truestmt_nodes, not_scan_list)
 
             elif cfg.vs[es.tuple[0]] == if_node and es['var'] == 'False':
-                
-                start_node = cfg.vs[es.tuple[1]]              
+
+                start_node = cfg.vs[es.tuple[1]]
                 not_scan_list = [if_node['name']]
                 list_falsestmt_nodes, temp = getSubCFGGraph(start_node, list_falsestmt_nodes, not_scan_list)
 
@@ -101,7 +104,8 @@ def getCtrlRealtionOfCFG(cfg):
                 else:
                     i += 1
 
-            _dict[if_node['name']] = ([t_node['name'] for t_node in list_truestmt_nodes], [f_node['name'] for f_node in list_falsestmt_nodes])
+            _dict[if_node['name']] = (
+            [t_node['name'] for t_node in list_truestmt_nodes], [f_node['name'] for f_node in list_falsestmt_nodes])
 
         else:
             filepath = cfg.vs[0]['filepath']
@@ -109,8 +113,8 @@ def getCtrlRealtionOfCFG(cfg):
             content = fin.readlines()
             fin.close()
 
-            if_line = int(if_node['location'].split(':')[0])-1
-            #print list_truestmt_nodes
+            if_line = int(if_node['location'].split(':')[0]) - 1
+            # print list_truestmt_nodes
             if list_truestmt_nodes == []:
                 continue
             sorted_list_truestmt_nodes = sortedNodesByLoc(list_truestmt_nodes)
@@ -121,18 +125,18 @@ def getCtrlRealtionOfCFG(cfg):
 
             if '{' in str_if_stmts:
                 if sorted_list_truestmt_nodes[-1]['location'] == None:
-                  if sorted_list_truestmt_nodes[-2]['location'] != None:
-                    end_line = int(sorted_list_truestmt_nodes[-2]['location'].split(':')[0])
-                  else:
-                    end_line = int(sorted_list_truestmt_nodes[-3]['location'].split(':')[0])
+                    if sorted_list_truestmt_nodes[-2]['location'] != None:
+                        end_line = int(sorted_list_truestmt_nodes[-2]['location'].split(':')[0])
+                    else:
+                        end_line = int(sorted_list_truestmt_nodes[-3]['location'].split(':')[0])
                 else:
                     end_line = int(sorted_list_truestmt_nodes[-1]['location'].split(':')[0])
 
                 list_stmt = content[if_line:end_line]
                 left_brace = 0
                 i = 0
-                index = 0    
-                tag = 0         
+                index = 0
+                tag = 0
                 for stmt in list_stmt:
                     for c in stmt:
                         if c == '{':
@@ -158,7 +162,8 @@ def getCtrlRealtionOfCFG(cfg):
                     if node['location'] == None:
                         continue
 
-                    if int(node['location'].split(':')[0]) >= if_line+1 and int(node['location'].split(':')[0]) <= real_end_line:
+                    if int(node['location'].split(':')[0]) >= if_line + 1 and int(
+                            node['location'].split(':')[0]) <= real_end_line:
                         list_real_true_stmt.append(node)
 
             else:
@@ -167,7 +172,6 @@ def getCtrlRealtionOfCFG(cfg):
             if list_falsestmt_nodes == []:
                 continue
             sorted_list_falsestmt_nodes = sortedNodesByLoc(list_falsestmt_nodes)
-            
 
             false_stmt_start = sorted_list_falsestmt_nodes[0]
             if sorted_list_truestmt_nodes[-1]['location'] != None:
@@ -179,10 +183,9 @@ def getCtrlRealtionOfCFG(cfg):
                     start_line = int(sorted_list_truestmt_nodes[-3]['location'].split(':')[0])
             end_line = int(false_stmt_start['location'].split(':')[0])
 
-
             str_else_stmts = '\n'.join(content[start_line:end_line])
 
-            if 'else' in str_else_stmts:                
+            if 'else' in str_else_stmts:
                 else_line = 0
                 for line in content[start_line:end_line]:
                     if 'else' in line:
@@ -200,11 +203,11 @@ def getCtrlRealtionOfCFG(cfg):
                         end_line = int(sorted_list_falsestmt_nodes[-2]['location'].split(':')[0])
                     else:
                         end_line = int(sorted_list_falsestmt_nodes[-3]['location'].split(':')[0])
-                    list_stmt = content[real_else_line-1:end_line]
+                    list_stmt = content[real_else_line - 1:end_line]
                     left_brace = 0
                     i = 0
-                    index = 0    
-                    tag = 0         
+                    index = 0
+                    tag = 0
                     for stmt in list_stmt:
                         for c in stmt:
                             if c == '{':
@@ -223,14 +226,15 @@ def getCtrlRealtionOfCFG(cfg):
                             index += 1
 
                     real_end_line = int(if_node['location'].split(':')[0]) + index
-                    #print "real_end_line", real_end_line
+                    # print "real_end_line", real_end_line
                     list_real_false_stmt = []
 
                     for node in sorted_list_falsestmt_nodes:
                         if node['location'] == None:
                             continue
 
-                        if int(node['location'].split(':')[0]) >= if_line+1 and int(node['location'].split(':')[0]) <= real_end_line:
+                        if int(node['location'].split(':')[0]) >= if_line + 1 and int(
+                                node['location'].split(':')[0]) <= real_end_line:
                             list_real_false_stmt.append(node)
 
                 else:
@@ -240,8 +244,8 @@ def getCtrlRealtionOfCFG(cfg):
             else:
                 list_real_false_stmt = []
 
-            _dict[if_node['name']] = ([t_node['name'] for t_node in list_real_true_stmt], [f_node['name'] for f_node in list_real_false_stmt])
-
+            _dict[if_node['name']] = (
+            [t_node['name'] for t_node in list_real_true_stmt], [f_node['name'] for f_node in list_real_false_stmt])
 
     return _dict
 
@@ -256,7 +260,7 @@ def completeDataEdgeOfCFG(cfg):
 
             if list_pre == [] or list_pre == None:
                 index = list_ordered_list.index(node)
-                start_node = list_ordered_list[index-1]['name']
+                start_node = list_ordered_list[index - 1]['name']
                 end_node = node['name']
                 var = None
                 addDataEdge(cfg, start_node, end_node, var)
@@ -264,7 +268,7 @@ def completeDataEdgeOfCFG(cfg):
             if list_su == [] or list_su == None:
                 index = list_ordered_list.index(node)
                 start_node = node['name']
-                end_node = list_ordered_list[index+1]['name']
+                end_node = list_ordered_list[index + 1]['name']
                 var = None
                 addDataEdge(cfg, start_node, end_node, var)
 
@@ -274,22 +278,20 @@ def completeDataEdgeOfCFG(cfg):
 def main():
     j = JoernSteps()
     j.connectToDatabase()
-    #获取函数节点
+    # 获取函数节点
     all_func_node = getALLFuncNode(j)
     print len(all_func_node)
     for node in tqdm.tqdm(all_func_node):
-        #获取函数节点所在的文件ID的目录
-        testID = getFuncFile(j, node._id).split('/')[-2]
-        #
-        #path = os.path.join("/home/zheng/Desktop/qemucfg/9/cfg_db", testID)
-        #path = os.path.join("/home/zheng/Desktop/sardcfg/31/cfg_db", testID)
+        # 获取函数节点所在的文件ID的目录
+        testID = getFuncFile(j, node._id).split('/')[-2] #FFmpeg
+
         path = os.path.join("/home/anderson/Desktop/locator_cfg/31/cfg_db", testID)
         store_file_name = node.properties['name'] + '_' + str(node._id)
         store_path = os.path.join(path, store_file_name)
         if os.path.exists(store_path):
             continue
         print store_path
-        initcfg = translateCFGByNode(j, node)#get init CFG
+        initcfg = translateCFGByNode(j, node)  # get init CFG
         opt_cfg_1 = modifyStmtNode(initcfg)
         cfg = completeDataEdgeOfCFG(opt_cfg_1)
         _dict = getCtrlRealtionOfCFG(cfg)
@@ -315,8 +317,6 @@ def main():
         else:
             continue
 
-
-
         filename = 'cfg'
         cfg_store_path = os.path.join(store_path, filename)
         fout = open(cfg_store_path, 'wb')
@@ -335,10 +335,11 @@ def main():
         pickle.dump(_dict_node2ifstmt, fout, True)
         fout.close()
 
-        #print node.properties['name']
-        #print _dict
-        #print _dict_node2ifstmt
-        #print ''
+        # print node.properties['name']
+        # print _dict
+        # print _dict_node2ifstmt
+        # print ''
+
 
 if __name__ == '__main__':
     main()
