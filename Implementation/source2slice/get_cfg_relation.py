@@ -286,7 +286,7 @@ def main():
         testID = getFuncFile(j, node._id).split('/')[-2] #FFmpeg
 
         path = os.path.join("/home/anderson/Desktop/locator_cfg/31/cfg_db", testID)
-        store_file_name = node.properties['name'] + '_' + str(node._id)
+        store_file_name = node.properties['name'] + '_' + str(node._id) #vdadec_init_2
         store_path = os.path.join(path, store_file_name)
         if os.path.exists(store_path):
             continue

@@ -38,7 +38,6 @@ def get_all_sensitiveAPI(db):
             if list_callee_id == []:
                 continue
 
-            
             for _id in list_callee_id:
                 cfgnode = getCFGNodeByCallee(db, _id)
                 if cfgnode != None:

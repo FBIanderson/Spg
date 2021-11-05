@@ -103,7 +103,7 @@ def getFuncPDGBynodeIDAndtestID_noctrl(list_cfgNodeID_funcID, testID):
 
 
 def getFuncPDGByfuncIDAndtestID(func_ID, testID):
-    path = os.path.join('/home/zheng/Desktop/locator_pdg/26/pdg_db', testID)
+    path = os.path.join('/home/anderson/Desktop/locator_pdg/31/pdg_db', testID)
     pdg = False
     for _file in os.listdir(path):
         if _file.split('_')[-1] == str(func_ID):

@@ -13,9 +13,6 @@ def generate_CPG(slice_id):
     #获取函数节点
     all_func_node = getALLFuncNode(j)
     for node in tqdm.tqdm(all_func_node):
-        #a = a + 1
-        #if a <= 693:
-        #    continue
         testID = getFuncFile(j, node._id).split('/')[-2]
         path = os.path.join("/home/zheng/Desktop/qemuCPG/"+str(slice_id)+"/CPG_db", testID)
         store_file_name = node.properties['name'] + '_' + str(node._id)
@@ -26,26 +23,19 @@ def generate_CPG(slice_id):
             os.mkdir(path)
         # if not os.path.exists(store_path):
         #     os.mkdir(store_path)
-        AST = translateCPGByNode(j, node)
+        cpg = translateCPGByNode(j, node)
         fout = open(store_path, 'wb')
-        pickle.dump(AST, fout, True)
+        pickle.dump(cpg, fout, True)
         fout.close()
 
 def TransCPG(slice_id):
     j = JoernSteps()
     j.connectToDatabase()
     all_func_node = getALLFuncNode(j)
-    a = 0
     record = []
     label = []
     for node in tqdm.tqdm(all_func_node):
-        #a = a + 1
-        #if a <= 693:
-        #    continue
-        #print 1
         testID = getFuncFile(j, node._id).split('/')[-2]
-        #path = os.path.join("/home/zheng/Desktop/pdg/2/pdg_db", testID)
-        #path = os.path.join("/home/zheng/Desktop/qemupdg/9/pdg_db", testID)
         store_file_name = node.properties['name'] + '_' + str(node._id)
         pdg_path = os.path.join("/home/zheng/Desktop/qemuCPG/"+str(slice_id)+"/CPG_db", testID,store_file_name)
         #print pdg_path

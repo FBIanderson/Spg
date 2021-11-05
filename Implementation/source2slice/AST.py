@@ -13,9 +13,6 @@ def generate_AST(slice_id):
     #获取函数节点
     all_func_node = getALLFuncNode(j)
     for node in tqdm.tqdm(all_func_node):
-        #a = a + 1
-        #if a <= 693:
-        #    continue
         testID = getFuncFile(j, node._id).split('/')[-2]
         path = os.path.join("/home/zheng/Desktop/qemuAST/"+str(slice_id)+"/AST_db", testID)
         store_file_name = node.properties['name'] + '_' + str(node._id)
@@ -39,13 +36,7 @@ def TransAST(slice_id):
     record = []
     label = []
     for node in tqdm.tqdm(all_func_node):
-        #a = a + 1
-        #if a <= 693:
-        #    continue
-        #print 1
         testID = getFuncFile(j, node._id).split('/')[-2]
-        #path = os.path.join("/home/zheng/Desktop/pdg/2/pdg_db", testID)
-        #path = os.path.join("/home/zheng/Desktop/qemupdg/9/pdg_db", testID)
         store_file_name = node.properties['name'] + '_' + str(node._id)
         pdg_path = os.path.join("/home/zheng/Desktop/qemuAST/"+str(slice_id)+"/AST_db", testID,store_file_name)
         pdg = pickle.load(open(pdg_path))

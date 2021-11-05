@@ -1,4 +1,6 @@
 ## coding:utf-8
+import os.path
+
 from joern.all import JoernSteps
 from igraph import *
 from access_db_operate import *
@@ -326,9 +328,12 @@ def program_slice(pdg, startnodesID, slicetype, testID):#process startnodes as a
 
 def api_slice():
     count = 1
-    store_filepath = "/home/zheng/Desktop/locator_slice/apislice/31/api_slices.txt"
+    store_filepath = "/home/anderson/Desktop/locator_slice/apislice/"+str(i)+"/"
+    if not os.path.exists(store_filepath):
+        os.makedirs(store_filepath)
+    store_filepath = os.path.join(store_filepath,"api_slices.txt")
     #store_filepath = "C/test_data/31/api_slices.txt"
-    f = open("/home/zheng/Desktop/locator_point/31/sensifunc_slice_points.pkl", 'rb')
+    f = open("/home/anderson/Desktop/locator_point/"+str(i)+"/sensifunc_slice_points.pkl", 'rb')
     dict_unsliced_sensifunc = pickle.load(f)
     f.close()
     l = ['CVE-2013-1573']
@@ -365,8 +370,11 @@ def api_slice():
 
 def pointers_slice():
     count = -1
-    store_filepath = "/home/zheng/Desktop/locator_slice/pointslice/31/pointersuse_slices.txt"
-    f = open("/home/zheng/Desktop/locator_point/31/pointuse_slice_points_new.pkl", 'rb')
+    store_filepath = "/home/anderson/Desktop/locator_slice/pointslice/"+str(i)+"/"
+    if not os.path.exists(store_filepath):
+        os.makedirs(store_filepath)
+    store_filepath = os.path.join(store_filepath,"pointersuse_slices.txt")
+    f = open("/home/anderson/Desktop/locator_point/"+str(i)+"/pointuse_slice_points_new.pkl", 'rb')
     dict_unsliced_pointers = pickle.load(f)
     #print dict_unsliced_pointers
     f.close()
@@ -410,8 +418,11 @@ def pointers_slice():
 
 def arrays_slice():
     count = -1
-    store_filepath = "/home/zheng/Desktop/locator_slice/arrayslice/31/arraysuse_slices.txt"
-    f = open("/home/zheng/Desktop/locator_point/31/arrayuse_slice_points.pkl", 'rb')
+    store_filepath = "/home/anderson/Desktop/locator_slice/arrayslice/"+str(i)+"/"
+    if not os.path.exists(store_filepath):
+        os.makedirs(store_filepath)
+    store_filepath = os.path.join(store_filepath,"arraysuse_slices.txt")
+    f = open("/home/anderson/Desktop/locator_point/"+str(i)+"/arrayuse_slice_points.pkl", 'rb')
     dict_unsliced_pointers = pickle.load(f)
     f.close()
     #l = ['CVE-2010-2068', 'CVE-2015-1158', 'CVE-2006-1530', 'CVE-2012-2802', 'CVE-2010-4165', 'CVE-2014-3523', 'CVE-2012-6062', 'CVE-2013-1672', 'CVE-2007-4997', 'CVE-2013-4082', 'CVE-2012-4186', 'CVE-2013-4512', 'CVE-2013-6450', 'CVE-2011-2534', 'CVE-2014-1690', 'CVE-2011-2536', 'CVE-2012-2319', 'CVE-2012-0957', 'CVE-2011-3936', 'CVE-2004-1151', 'CVE-2013-4929', 'CVE-2010-3296', 'CVE-2011-4102', 'CVE-2012-5668', 'CVE-2011-4100', 'CVE-2011-1959', 'CVE-2012-3969', 'CVE-2012-1183', 'CVE-2011-0726', 'CVE-2013-0756', 'CVE-2004-0535', 'CVE-2010-2495', 'CVE-2012-2393', 'CVE-2015-3811', 'CVE-2012-2776', 'CVE-2009-2909', 'CVE-2014-3633', 'CVE-2014-1508', 'CVE-2011-2529', 'CVE-2014-3537', 'CVE-2012-1947', 'CVE-2013-0844', 'CVE-2012-1942', 'CVE-2014-0195', 'CVE-2012-4293', 'CVE-2012-4292', 'CVE-2008-1390', 'CVE-2011-0021', 'CVE-2012-3991', 'CVE-2007-4521', 'CVE-2009-0746', 'CVE-2011-1147', 'CVE-2012-5240', 'CVE-2013-2634', 'CVE-2014-8133', 'CVE-2006-2778', 'CVE-2012-4288', 'CVE-2015-0253', 'CVE-2012-0444', 'CVE-2013-1726', 'CVE-2013-7112', 'CVE-2006-1856', 'CVE-2013-0850', 'CVE-2011-3623', 'CVE-2013-1582', 'CVE-2013-1732', 'CVE-2014-8884', 'CVE-2013-0772', 'CVE-2014-9374', 'CVE-2014-1497', 'CVE-2014-0221', 'CVE-2013-1696', 'CVE-2011-1833', 'CVE-2013-1693', 'CVE-2013-0872', 'CVE-2012-2790', 'CVE-2012-2791', 'CVE-2012-2796', 'CVE-2012-0477', 'CVE-2012-2652', 'CVE-2006-4790', 'CVE-2013-0867', 'CVE-2013-4932', 'CVE-2013-0860', 'CVE-2014-3511', 'CVE-2014-3510', 'CVE-2013-0868', 'CVE-2014-8541', 'CVE-2014-2739', 'CVE-2014-9319', 'CVE-2006-4813', 'CVE-2014-8544', 'CVE-2011-3973', 'CVE-2013-1848', 'CVE-2014-9316', 'CVE-2012-1594', 'CVE-2013-1573', 'CVE-2012-0068', 'CVE-2015-0833', 'CVE-2010-1748', 'CVE-2012-0067', 'CVE-2011-3362', 'CVE-2014-3182', 'CVE-2013-5641', 'CVE-2013-5642', 'CVE-2011-3484', 'CVE-2013-6891', 'CVE-2014-8712', 'CVE-2014-8713', 'CVE-2014-8714', 'CVE-2013-4534', 'CVE-2010-2431', 'CVE-2014-8412', 'CVE-2011-1175', 'CVE-2012-5237', 'CVE-2011-1173', 'CVE-2012-5238', 'CVE-2014-4611', 'CVE-2015-0564', 'CVE-2014-5271', 'CVE-2011-0055', 'CVE-2014-3470', 'CVE-2014-8643', 'CVE-2015-0204', 'CVE-2014-2286', 'CVE-2012-6537', 'CVE-2011-3945', 'CVE-2011-3944', 'CVE-2011-2896', 'CVE-2010-2955', 'CVE-2013-2495', 'CVE-2013-4931', 'CVE-2013-4933', 'CVE-2012-2775', 'CVE-2013-4934', 'CVE-2013-4936', 'CVE-2011-4594', 'CVE-2014-6424', 'CVE-2013-0311', 'CVE-2011-4598', 'CVE-2006-2935', 'CVE-2011-4352', 'CVE-2012-1184', 'CVE-2005-3356', 'CVE-2012-6059', 'CVE-2012-6058', 'CVE-2011-3950', 'CVE-2014-9672', 'CVE-2010-2803', 'CVE-2013-7011', 'CVE-2013-3674', 'CVE-2009-0676', 'CVE-2013-6380', 'CVE-2009-2768', 'CVE-2015-3008', 'CVE-2013-0796', 'CVE-2009-2484', 'CVE-2013-4264', 'CVE-2013-4928', 'CVE-2014-8542', 'CVE-2012-6540', 'CVE-2015-0228', 'CVE-2013-7008', 'CVE-2013-7009']
@@ -452,8 +463,11 @@ def arrays_slice():
 
 def integeroverflow_slice():
     count = -1
-    store_filepath = "/home/zheng/Desktop/locator_slice/integeslice/31/integeroverflow_slices.txt"
-    f = open("/home/zheng/Desktop/locator_point/31/integeroverflow_slice_points_new.pkl", 'rb')
+    store_filepath = "/home/anderson/Desktop/locator_slice/integeslice/"+str(i)+"/"
+    if not os.path.exists(store_filepath):
+        os.makedirs(store_filepath)
+    store_filepath = os.path.join(store_filepath,"integeroverflow_slices.txt")
+    f = open("/home/anderson/Desktop/locator_point/"+str(i)+"/integeroverflow_slice_points_new.pkl", 'rb')
     # store_filepath = "/home/zheng/Desktop/locator_slice/arrayslice/31/arraysuse_slices.txt"
     # f = open("/home/zheng/Desktop/locator_point/31/arrayuse_slice_points.pkl", 'rb')
     dict_unsliced_expr = pickle.load(f)
@@ -491,6 +505,7 @@ def integeroverflow_slice():
      
 
 if __name__ == "__main__":
+    i = 18
     api_slice()
     pointers_slice()
     arrays_slice()
