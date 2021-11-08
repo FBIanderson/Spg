@@ -854,7 +854,7 @@ def getCallGraph(db, testID):
                     list_callee_id.append(_t[0])
 
         # print 4, list_callee_id
-        if list_callee_id == []:
+        if not list_callee_id:
             continue
 
         else:
@@ -868,8 +868,7 @@ def getCallGraph(db, testID):
                     # print callee_cfgnode
                     # print 2
 
-                    if callee_cfgnode == None:
-
+                    if callee_cfgnode is None:
                         print ('ERROR', callee_cfgnode)
                         continue
                     else:
@@ -896,18 +895,16 @@ if __name__ == '__main__':
     j = JoernSteps()
     j.connectToDatabase()
 
-    pdg_db_path = "/home/anderson/Desktop/locator_pdg/31/pdg_db"
+    i = 1
+    pdg_db_path = "/home/anderson/Desktop/locator_pdg/" + str(i) + "/pdg_db"
+    dict_path = "/home/anderson/Desktop/locator_dict/" + str(i) + "/dict_call2cfgNodeID_funcID"
     list_testID = os.listdir(pdg_db_path)
-    # print (list_testID)
+
     for testID in tqdm.tqdm(list_testID):
-        if os.path.exists(
-                os.path.join("/home/anderson/Desktop/locator_dict/31/dict_call2cfgNodeID_funcID", str(testID))):
+        if os.path.exists(os.path.join(dict_path, str(testID))):
             continue
-        # print('start')
         call_g = getCallGraph(j, testID)
-        # print (call_g)
-        # print ('start 1')
-        if call_g == False:
+        if call_g is False:
             print ('false')
             continue
         _dict = {}
@@ -917,13 +914,9 @@ if __name__ == '__main__':
                 _dict[endnode['name']] = [(edge['var'], call_g.vs[edge.tuple[0]]['name'])]
             else:
                 _dict[endnode['name']].append((edge['var'], call_g.vs[edge.tuple[0]]['name']))
-        if not os.path.exists(
-                os.path.join("/home/anderson/Desktop/locator_dict/31/dict_call2cfgNodeID_funcID", str(testID))):
-            # os.mkdir(os.path.join("/home/zheng/Desktop/qemudict/31/dict_call2cfgNodeID_funcID", str(testID)))
-            os.makedirs(os.path.join("/home/anderson/Desktop/locator_dict/31/dict_call2cfgNodeID_funcID", str(testID)))
-        filepath = os.path.join("/home/anderson/Desktop/locator_dict/31/dict_call2cfgNodeID_funcID", str(testID),
-                                "dict.pkl")
-        # print (_dict)
+        if not os.path.exists(os.path.join(dict_path, str(testID))):
+            os.makedirs(os.path.join(dict_path, str(testID)))
+        filepath = os.path.join(dict_path, str(testID), "dict.pkl")
         f = open(filepath, 'wb')
         pickle.dump(_dict, f, True)
         f.close()

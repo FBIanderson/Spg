@@ -102,8 +102,8 @@ def getFuncPDGBynodeIDAndtestID_noctrl(list_cfgNodeID_funcID, testID):
     return _dict
 
 
-def getFuncPDGByfuncIDAndtestID(func_ID, testID):
-    path = os.path.join('/home/anderson/Desktop/locator_pdg/31/pdg_db', testID)
+def getFuncPDGByfuncIDAndtestID(func_ID, testID,slice_id):
+    path = os.path.join('/home/anderson/Desktop/locator_pdg/'+str(slice_id)+'/pdg_db', testID)
     pdg = False
     for _file in os.listdir(path):
         if _file.split('_')[-1] == str(func_ID):
@@ -546,12 +546,11 @@ def sortedNodesByLoc(list_node):
     return list_ordered_nodes
 
 
-def getFuncPDGById(testID, pdg_funcid):
-    file_dir = os.path.join("/home/anderson/Desktop/locator_pdg/31/pdg_db", testID)
+def getFuncPDGById(testID, pdg_funcid,slice_id):
+    file_dir = os.path.join("/home/anderson/Desktop/locator_pdg/"+str(slice_id)+"/pdg_db", testID)
 
     for _file in os.listdir(file_dir):
         func_id = _file.split('_')[-1]
-
         if func_id == pdg_funcid:
             pdg_path = os.path.join(file_dir, _file)
             #print pdg_path
@@ -559,7 +558,6 @@ def getFuncPDGById(testID, pdg_funcid):
             #print pdg_path
             pdg = pickle.load(f)
             f.close()
-
             return pdg
 
 
@@ -584,8 +582,8 @@ def getFuncPDGById_noctrl(testID, pdg_funcid):
                     return pdg
 
 
-def getFuncPDGByNameAndtestID(func_name, testID):
-    path = os.path.join("/home/anderson/Desktop/locator_pdg/31/pdg_db", testID)
+def getFuncPDGByNameAndtestID(func_name, testID,slice_id):
+    path = os.path.join("/home/anderson/Desktop/locator_pdg/"+str(slice_id)+"/pdg_db", testID)
     pdg = False
     for _file in os.listdir(path):
         if '_'.join(_file.split('_')[:-1]) == func_name:

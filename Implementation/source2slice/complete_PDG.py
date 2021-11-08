@@ -482,32 +482,30 @@ def main():
     j.connectToDatabase()
     all_func_node = getALLFuncNode(j)
     for node in tqdm.tqdm(all_func_node):
-        testID = getFuncFile(j, node._id).split('/')[-2]
+        filename = getFuncFile(j, node._id)
+        testID = filename.split('/')[-3] + '/' + filename.split('/')[-2]  # vul + CWExxxx-xxxx
 
-        path = os.path.join("/home/anderson/Desktop/locator_pdg/31/pdg_db", testID)
+        i = 1
+        path = os.path.join("/home/anderson/Desktop/locator_pdg/"+str(i)+"/pdg_db", testID)
         store_file_name = node.properties['name'] + '_' + str(node._id)
 
         store_path = os.path.join(path, store_file_name)
         if os.path.exists(store_path):
             continue
-        if testID == 'CVE-2016-7176_vul':
-            continue
         print store_path
         initpdg = translatePDGByNode(j, node)  # get init PDG
         opt_pdg_1 = modifyStmtNode(initpdg)  # merge every statement node
 
-        cfg_path = os.path.join("/home/anderson/Desktop/locator_cfg/31/cfg_db", testID, store_file_name)
+        cfg_path = os.path.join("/home/anderson/Desktop/locator_cfg/"+str(i)+"/cfg_db", testID, store_file_name)
         for _file in os.listdir(cfg_path):
             if _file == 'dict_if2cfgnode':
                 fin = open(os.path.join(cfg_path, _file))
                 dict_if2cfgnode = pickle.load(fin)
                 fin.close()
-
             elif _file == 'dict_cfgnode2if':
                 fin = open(os.path.join(cfg_path, _file))
                 dict_cfgnode2if = pickle.load(fin)
                 fin.close()
-
             else:
                 # print cfg_path
                 fin = open(os.path.join(cfg_path, _file))

@@ -100,7 +100,7 @@ def program_slice_forward(pdg, list_startNode):  # startNode is a list of parame
     return list_ordered_node
 
 
-def process_cross_func(to_scan_list, testID, slicetype, list_result_node, not_scan_func_list):
+def process_cross_func(to_scan_list, testID, slicetype, list_result_node, not_scan_func_list,slice_id):
     if to_scan_list == []:
         return list_result_node, not_scan_func_list
 
@@ -111,7 +111,7 @@ def process_cross_func(to_scan_list, testID, slicetype, list_result_node, not_sc
         ret = isNewOrDelOp(node, testID)
         if ret:
             funcname = ret
-            pdg = getFuncPDGByNameAndtestID(funcname, testID)
+            pdg = getFuncPDGByNameAndtestID(funcname, testID, slice_id)
 
             if pdg == False:
                 not_scan_func_list.append(node['name'])
@@ -132,7 +132,7 @@ def process_cross_func(to_scan_list, testID, slicetype, list_result_node, not_sc
                 list_result_node = list_result_node[:index + 1] + result_list + list_result_node[index + 1:]
 
                 list_result_node, not_scan_func_list = process_cross_func(result_list, testID, slicetype,
-                                                                          list_result_node, not_scan_func_list)
+                                                                          list_result_node, not_scan_func_list,slice_id)
 
 
         else:
@@ -145,7 +145,7 @@ def process_cross_func(to_scan_list, testID, slicetype, list_result_node, not_sc
                         objectname = funcname.split('->')[0].strip()
 
                         funcID = node['functionId']
-                        src_pdg = getFuncPDGByfuncIDAndtestID(funcID, testID)
+                        src_pdg = getFuncPDGByfuncIDAndtestID(funcID, testID,slice_id=slice_id)
                         if src_pdg == False:
                             continue
 
@@ -213,10 +213,10 @@ def process_cross_func(to_scan_list, testID, slicetype, list_result_node, not_sc
                             continue
 
                         funcname = classname + ' :: ' + real_funcname
-                        pdg = getFuncPDGByNameAndtestID(funcname, testID)
+                        pdg = getFuncPDGByNameAndtestID(funcname, testID,slice_id)
 
                     else:
-                        pdg = getFuncPDGByNameAndtestID(funcname, testID)
+                        pdg = getFuncPDGByNameAndtestID(funcname, testID,slice_id)
 
                     if pdg == False:
                         not_scan_func_list.append(node['name'])

@@ -27,9 +27,6 @@ def getSubCFGGraph(startNode, list_node, not_scan_list):
     return list_node, not_scan_list
 
 
-print
-
-
 def getCtrlRealtionOfCFG(cfg):
     list_ifstmt_nodes = []
     for node in cfg.vs:
@@ -44,7 +41,7 @@ def getCtrlRealtionOfCFG(cfg):
             pattern = re.compile("(?:if|while|for|switch)")
             # print src_code, node['name']
             result = re.search(pattern, src_code)
-            if result == None:
+            if result is None:
                 res = 'for'
             else:
                 res = result.group()
@@ -105,7 +102,7 @@ def getCtrlRealtionOfCFG(cfg):
                     i += 1
 
             _dict[if_node['name']] = (
-            [t_node['name'] for t_node in list_truestmt_nodes], [f_node['name'] for f_node in list_falsestmt_nodes])
+                [t_node['name'] for t_node in list_truestmt_nodes], [f_node['name'] for f_node in list_falsestmt_nodes])
 
         else:
             filepath = cfg.vs[0]['filepath']
@@ -245,7 +242,7 @@ def getCtrlRealtionOfCFG(cfg):
                 list_real_false_stmt = []
 
             _dict[if_node['name']] = (
-            [t_node['name'] for t_node in list_real_true_stmt], [f_node['name'] for f_node in list_real_false_stmt])
+                [t_node['name'] for t_node in list_real_true_stmt], [f_node['name'] for f_node in list_real_false_stmt])
 
     return _dict
 
@@ -283,10 +280,12 @@ def main():
     print len(all_func_node)
     for node in tqdm.tqdm(all_func_node):
         # 获取函数节点所在的文件ID的目录
-        testID = getFuncFile(j, node._id).split('/')[-2] #FFmpeg
+        filename = getFuncFile(j, node._id)
+        testID = filename.split('/')[-3]+'/'+filename.split('/')[-2]  # vul + CWExxxx-xxxx
 
-        path = os.path.join("/home/anderson/Desktop/locator_cfg/31/cfg_db", testID)
-        store_file_name = node.properties['name'] + '_' + str(node._id) #vdadec_init_2
+        i = 1
+        path = os.path.join("/home/anderson/Desktop/locator_cfg/"+str(i)+"/cfg_db", testID)
+        store_file_name = node.properties['name'] + '_' + str(node._id)  # vdadec_init_2
         store_path = os.path.join(path, store_file_name)
         if os.path.exists(store_path):
             continue
@@ -334,11 +333,6 @@ def main():
         fout = open(dict_store_path_2, 'wb')
         pickle.dump(_dict_node2ifstmt, fout, True)
         fout.close()
-
-        # print node.properties['name']
-        # print _dict
-        # print _dict_node2ifstmt
-        # print ''
 
 
 if __name__ == '__main__':
