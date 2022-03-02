@@ -1,0 +1,59 @@
+CVE-2005-0180@copy_from_user@copy_to_user
+CVE-2005-3858@icmpv6_param_prob@icmpv6_send
+CVE-2005-4635@fib_lookup
+CVE-2006-4997@kfree_skb
+CVE-2006-5331@_exception
+CVE-2006-6106@memset@strncpy
+CVE-2007-1861@fib_table_lookup
+CVE-2007-6417@shmem_alloc_page
+CVE-2008-2136@pskb_may_pull@kfree_skb
+CVE-2008-3534@clear_inode
+CVE-2008-5713@clear_bit
+CVE-2009-0676@memset,val
+CVE-2009-0745@memset@gdp->bg_flags |= cpu_to_le16(EXT4_BG_INODE_ZEROED)
+CVE-2009-0746@de->rec_len
+CVE-2009-0778@icmp_xmit_unlock
+CVE-2009-1192@alloc_page(GFP_KERNEL
+CVE-2009-1338@task_pid_vnr@p->pid > 1
+CVE-2009-1360@NET_INC_STATS_BH
+CVE-2009-1527@mutex_unlock@task_unlock
+CVE-2009-1630@MAY_EXEC,EACCES
+CVE-2009-1961@inode_double_unlock@mutex_lock_nested
+CVE-2009-2406@unlikely((*tag_11_contents_size) > max_contents_bytes@max_contents_bytes
+CVE-2009-2698@skb_queue_empty@udp_push_pending_frames
+CVE-2009-2846@*ppos >= HPEE_MAX_LENGTH
+CVE-2009-2847@copy_to_user@access_ok
+CVE-2009-3228@tcm->tcm__pad1 = 0@tcm->tcm_ifindex
+CVE-2009-3638@KVM_GET_SUPPORTED_CPUID
+CVE-2009-3722@kvm_require_cpl@vmcs_readl
+CVE-2009-3726@IS_GETLK
+CVE-2009-4005@fifo->skbuff->len > 3@fifo->skbuff->len+len<fifo->max_size
+CVE-2009-4307@sbi->s_log_groups_per_flex < 1@groups_per_flex = 1
+CVE-2009-4308@!sb ||
+CVE-2009-4895@__tty_fasync@spin_unlock_irqrestore,fasync_helper
+CVE-2010-0006@ipv6_skb_net@skb_trim(skb, pkt_len + sizeof(struct ipv6hdr))@pskb_trim_rcsum(skb, pkt_len + sizeof(struct ipv6hdr))
+CVE-2010-0437@n && !(n->nud_state & NUD_VALID)@(*dst)->neighbour
+CVE-2010-1162@put_pid(tty->pgrp)@free_tty_struct(tty)
+CVE-2010-1173@sctp_make_op_error_fixed@sctp_make_op_error_limited@sctp_make_op_error_space
+CVE-2010-2066@if (IS_IMMUTABLE(donor_inode) || IS_APPEND(donor_inode))@!*len
+CVE-2010-2226@!(file->f_mode & FMODE_READ)@!(f.file->f_mode & FMODE_READ)@!(file->f_mode & FMODE_WRITE)
+CVE-2010-2240@if (check_stack_guard_page(vma, address) < 0)@VM_FAULT_OOM
+CVE-2010-2521@argp->end = argp->p + (argp->pagelen>>2);@argp->end = p + (argp->pagelen>>2);
+CVE-2010-2803@memset(kdata + usize, 0, asize - usize);@memset(kdata, 0, usize);@ioctl->flags & DRM_MASTER
+CVE-2010-2942@opt = {@struct tc_defact opt;@struct tc_mirred opt;
+CVE-2010-2954@irda_open_tsap
+CVE-2010-3432@if (ecn_capable && sctp_packet_empty(packet)) {@sctp_transport_dst_check
+CVE-2010-3442@control->count > MAX_CONTROL_COUNT@control->count
+CVE-2010-3848@struct iovec iov[msg->msg_iovlen+1];@struct iovec iov[2];
+CVE-2010-3849@saddr == NULL
+CVE-2010-3850@if (!capable(CAP_NET_ADMIN))@if (edev == NULL)
+CVE-2010-3877@memset@if (down_interruptible(&tsock->sem))@if (peer)
+CVE-2010-4073@memset@switch (second & (~IPC_64))
+CVE-2010-4076@
+CVE-2010-4079@memset@vblank.flags
+CVE-2010-4081@memset@info
+CVE-2010-4163@if (!iov[i].iov_len)@if (!iov.iov_len)@iov
+CVE-2010-4165@if (val < 8 || val > MAX_TCP_WINDOW) {@val < TCP_MIN_MSS || val > MAX_TCP_WINDOW
+CVE-2010-4256@pipe = file->f_path.dentry->d_inode->i_pipe;@pipe = get_pipe_info(file);
+CVE-2010-4526@if (sock_owned_by_user(sk))@sctp_do_sm
+CVE-2010-4565@

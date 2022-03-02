@@ -289,6 +289,62 @@ def get_all_delete_statements(db):
     pass
 
 
+def get_all_vul_points(db):
+    fin = open("cve_vul_characters", 'rb')
+    cve2sensitiveKey = {}
+    for line in fin:
+        line = line.rstrip()
+        words = line.split("@")
+        key = words[0]
+        value = []
+        for i in range(1, len(words)):
+            value.append(words[i])
+        cve2sensitiveKey[key] = value
+    fin.close()
+    _dict = {}
+    print ('get_all_vul_points')
+    for cve, sensitiveWords in tqdm.tqdm(cve2sensitiveKey.items()):
+        func_nodes = getFuncNodeInTestID(db, cve)
+        if not func_nodes:
+            continue
+        for func_node in func_nodes:
+            filepath = getFuncFile(db, func_node._id)
+            if 'fix' in filepath:
+                curr = 'fix/' + cve
+            else:
+                curr = 'vul/' + cve
+            nodes = getAllNodesByFuncNode(db, func_node._id)
+            cnt = 0
+            node_queue = []
+            for node in nodes:
+                if cnt > 10:
+                    break
+                for sensitiveWord in sensitiveWords:
+                    if sensitiveWord in node['code']:
+                        if node['type'] == 'Function':
+                            cnt += 1
+                            if curr in _dict.keys():
+                                _dict[curr].append(([str(node._id)], str(node.properties['functionId']), sensitiveWord))
+                            # _dict[cve].append(node._id)
+                            else:
+                                _dict[curr] = [([str(node._id)], str(node.properties['functionId']), sensitiveWord)]
+                        else:
+                            node_queue.append((node, sensitiveWord))
+                        break
+            while (curr not in _dict or len(_dict[curr]) < 50) and len(node_queue) > 0:
+                node, sensitiveWord = node_queue.pop()
+                if curr in _dict.keys():
+                    _dict[curr].append(([str(node._id)], str(node.properties['functionId']), sensitiveWord))
+                # _dict[cve].append(node._id)
+                else:
+                    _dict[curr] = [([str(node._id)], str(node.properties['functionId']), sensitiveWord)]
+
+    return _dict
+
+
+"""
+get the point of each function
+"""
 if __name__ == '__main__':
     j = JoernSteps()
     j.connectToDatabase()
@@ -299,28 +355,28 @@ if __name__ == '__main__':
     if not os.path.exists(path):
         os.makedirs(path)
 
-    _dict = get_all_sensitiveAPI(j)
-    f = open(path + "/sensifunc_slice_points.pkl", 'wb')
-    pickle.dump(_dict, f, True)
-    f.close()
-    # print _dict
+    # _dict = get_all_sensitiveAPI(j)
+    # f = open(path + "/sensifunc_slice_points.pkl", 'wb')
+    # pickle.dump(_dict, f, True)
+    # f.close()
 
-    _dict = get_all_pointer_use_new(j)
-    f = open(path + "/pointuse_slice_points_new.pkl", 'wb')
-    pickle.dump(_dict, f, True)
-    f.close()
-    # print _dict
-
-    _dict = get_all_array_use(j)
-    f = open(path + "/arrayuse_slice_points.pkl", 'wb')
-    pickle.dump(_dict, f, True)
-    f.close()
-    # print _dict
-
-    _dict = get_all_integeroverflow_point(j)
-    f = open(path + "/integeroverflow_slice_points_new.pkl", 'wb')
-    pickle.dump(_dict, f, True)
-    f.close()
+    #
+    # _dict = get_all_pointer_use_new(j)
+    # f = open(path + "/pointuse_slice_points_new.pkl", 'wb')
+    # pickle.dump(_dict, f, True)
+    # f.close()
+    # # print _dict
+    #
+    # _dict = get_all_array_use(j)
+    # f = open(path + "/arrayuse_slice_points.pkl", 'wb')
+    # pickle.dump(_dict, f, True)
+    # f.close()
+    # # print _dict
+    #
+    # _dict = get_all_integeroverflow_point(j)
+    # f = open(path + "/integeroverflow_slice_points_new.pkl", 'wb')
+    # pickle.dump(_dict, f, True)
+    # f.close()
 
     # _dict = get_all_parameter_use(j)
     # f = open("/home/zheng/Desktop/locator_point/param_slice_points_new.pkl", 'wb')
@@ -328,7 +384,13 @@ if __name__ == '__main__':
     # f.close()
     #
     # _dict = get_all_return_use(j)
-    # f = open("/home/zheng/Desktop/locator_point/return_slice_points_new.pkl", 'wb')
+    # f = open(path + "/return_slice_points_new.pkl", 'wb')
     # pickle.dump(_dict, f, True)
-    # f.close()
-    # #print _dict
+    # # f.close()
+    _dict = get_all_vul_points(j)
+    f = open(path + "/vul_points.pkl", 'wb')
+    pickle.dump(_dict, f, True)
+    f.close()
+    print _dict
+    for key in _dict:
+        print(key)

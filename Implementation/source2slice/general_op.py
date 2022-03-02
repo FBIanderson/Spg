@@ -597,10 +597,10 @@ def getFuncPDGByNameAndtestID(func_name, testID,slice_id):
     return pdg
 
 
-def getFuncPDGByNameAndtestID_noctrl(func_name, testID):
+def getFuncPDGByNameAndtestID_noctrl(func_name, testID,slice_id):
     pdg = False
-    for _dir in os.listdir("/home/anderson/Desktop/locator_pdg/31/pdg_db"):
-        list_testid = os.listdir(os.path.join("/home/anderson/Desktop/locator_pdg/31/pdg_db", _dir))
+    for _dir in os.listdir("/home/anderson/Desktop/locator_pdg/"+str(slice_id)+"/pdg_db"):
+        list_testid = os.listdir(os.path.join("/home/anderson/Desktop/locator_pdg/"+str(slice_id)+"/pdg_db", _dir))
 
         if testID not in list_testid:
             continue

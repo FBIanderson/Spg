@@ -70,6 +70,28 @@ def sub_slice_forward(startnode, list_node, not_scan_list):
     return list_node, not_scan_list
 
 
+def sub_slice_mvp_forward(startnode, list_node, not_scan_list):
+    if startnode['name'] in not_scan_list:
+        return list_node, not_scan_list
+
+    else:
+        list_node.append(startnode)
+        not_scan_list.append(startnode['name'])
+
+    successors = startnode.successors()
+    if successors != []:
+        for p_node in successors:
+            if p_node['type'] == 'Condition':
+                pass
+            elif p_node['type'] == 'ReturnStatement':
+                # No dependency exists between the return value and the statements after the return statement.
+                # Therefore, there is no need for forward slicing.
+                pass
+            else:  # include Assignment statement and others
+                list_node, not_scan_list = sub_slice_mvp_forward(p_node, list_node, not_scan_list)
+
+    return list_node, not_scan_list
+
 def program_slice_forward(pdg, list_startNode):  # startNode is a list of parameters, only consider data dependency
     pdg = del_ctrl_edge(pdg)
 
@@ -99,6 +121,35 @@ def program_slice_forward(pdg, list_startNode):  # startNode is a list of parame
 
     return list_ordered_node
 
+
+def program_slice_mvp_forward(pdg, list_startNode):  # startNode is a list of parameters, only consider data dependency
+    pdg = del_ctrl_edge(pdg)
+
+    list_all_node = []
+    not_scan_list = []
+    for startNode in list_startNode:
+        list_node = [startNode]
+        not_scan_list.append(startNode['name'])
+        successors = startNode.successors()
+
+        if successors != []:
+            for p_node in successors:
+                list_node, not_scan_list = sub_slice_mvp_forward(p_node, list_node, not_scan_list)
+
+        list_all_node += list_node
+
+    list_ordered_node = sortedNodesByLoc(list_all_node)
+
+    a = 0
+    _list_re = []
+    while a < len(list_ordered_node):
+        if list_ordered_node[a]['name'] not in _list_re:
+            _list_re.append(list_ordered_node[a]['name'])
+            a += 1
+        else:
+            del list_ordered_node[a]
+
+    return list_ordered_node
 
 def process_cross_func(to_scan_list, testID, slicetype, list_result_node, not_scan_func_list,slice_id):
     if to_scan_list == []:
@@ -164,7 +215,7 @@ def process_cross_func(to_scan_list, testID, slicetype, list_result_node, not_sc
                             continue
 
                         funcname = classname + ' :: ' + real_funcname
-                        pdg = getFuncPDGByNameAndtestID_noctrl(funcname, testID)
+                        pdg = getFuncPDGByNameAndtestID_noctrl(funcname, testID,slice_id=slice_id)
 
 
                     elif funcname.find('.') != -1:
@@ -172,7 +223,7 @@ def process_cross_func(to_scan_list, testID, slicetype, list_result_node, not_sc
                         objectname = funcname.split('.')[0].strip()
 
                         funcID = node['functionId']
-                        src_pdg = getFuncPDGByNameAndtestID_noctrl(funcID, testID)
+                        src_pdg = getFuncPDGByNameAndtestID_noctrl(funcID, testID,slice_id=slice_id)
                         if src_pdg == False:
                             continue
                         classname = False
@@ -243,7 +294,7 @@ def process_cross_func(to_scan_list, testID, slicetype, list_result_node, not_sc
 
                             list_result_node, not_scan_func_list = process_cross_func(result_list, testID, slicetype,
                                                                                       list_result_node,
-                                                                                      not_scan_func_list)
+                                                                                      not_scan_func_list,slice_id=slice_id)
 
                         elif slicetype == 1:
                             param_node = []
@@ -275,7 +326,7 @@ def process_cross_func(to_scan_list, testID, slicetype, list_result_node, not_sc
 
                             list_result_node, not_scan_func_list = process_cross_func(result_list, testID, slicetype,
                                                                                       list_result_node,
-                                                                                      not_scan_func_list)
+                                                                                      not_scan_func_list, slice_id=slice_id)
 
     return list_result_node, not_scan_func_list
 

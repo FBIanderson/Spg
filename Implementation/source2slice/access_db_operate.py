@@ -591,6 +591,10 @@ def getCalleeNode(db, func_id):
     results = db.runGremlinQuery(query_str)
     return results
 
+def getAllNodesByFuncNode(db,func_id):
+    query_str = "queryNodeIndex('functionId:%d')" % func_id
+    results = db.runGremlinQuery(query_str)
+    return results
 
 def get_all_calls_node(db, testID):
     list_all_funcID = [node._id for node in getFuncNodeInTestID(db, testID)]

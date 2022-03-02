@@ -18,6 +18,8 @@ def get_slice_ciretion(store_filepath, list_result, count, func_name, startline,
 
     for node in list_result:
         if node['type'] == 'Function':
+            if not os.path.isfile(node['filepath']):
+                continue
             f2 = open(node['filepath'], 'r')
             content = f2.readlines()
             f2.close()
@@ -59,6 +61,8 @@ def get_slice_ciretion(store_filepath, list_result, count, func_name, startline,
                 continue
             else:
                 # print node['type'], node['code'], node['name']
+                if not os.path.isfile(node['filepath']):
+                    continue
                 f2 = open(node['filepath'], 'r')
                 content = f2.readlines()
                 f2.close()
@@ -215,7 +219,7 @@ def get_slice_ciretion(store_filepath, list_result, count, func_name, startline,
 
         else:
             # print node['name'], node['code'], node['type'], node['filepath']
-            if node['location'] == None:
+            if node['location'] is None or not os.path.isfile(node['filepath']):
                 continue
             f2 = open(node['filepath'], 'r')
             content = f2.readlines()
@@ -229,7 +233,7 @@ def get_slice_ciretion(store_filepath, list_result, count, func_name, startline,
                 list_write2file.append(node['code'] + ' ' + str(row + 1) + '\n')
                 # list_line.append(str(row+1))
 
-    f = open(store_filepath, 'a')
+    f = open(os.path.join(store_filepath, "critrion.txt"), 'a')
     f.write(str(count) + ' ' + filepath_all + ' ' + func_name + ' ' + startline + '\n')
     # for wb in list_write2file:
     #     f.write(wb)
@@ -501,7 +505,8 @@ def program_slice(pdg, startnodesID, slicetype,
         results_back = program_slice_backwards(pdg, list_startnodes)
 
         not_scan_func_list = []
-        results_back, temp = process_cross_func(results_back, testID, 1, results_back, not_scan_func_list)
+        results_back, temp = process_cross_func(results_back, testID, 1, results_back, not_scan_func_list,
+                                                slice_id=slice_id)
 
         return [results_back], start_line, startline_path
 
@@ -517,7 +522,7 @@ def program_slice(pdg, startnodesID, slicetype,
 
         return [results_for], start_line, startline_path
 
-    else:  # bi_direction
+    elif slicetype == 2:  # bi_direction
         # print "start extract backwords dataflow!"
 
         start_line = list_startnodes[0]['location'].split(':')[0]
@@ -568,31 +573,79 @@ def program_slice(pdg, startnodesID, slicetype,
             all_result.append(list_to_crossfunc_back + list_to_crossfunc_for)
 
         return all_result, start_line, startline_path
+    else: #mvp slice
+        start_line = list_startnodes[0]['location'].split(':')[0]
+        start_name = list_startnodes[0]['name']
+        startline_path = list_startnodes[0]['filepath']
+        results_back = program_slice_backwards(pdg, list_startnodes)  # results_back is a list of nodes
 
+        results_for = program_slice_mvp_forward(pdg, list_startnodes)
 
+        _list_name = []
+        for node_back in results_back:
+            _list_name.append(node_back['name'])
 
+        for node_for in results_for:
+            if node_for['name'] in _list_name:
+                continue
+            else:
+                results_back.append(node_for)
+
+        results_back = sortedNodesByLoc(results_back)
+
+        iter_times = 0
+        start_list = [[results_back, iter_times]]
+        i = 0
+        not_scan_func_list = []
+        list_cross_func_back, not_scan_func_list = process_crossfuncs_back_byfirstnode(start_list, testID, i,
+                                                                                       not_scan_func_list)
+        list_results_back = [l[0] for l in list_cross_func_back]
+
+        all_result = []
+        for results_back in list_results_back:
+            index = 1
+            for a_node in results_back:
+                if a_node['name'] == start_name:
+                    break
+                else:
+                    index += 1
+
+            list_to_crossfunc_back = results_back[:index]
+            list_to_crossfunc_for = results_back[index:]
+
+            list_to_crossfunc_back, temp = process_cross_func(list_to_crossfunc_back, testID, 0, list_to_crossfunc_back,
+                                                              not_scan_func_list, slice_id=slice_id)
+
+            list_to_crossfunc_for, temp = process_cross_func(list_to_crossfunc_for, testID, 1, list_to_crossfunc_for,
+                                                             not_scan_func_list, slice_id=slice_id)
+
+            all_result.append(list_to_crossfunc_back + list_to_crossfunc_for)
+
+        return all_result, start_line, startline_path
 '''
 store_slice_path 
 load_point_path start point
 store_record_path record path 
 store_real_path label
 '''
+
+
 def api_slice(store_slice_path, load_point_path, store_record_path, store_real_path, slice_id):
     count = 1
     store_filepath = store_slice_path
     f = open(load_point_path, 'rb')
     dict_unsliced_sensifunc = pickle.load(f)
     f.close()
-    record = []
-    label = []
-    for key in tqdm.tqdm(dict_unsliced_sensifunc.keys()):  # key is testID
+    for key in tqdm.tqdm(dict_unsliced_sensifunc.keys()):  # key is testID u'fix/CVE-2011-1927'
         dictlist = []
+        idx = 0
         for _t in dict_unsliced_sensifunc[key]:
             if _t not in dictlist:
                 dictlist.append(_t)
             else:
                 continue
         for _t in dictlist:
+            record = []
             recordtemp = []
             list_sensitive_funcid = _t[0]
             pdg_funcid = _t[1]
@@ -665,7 +718,6 @@ def api_slice(store_slice_path, load_point_path, store_record_path, store_real_p
                         for listnode in _list:
                             listname.append(listnode['name'])
                             # print listname
-                            # print listname
                         i = 0
                         while i < pdg.ecount():
                             if pdg.vs[pdg.es[i].source]['name'] in listname and pdg.vs[pdg.es[i].target][
@@ -688,40 +740,31 @@ def api_slice(store_slice_path, load_point_path, store_record_path, store_real_p
                                 recordtemp.append(d)
                             i = i + 1
                         count += 1
-                        labelfile = startline_path
-                        labeltemp = labelfile.split('/')[-1]
-                        labeltemp = labeltemp.split('.')[0]
-                        labeltemp = labeltemp.split('_')[-1]
-                        labell = str(labelfile) + '\t' + str(labeltemp)
-                        # '''
-                    # coo = coo + 1
-                # '''
                 if len(recordtemp) != 0:
                     record.append(recordtemp)
-                    label.append(labell)
                 else:
                     print 'norecord'
                     print len(pdg_set)
+            path = os.path.join(store_record_path, key)
+            if key.split('/')[0] == 'vul':
+                label = 1
+            else:
+                label = 0
+            if not os.path.exists(path):
+                os.makedirs(path)
+            record_file = open(os.path.join(path, str(label) + "_record" + str(idx) + ".pkl"), 'wb')
+            pickle.dump(record, record_file)
+            record_file.close()
+            idx += 1
 
-    for r in record:
-        with open(store_record_path, 'a+') as record_file:
-            for ri in r:
-                record_file.write(str(ri) + '\n')
-            record_file.write('--------------finish--------------\n')
-    for l in label:
-        with open(store_real_path, 'a+') as label_file:
-            label_file.write(str(l) + '\n')
 
-
-def return_slice(store_slice_path, load_point_path, store_record_path, store_real_path):
+def return_slice(store_slice_path, load_point_path, store_record_path, store_real_path, slice_id):
     count = 1
     store_filepath = store_slice_path
     f = open(load_point_path, 'rb')
     dict_unsliced_pointers = pickle.load(f)
-    # print dict_unsliced_pointers
     f.close()
     record = []
-    label = []
 
     l = ['CVE-2015-4521', 'CVE-2015-4482', 'CVE-2016-2824', 'CVE-2015-4487', 'CVE-2014-2894', 'CVE-2015-4484',
          'CVE-2016-4002', 'CVE-2015-2729', 'CVE-2015-4500', 'CVE-2015-4501', 'CVE-2016-5238', 'CVE-2014-5263',
@@ -743,9 +786,10 @@ def return_slice(store_slice_path, load_point_path, store_record_path, store_rea
          'CVE-2015-0826', 'CVE-2016-5254', 'CVE-2016-4441', 'CVE-2015-7194', 'CVE-2015-6820', 'CVE-2013-4149',
          'CVE-2015-7198', 'CVE-2015-7199', 'CVE-2015-2710', 'CVE-2015-2712', 'CVE-2013-7022', 'CVE-2013-7023',
          'CVE-2013-0845', 'CVE-2016-7466', 'CVE-2015-7202', 'CVE-2013-4151', 'CVE-2013-4150', 'CVE-2016-8668']
-    for key in tqdm.tqdm(dict_unsliced_pointers.keys()):  # key is testID
+    for key in tqdm.tqdm(dict_unsliced_pointers.keys()):  # key is testID(fix/CVE-2008-2136)
         if key in l:
             continue
+        idx = 0
         dictlist = []
         for _t in dict_unsliced_pointers[key]:
             if _t not in dictlist:
@@ -760,12 +804,13 @@ def return_slice(store_slice_path, load_point_path, store_record_path, store_rea
             pointers_name = str(_t[2])
 
             slice_dir = 0
-            pdg = getFuncPDGById(key, pdg_funcid)
+            pdg = getFuncPDGById(key, pdg_funcid, slice_id=slice_id)
             if pdg == False:
                 print 'error'
                 exit()
 
-            list_code, startline, startline_path = program_slice(pdg, list_pointers_funcid, slice_dir, key)
+            list_code, startline, startline_path = program_slice(pdg, list_pointers_funcid, slice_dir, key,
+                                                                 slice_id=slice_id)
 
             if list_code == []:
                 fout = open("error.txt", 'a')
@@ -776,7 +821,6 @@ def return_slice(store_slice_path, load_point_path, store_record_path, store_rea
                 # get_slice_file_sequence(store_filepath, _list, count, pointers_name, startline, startline_path)
                 get_slice_ciretion(store_filepath, _list, count, pointers_name, startline,
                                    startline_path)
-                # '''
                 functionlist = []
                 for node in _list:
                     functionID = node['functionId']
@@ -814,7 +858,7 @@ def return_slice(store_slice_path, load_point_path, store_record_path, store_rea
                 functionlist = set(functionlist)
                 pdg_set = []
                 for functionID in functionlist:
-                    pdg = getFuncPDGById(key, functionID)
+                    pdg = getFuncPDGById(key, functionID, slice_id=slice_id)
                     pdg_set.append(pdg)
 
                 for pdg in pdg_set:
@@ -829,7 +873,6 @@ def return_slice(store_slice_path, load_point_path, store_record_path, store_rea
                     listname = []
                     for listnode in _list:
                         listname.append(listnode['name'])
-                        # print listname
                         # print listname
                     i = 0
                     while i < pdg.ecount():
@@ -854,34 +897,24 @@ def return_slice(store_slice_path, load_point_path, store_record_path, store_rea
                         # get_slice_file_sequence(store_filepath, _list, count, sensitive_funcname, startline, startline_path)
                     listname = []
                     count += 1
-                    labelfile = startline_path
-                    labeltemp = labelfile.split('/')[-1]
-                    labeltemp = labeltemp.split('.')[0]
-                    labeltemp = labeltemp.split('_')[-1]
-                    labell = str(labelfile) + '\t' + str(labeltemp)
-                    # '''
-                    # count += 1
-            # '''
-            if len(recordtemp) != 0:
-                record.append(recordtemp)
-                label.append(labell)
-            # '''
-    # print count
-    # '''
-    for r in record:
-        with open(store_record_path, 'a+') as record_file:
-            for ri in r:
-                record_file.write(str(ri) + '\n')
-            record_file.write('--------------finish--------------\n')
-    for l in label:
-        with open(store_real_path, 'a+') as label_file:
-            label_file.write(str(l) + '\n')
-    # '''
-    # tulist = []
-    # for i in range(len(record)):
-    #     tuple = (label[i],record[i])
-    #     tulist.append(tuple)
-    # return tulist
+            record.append(recordtemp)
+            labelfile = ''
+            if isinstance(startline_path, list):
+                if len(startline_path) > 0:
+                    labelfile = startline_path[0].split('/')[-1]
+            else:
+                labelfile = startline_path.split('/')[-1]
+            path = os.path.join(store_record_path, key)
+            if key.split('/')[0] == 'vul':
+                label = 1
+            else:
+                label = 0
+            if not os.path.exists(path):
+                os.makedirs(path)
+            record_file = open(os.path.join(path, str(label) + "_record" + str(idx) + labelfile + ".pkl"), 'wb')
+            pickle.dump(record, record_file)
+            record_file.close()
+            idx += 1
 
 
 def param_slice(store_slice_path, load_point_path, store_record_path, store_real_path):
@@ -1408,11 +1441,7 @@ def integeroverflow_slice(store_slice_path, load_point_path, store_record_path, 
                 fout.write(expr_name + ' ' + str(list_expr_funcid) + ' found nothing! \n')
                 fout.close()
             else:
-                # if len(list_code)!=1:
-                #    print 'false'
                 _list = list_code[0]
-                # print len(list_code)
-                # print 'yes'
                 get_slice_ciretion(store_filepath, _list, count, expr_name, startline, startline_path)
                 functionlist = []
                 for node in _list:
@@ -1434,8 +1463,6 @@ def integeroverflow_slice(store_slice_path, load_point_path, store_record_path, 
                                          'code': str(_list[m]['code']),
                                          'lineNo': str(_list[m]['location'].split(':')[0])}
                         d['eid'] = str(_list[m + 1]['name'])
-                        # if _list[m + 1]['location'] == None:
-                        #    print _list[m + 1]
                         if _list[m + 1]['location'] == None:
                             d['epro'] = {'type': str(_list[m + 1]['type']),
                                          'code': str(_list[m + 1]['code']),
@@ -1466,7 +1493,6 @@ def integeroverflow_slice(store_slice_path, load_point_path, store_record_path, 
                     for listnode in _list:
                         listname.append(listnode['name'])
                         # print listname
-                        # print listname
                     i = 0
                     while i < pdg.ecount():
                         if pdg.vs[pdg.es[i].source]['name'] in listname and pdg.vs[pdg.es[i].target]['name'] in listname \
@@ -1487,9 +1513,6 @@ def integeroverflow_slice(store_slice_path, load_point_path, store_record_path, 
                             d['label'] = str(pdg.es[i]['label'])
                             recordtemp.append(d)
                         i = i + 1
-                        # while i < pdg.vcount():
-                        # print pdg.vs[i]
-                    listname = []
                     count += 1
                     labelfile = startline_path
                     labeltemp = labelfile.split('/')[-1]
@@ -1526,14 +1549,158 @@ def integeroverflow_slice(store_slice_path, load_point_path, store_record_path, 
     # return tulist
 
 
+def mvp_slice(store_slice_path, load_point_path, store_record_path, store_real_path, slice_id):
+    count = 1
+    store_filepath = store_slice_path
+    f = open(load_point_path, 'rb')
+    dict_unsliced_sensifunc = pickle.load(f)
+    f.close()
+    for key in tqdm.tqdm(dict_unsliced_sensifunc.keys()):  # key is testID u'fix/CVE-2011-1927'
+        dictlist = []
+        idx = 0
+        for _t in dict_unsliced_sensifunc[key]:
+            if _t not in dictlist:
+                dictlist.append(_t)
+            else:
+                continue
+        for _t in dictlist:
+            record = []
+            recordtemp = []
+            list_sensitive_funcid = _t[0]
+            pdg_funcid = _t[1]
+            sensitive_funcname = _t[2]
+            if sensitive_funcname.find("main") != -1:
+                continue  # todo
+            else:
+                slice_dir = 3  # mvp slice
+                pdg = getFuncPDGById(key, pdg_funcid, slice_id)
+                if pdg == False:
+                    print 'error'
+                    exit()
+                list_code, startline, startline_path = program_slice(pdg, list_sensitive_funcid, slice_dir, key,
+                                                                     slice_id=slice_id)
+                # print len(list_code)
+                if list_code == []:
+                    fout = open("error.txt", 'a')
+                    fout.write(sensitive_funcname + ' ' + str(list_sensitive_funcid) + ' found nothing! \n')
+                    fout.close()
+                else:
+                    _list = list_code[0]
+                    functionlist = []
+                    for node in _list:
+                        functionID = node['functionId']
+                        functionlist.append(functionID)
+                    for m in range(len(_list)):
+                        if m == len(_list) - 1:
+                            continue
+                        elif _list[m]['functionId'] != _list[m + 1]['functionId']:
+                            d = dict()
+                            d['sid'] = str(_list[m]['name'])
+                            if _list[m]['location'] == None:
+                                d['spro'] = {'type': str(_list[m]['type']),
+                                             'code': str(_list[m]['code']),
+                                             'lineNo': 'None'}
+                            else:
+                                d['spro'] = {'type': str(_list[m]['type']),
+                                             'code': str(_list[m]['code']),
+                                             'lineNo': str(_list[m]['location'].split(':')[0])}
+                            d['eid'] = str(_list[m + 1]['name'])
+                            if _list[m + 1]['location'] == None:
+                                d['epro'] = {'type': str(_list[m + 1]['type']),
+                                             'code': str(_list[m + 1]['code']),
+                                             'lineNo': 'None'}
+                            else:
+                                d['epro'] = {'type': str(_list[m + 1]['type']),
+                                             'code': str(_list[m + 1]['code']),
+                                             'lineNo': str(_list[m + 1]['location'].split(':')[0])}
+                            d['label'] = str(4)
+                            recordtemp.append(d)
+                        else:
+                            continue
+                    functionlist = set(functionlist)
+                    pdg_set = []
+                    for functionID in functionlist:
+                        pdg = getFuncPDGById(key, functionID, slice_id=slice_id)
+                        pdg_set.append(pdg)
+                    get_slice_ciretion(store_filepath, _list, count, sensitive_funcname, startline,
+                                       startline_path)
+                    for pdg in pdg_set:
+                        i = 0
+                        # pdg = getFuncPDGById(key, pdg_funcid)
+                        while i < pdg.vcount():
+                            # if pdg.vs[i]['type'] == 'IdentifierDeclStatement' and pdg.vs[i] not in _list:
+                            #     _list.append(pdg.vs[i])
+                            if pdg.vs[i]['type'] == 'Parameter' and pdg.vs[i] not in _list:
+                                _list.append(pdg.vs[i])
+                            i = i + 1
+                        listname = []
+                        for listnode in _list:
+                            listname.append(listnode['name'])
+                            # print listname
+                        i = 0
+                        while i < pdg.ecount():
+                            if pdg.vs[pdg.es[i].source]['name'] in listname and pdg.vs[pdg.es[i].target][
+                                'name'] in listname \
+                                    and pdg.vs[pdg.es[i].source]['location'] != None and pdg.vs[pdg.es[i].target][
+                                'location'] != None:
+                                # print pdg.vs[pdg.es[i].source]['name'], pdg.vs[pdg.es[i].target]['name']
+                                d = dict()
+                                d['sid'] = str(pdg.vs[pdg.es[i].source]['name'])
+                                d['spro'] = {'type': str(pdg.vs[pdg.es[i].source]['type']),
+                                             'code': str(pdg.vs[pdg.es[i].source]['code']),
+                                             'lineNo': str(pdg.vs[pdg.es[i].source]['location'].split(':')[0])}
+                                d['eid'] = str(pdg.vs[pdg.es[i].target]['name'])
+                                # if pdg.vs[pdg.es[i].target]['location'] == None:
+                                #    print pdg.vs[pdg.es[i].target]
+                                d['epro'] = {'type': str(pdg.vs[pdg.es[i].target]['type']),
+                                             'code': str(pdg.vs[pdg.es[i].target]['code']),
+                                             'lineNo': str(pdg.vs[pdg.es[i].target]['location'].split(':')[0])}
+                                d['label'] = str(pdg.es[i]['label'])
+                                recordtemp.append(d)
+                            i = i + 1
+                        count += 1
+                if len(recordtemp) != 0:
+                    record.append(recordtemp)
+                else:
+                    print 'norecord'
+                    # print len(pdg_set)
+            path = os.path.join(store_record_path, key)
+            if key.split('/')[0] == 'vul':
+                label = 1
+            else:
+                label = 0
+            if not os.path.exists(path):
+                os.makedirs(path)
+            record_file = open(os.path.join(path, str(label) + "_record" + str(idx) + ".pkl"), 'wb')
+            pickle.dump(record, record_file)
+            record_file.close()
+            idx += 1
+
+
 if __name__ == "__main__":
     i = 1  # slice id
-    api_path = "/home/anderson/Desktop/locator_record/api_record/" + str(i)
+    # record path
+    record_path = "/home/anderson/Desktop/locator_record/" + str(i)
+    #api path
+    api_path = record_path + "/api_record/"
     if not os.path.exists(api_path):
         os.makedirs(api_path)
-    load_point_path = "/home/anderson/Desktop/locator_point/" + str(i) + "/sensifunc_slice_points.pkl"
 
-    store_slice_path = api_path + "/JOERN_slices.txt"
+    #return path
+    return_path = record_path + "/return_record/"
+    if not os.path.exists(return_path):
+        os.makedirs(return_path)
+
+    # vul path
+    vul_path = record_path + "/vul_record/"
+    if not os.path.exists(vul_path):
+        os.makedirs(vul_path)
+
+    # all points path
+    load_point_path = "/home/anderson/Desktop/locator_point/" + str(i)
+    api_point_path = load_point_path + "/sensifunc_slice_points.pkl"
+    return_point_path = load_point_path + "/return_slice_points_new.pkl"
+    vul_point_path = load_point_path + "/vul_points.pkl"
     '''
     1 ../FFmpeg/1_0.cpp fclose 1721
 2 ../FFmpeg/1_0.cpp snprintf 1125
@@ -1544,16 +1711,11 @@ if __name__ == "__main__":
 7 ../FFmpeg/1_0.cpp snprintf 883
 8 ../FFmpeg/1_0.cpp snprintf 839
 9 ../FFmpeg/1_0.cpp snprintf 809
-    '''
-    store_record_path = api_path+ "/JOERNrecord.txt"
-    '''
     {'spro': {'code': 'ost -> logfile = NULL', 'type': 'ExpressionStatement', 'lineNo': '1723'}, 
     'label': '3', 'eid': '1047', 
     'epro': {'code': 'av_audio_convert_free ( ost -> reformat_ctx )', 'type': 'ExpressionStatement', 'lineNo': '1747'}, 
     'sid': '1136'}
-    
     '''
-    store_real_path = api_path + "/JOERNreal-mvd.txt"
     '''
 ../FFmpeg/1_0.cpp	0
 ../FFmpeg/42_1.cpp	1
@@ -1562,9 +1724,11 @@ if __name__ == "__main__":
 ../FFmpeg/32_1.cpp	1
 ../FFmpeg/61_0.cpp	0
 ../FFmpeg/7_1.cpp	1
-../FFmpeg/1_0.cpp	0
     '''
-    api_slice(store_slice_path, load_point_path, store_record_path, store_real_path, i)
+    # api_slice(store_slice_path=api_path, load_point_path=api_point_path, store_record_path=api_path, store_real_path=api_path, slice_id=i)
+    mvp_slice(store_slice_path=vul_path,load_point_path=vul_point_path,store_record_path=vul_path,store_real_path=vul_path,slice_id=i)
+    # return_slice(store_slice_path=return_path, load_point_path=return_point_path, store_record_path=return_path,
+    #              store_real_path=return_path, slice_id=i)
     # pointers_slice(store_slice_path, load_point_path, store_record_path, store_real_path)
     # arrays_slice(store_slice_path, load_point_path, store_record_path, store_real_path)
     # integeroverflow_slice(store_slice_path, load_point_path, store_record_path, store_real_path)

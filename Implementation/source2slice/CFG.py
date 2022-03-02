@@ -460,14 +460,9 @@ def main(slice_id):
     j = JoernSteps()
     j.connectToDatabase()
     all_func_node = getALLFuncNode(j)
-    a = 0
     record = []
     label = []
     for node in tqdm.tqdm(all_func_node):
-        #a = a + 1
-        #if a <= 693:
-        #    continue
-        print 1
         testID = getFuncFile(j, node._id).split('/')[-2]
         #path = os.path.join("/home/zheng/Desktop/pdg/2/pdg_db", testID)
         #path = os.path.join("/home/zheng/Desktop/qemupdg/9/pdg_db", testID)

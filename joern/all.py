@@ -46,6 +46,7 @@ class JoernSteps:
         else:
             finalQuery = ""
         finalQuery += query
+        print "finalQuery: "+finalQuery
         return self.gremlin.execute(finalQuery)
         
     def runCypherQuery(self, cmd):
@@ -71,6 +72,8 @@ class JoernSteps:
     def _initJoernSteps(self):
         self.graphDbURL = DEFAULT_GRAPHDB_URL
         self.stepsDirs = [DEFAULT_STEP_DIR]
+        print  self.graphDbURL
+        print self.stepsDirs
 
     def _createInitCommand(self):
         
@@ -83,4 +86,5 @@ class JoernSteps:
                     filename = os.path.join(root, f)
                     if not filename.endswith('.groovy'): continue
                     initCommand += file(filename).read() + "\n"
+        print initCommand
         return initCommand
