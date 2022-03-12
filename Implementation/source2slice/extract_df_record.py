@@ -807,7 +807,7 @@ def arrays_slice():
             list_code, startline, startline_path = program_slice(pdg, list_pointers_funcid, slice_dir, key)
 
             if list_code == []:
-                fout = open("JOERNrecord.txt", 'a')
+                fout = open("data/JOERNrecord.txt", 'a')
                 fout.write(arrays_name + ' ' + str(list_pointers_funcid) + ' found nothing! \n')
                 fout.close()
             else:

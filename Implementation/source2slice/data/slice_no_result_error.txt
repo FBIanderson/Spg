@@ -1,0 +1,190 @@
+fix/CVE-2008-2136:pskb_may_pull ['17002'] found nothing! 
+fix/CVE-2008-2136:pskb_may_pull ['17293'] found nothing! 
+fix/CVE-2008-2136:pskb_may_pull ['17584'] found nothing! 
+fix/CVE-2008-2136:pskb_may_pull ['17868'] found nothing! 
+fix/CVE-2008-2136:pskb_may_pull ['18161'] found nothing! 
+fix/CVE-2008-2136:pskb_may_pull ['18434'] found nothing! 
+fix/CVE-2008-2136:pskb_may_pull ['18699'] found nothing! 
+fix/CVE-2008-2136:pskb_may_pull ['19025'] found nothing! 
+fix/CVE-2008-2136:pskb_may_pull ['19356'] found nothing! 
+fix/CVE-2008-2136:pskb_may_pull ['19670'] found nothing! 
+fix/CVE-2008-2136:pskb_may_pull ['19950'] found nothing! 
+fix/CVE-2008-2136:pskb_may_pull ['20245'] found nothing! 
+fix/CVE-2009-2406:max_contents_bytes ['81208'] found nothing! 
+vul/CVE-2005-0180:copy_to_user ['323068'] found nothing! 
+vul/CVE-2005-0180:copy_from_user ['323269'] found nothing! 
+vul/CVE-2005-0180:copy_to_user ['323588'] found nothing! 
+vul/CVE-2005-0180:copy_from_user ['323771'] found nothing! 
+vul/CVE-2005-0180:copy_to_user ['324087'] found nothing! 
+vul/CVE-2005-0180:copy_from_user ['324327'] found nothing! 
+vul/CVE-2005-0180:copy_to_user ['324651'] found nothing! 
+vul/CVE-2005-0180:copy_from_user ['324852'] found nothing! 
+fix/CVE-2006-5331:_exception ['8878'] found nothing! 
+fix/CVE-2009-2847:access_ok ['133267'] found nothing! 
+fix/CVE-2009-2847:access_ok ['133607'] found nothing! 
+fix/CVE-2009-2847:access_ok ['133954'] found nothing! 
+fix/CVE-2009-2847:access_ok ['134301'] found nothing! 
+fix/CVE-2009-2847:access_ok ['134648'] found nothing! 
+fix/CVE-2009-2847:access_ok ['134995'] found nothing! 
+fix/CVE-2011-1585:list_for_each ['220742'] found nothing! 
+fix/CVE-2011-1585:list_for_each_entry ['220742'] found nothing! 
+fix/CVE-2011-1585:list_for_each ['220910'] found nothing! 
+fix/CVE-2011-1585:list_for_each_entry ['220910'] found nothing! 
+fix/CVE-2011-1585:list_for_each ['221086'] found nothing! 
+fix/CVE-2011-1585:list_for_each_entry ['221086'] found nothing! 
+fix/CVE-2011-1585:list_for_each ['221186'] found nothing! 
+fix/CVE-2011-1585:list_for_each_entry ['221186'] found nothing! 
+fix/CVE-2011-1585:list_for_each ['221281'] found nothing! 
+fix/CVE-2011-1585:list_for_each_entry ['221281'] found nothing! 
+vul/CVE-2008-2136:pskb_may_pull ['336754'] found nothing! 
+vul/CVE-2008-2136:pskb_may_pull ['337031'] found nothing! 
+vul/CVE-2008-2136:pskb_may_pull ['337320'] found nothing! 
+fix/CVE-2014-1690:nf_nat_mangle_tcp_packet ['296283'] found nothing! 
+fix/CVE-2014-1690:nf_nat_mangle_tcp_packet ['296612'] found nothing! 
+vul/CVE-2006-5331:_exception ['329414'] found nothing! 
+vul/CVE-2006-5331:_exception ['329456'] found nothing! 
+vul/CVE-2006-5331:_exception ['329507'] found nothing! 
+fix/CVE-2009-3722:kvm_require_cpl ['138628'] found nothing! 
+fix/CVE-2009-3722:kvm_require_cpl ['138982'] found nothing! 
+fix/CVE-2009-3722:kvm_require_cpl ['139287'] found nothing! 
+fix/CVE-2009-3726:IS_GETLK ['139521'] found nothing! 
+fix/CVE-2009-3726:IS_GETLK ['139803'] found nothing! 
+fix/CVE-2009-3726:IS_GETLK ['140083'] found nothing! 
+fix/CVE-2009-3726:IS_GETLK ['140339'] found nothing! 
+fix/CVE-2009-3726:IS_GETLK ['140617'] found nothing! 
+vul/CVE-2009-2847:copy_to_user ['367646'] found nothing! 
+vul/CVE-2009-2847:access_ok ['368042'] found nothing! 
+vul/CVE-2009-2847:copy_to_user ['367934'] found nothing! 
+vul/CVE-2011-1585:list_for_each ['441420'] found nothing! 
+fix/CVE-2011-1593:last ['221310'] found nothing! 
+fix/CVE-2009-2698:skb_queue_empty ['81687'] found nothing! 
+fix/CVE-2009-2698:skb_queue_empty ['82805'] found nothing! 
+fix/CVE-2009-2698:skb_queue_empty ['83966'] found nothing! 
+fix/CVE-2009-2698:skb_queue_empty ['85134'] found nothing! 
+fix/CVE-2009-2698:skb_queue_empty ['87372'] found nothing! 
+fix/CVE-2009-2698:skb_queue_empty ['88575'] found nothing! 
+fix/CVE-2009-2698:skb_queue_empty ['89780'] found nothing! 
+fix/CVE-2009-2698:skb_queue_empty ['91019'] found nothing! 
+fix/CVE-2009-2698:skb_queue_empty ['92265'] found nothing! 
+fix/CVE-2009-2698:skb_queue_empty ['93509'] found nothing! 
+fix/CVE-2009-2698:skb_queue_empty ['94749'] found nothing! 
+fix/CVE-2009-2698:skb_queue_empty ['95984'] found nothing! 
+fix/CVE-2009-2698:skb_queue_empty ['97203'] found nothing! 
+fix/CVE-2009-2698:skb_queue_empty ['100623'] found nothing! 
+fix/CVE-2009-2698:skb_queue_empty ['102035'] found nothing! 
+fix/CVE-2009-2698:skb_queue_empty ['103458'] found nothing! 
+fix/CVE-2009-2698:skb_queue_empty ['104881'] found nothing! 
+fix/CVE-2009-2698:skb_queue_empty ['106322'] found nothing! 
+fix/CVE-2009-2698:skb_queue_empty ['107791'] found nothing! 
+fix/CVE-2009-2698:skb_queue_empty ['109243'] found nothing! 
+fix/CVE-2009-2698:skb_queue_empty ['110690'] found nothing! 
+fix/CVE-2009-2698:skb_queue_empty ['112130'] found nothing! 
+fix/CVE-2009-2698:skb_queue_empty ['113542'] found nothing! 
+vul/CVE-2009-3726:IS_GETLK ['371296'] found nothing! 
+vul/CVE-2009-3726:IS_GETLK ['371508'] found nothing! 
+vul/CVE-2009-3726:IS_GETLK ['371720'] found nothing! 
+fix/CVE-2010-4165:val < TCP_MIN_MSS || val > MAX_TCP_WINDOW ['200342'] found nothing! 
+fix/CVE-2010-4165:val < TCP_MIN_MSS || val > MAX_TCP_WINDOW ['201807'] found nothing! 
+fix/CVE-2010-4165:val < TCP_MIN_MSS || val > MAX_TCP_WINDOW ['202911'] found nothing! 
+fix/CVE-2010-4165:val < TCP_MIN_MSS || val > MAX_TCP_WINDOW ['204027'] found nothing! 
+fix/CVE-2010-4165:val < TCP_MIN_MSS || val > MAX_TCP_WINDOW ['204850'] found nothing! 
+fix/CVE-2010-4165:val < TCP_MIN_MSS || val > MAX_TCP_WINDOW ['206428'] found nothing! 
+fix/CVE-2010-4165:val < TCP_MIN_MSS || val > MAX_TCP_WINDOW ['207843'] found nothing! 
+fix/CVE-2010-4165:val < TCP_MIN_MSS || val > MAX_TCP_WINDOW ['209310'] found nothing! 
+fix/CVE-2010-4565:sock ['210937'] found nothing! 
+fix/CVE-2010-4565:sock ['211169'] found nothing! 
+fix/CVE-2010-4565:sock ['211477'] found nothing! 
+fix/CVE-2010-4565:sock ['211783'] found nothing! 
+fix/CVE-2010-4081:info ['188732'] found nothing! 
+fix/CVE-2010-4081:info ['189917'] found nothing! 
+fix/CVE-2010-4081:info ['191103'] found nothing! 
+fix/CVE-2010-4081:info ['192290'] found nothing! 
+fix/CVE-2010-4081:info ['193486'] found nothing! 
+fix/CVE-2010-4081:info ['194669'] found nothing! 
+fix/CVE-2010-4081:info ['195852'] found nothing! 
+fix/CVE-2010-4081:info ['197043'] found nothing! 
+vul/CVE-2011-1593:last ['441454'] found nothing! 
+vul/CVE-2011-1593:last ['441593'] found nothing! 
+vul/CVE-2011-1593:last ['441732'] found nothing! 
+fix/CVE-2010-3849:saddr == NULL ['180407'] found nothing! 
+fix/CVE-2010-3849:saddr == NULL ['181541'] found nothing! 
+fix/CVE-2010-3849:saddr == NULL ['182690'] found nothing! 
+fix/CVE-2010-2954:irda_open_tsap ['172738'] found nothing! 
+fix/CVE-2010-2954:irda_open_tsap ['172925'] found nothing! 
+fix/CVE-2010-2954:irda_open_tsap ['174398'] found nothing! 
+vul/CVE-2010-4163:iov ['428382'] found nothing! 
+vul/CVE-2010-4163:iov ['428666'] found nothing! 
+vul/CVE-2010-4163:iov ['428973'] found nothing! 
+vul/CVE-2010-4565:sock ['433625'] found nothing! 
+vul/CVE-2010-4565:sock ['433835'] found nothing! 
+vul/CVE-2010-4565:sock ['434047'] found nothing! 
+vul/CVE-2010-4081:info ['427331'] found nothing! 
+vul/CVE-2010-4081:info ['427722'] found nothing! 
+vul/CVE-2010-4081:info ['428113'] found nothing! 
+vul/CVE-2014-3610:svm_set_msr ['494930'] found nothing! 
+vul/CVE-2014-3610:svm_set_msr ['495123'] found nothing! 
+vul/CVE-2009-2698:skb_queue_empty ['362928'] found nothing! 
+fix/CVE-2018-6927:list_for_each_entry_safe ['321469'] found nothing! 
+fix/CVE-2018-6927:list_for_each_entry_safe ['322411'] found nothing! 
+vul/CVE-2010-2954:irda_open_tsap ['396398'] found nothing! 
+vul/CVE-2010-2954:irda_open_tsap ['397119'] found nothing! 
+vul/CVE-2010-2954:irda_open_tsap ['397561'] found nothing! 
+fix/CVE-2012-1583:xfrm6_rcv_spi ['246784'] found nothing! 
+fix/CVE-2012-1583:xfrm6_rcv_spi ['246866'] found nothing! 
+fix/CVE-2012-1583:xfrm6_rcv_spi ['246930'] found nothing! 
+fix/CVE-2012-1583:xfrm6_rcv_spi ['246994'] found nothing! 
+vul/CVE-2018-6927:list_for_each_safe ['526482'] found nothing! 
+vul/CVE-2018-6927:list_for_each_entry_safe ['526823'] found nothing! 
+vul/CVE-2018-6927:list_for_each_entry_safe ['527350'] found nothing! 
+vul/CVE-2018-6927:list_for_each_entry_safe ['527916'] found nothing! 
+vul/CVE-2018-6927:list_for_each_entry_safe ['528456'] found nothing! 
+vul/CVE-2018-6927:list_for_each_entry_safe ['529069'] found nothing! 
+vul/CVE-2018-6927:list_for_each_entry_safe ['529952'] found nothing! 
+vul/CVE-2018-6927:list_for_each_entry_safe ['530835'] found nothing! 
+vul/CVE-2018-6927:list_for_each_entry_safe ['531731'] found nothing! 
+fix/CVE-2014-0100:hlist_for_each_entry ['291028'] found nothing! 
+fix/CVE-2009-1338:task_pid_vnr ['65767'] found nothing! 
+fix/CVE-2009-1338:task_pid_vnr ['66017'] found nothing! 
+fix/CVE-2009-1338:task_pid_vnr ['66186'] found nothing! 
+fix/CVE-2009-1338:task_pid_vnr ['66419'] found nothing! 
+fix/CVE-2009-1338:task_pid_vnr ['66649'] found nothing! 
+vul/CVE-2010-3849:saddr == NULL ['410911'] found nothing! 
+vul/CVE-2010-3849:saddr == NULL ['412024'] found nothing! 
+vul/CVE-2010-3849:saddr == NULL ['413138'] found nothing! 
+vul/CVE-2010-3849:saddr == NULL ['414329'] found nothing! 
+vul/CVE-2010-3849:saddr == NULL ['415536'] found nothing! 
+vul/CVE-2010-3849:saddr == NULL ['416737'] found nothing! 
+vul/CVE-2010-3849:saddr == NULL ['417939'] found nothing! 
+vul/CVE-2010-3849:saddr == NULL ['419085'] found nothing! 
+vul/CVE-2010-3849:saddr == NULL ['420232'] found nothing! 
+fix/CVE-2010-4163:iov ['197860'] found nothing! 
+fix/CVE-2010-4163:iov ['198177'] found nothing! 
+fix/CVE-2010-4163:iov ['198487'] found nothing! 
+fix/CVE-2010-4163:iov ['198801'] found nothing! 
+fix/CVE-2010-4163:iov ['199099'] found nothing! 
+fix/CVE-2010-4163:iov ['199445'] found nothing! 
+vul/CVE-2014-0100:hlist_for_each_entry ['480524'] found nothing! 
+vul/CVE-2014-0100:hlist_for_each_entry ['480759'] found nothing! 
+vul/CVE-2014-0100:hlist_for_each_entry ['481000'] found nothing! 
+fix/CVE-2005-0180:copy_to_user ['42'] found nothing! 
+fix/CVE-2005-0180:copy_from_user ['280'] found nothing! 
+fix/CVE-2005-0180:copy_to_user ['607'] found nothing! 
+fix/CVE-2005-0180:copy_from_user ['839'] found nothing! 
+fix/CVE-2005-0180:copy_to_user ['1184'] found nothing! 
+fix/CVE-2005-0180:copy_from_user ['1416'] found nothing! 
+fix/CVE-2005-0180:copy_to_user ['1767'] found nothing! 
+fix/CVE-2005-0180:copy_from_user ['2007'] found nothing! 
+fix/CVE-2005-0180:copy_to_user ['2333'] found nothing! 
+fix/CVE-2005-0180:copy_from_user ['2540'] found nothing! 
+fix/CVE-2005-0180:copy_to_user ['2897'] found nothing! 
+fix/CVE-2005-0180:copy_from_user ['3102'] found nothing! 
+fix/CVE-2005-0180:copy_to_user ['3458'] found nothing! 
+fix/CVE-2005-0180:copy_from_user ['3690'] found nothing! 
+fix/CVE-2010-3432:sctp_transport_dst_check ['174699'] found nothing! 
+fix/CVE-2010-3432:sctp_transport_dst_check ['174996'] found nothing! 
+fix/CVE-2010-3432:sctp_transport_dst_check ['175334'] found nothing! 
+vul/CVE-2009-2406:max_contents_bytes ['360408'] found nothing! 
+vul/CVE-2009-2406:max_contents_bytes ['360729'] found nothing! 
+vul/CVE-2009-2406:max_contents_bytes ['361082'] found nothing! 
+vul/CVE-2009-2406:max_contents_bytes ['361435'] found nothing! 
+vul/CVE-2009-1338:task_pid_vnr ['350754'] found nothing! 

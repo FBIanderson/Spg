@@ -3,7 +3,11 @@ import os
 import pickle
 import re
 
-list_destparam_0_cpyapi = ['sprintf', 'gets', 'fgets', '_memccpy', '_mbscpy', '_strncpy', 'wmemset', 'vasprintf', 'asprintf', 'wcsncpy', 'lstrcpy', '_wcsncpy', '_snprintf', 'memcpy', 'memmove', '_tcscpy', '_snwprintf', 'strcpy', 'CopyMemory', 'wcsncat', 'vsprintf', 'lstrcpyn', 'vsnprintf', '_mbsncat', 'wmemmove', 'memset', 'wmemcpy', 'strcat', 'fprintf', '_strncat', '_tcsncpy', '_mbsnbcpy', 'strncpy', 'strncat', 'wcscpy', 'snprintf', 'lstrcat']
+list_destparam_0_cpyapi = ['sprintf', 'gets', 'fgets', '_memccpy', '_mbscpy', '_strncpy', 'wmemset', 'vasprintf',
+                           'asprintf', 'wcsncpy', 'lstrcpy', '_wcsncpy', '_snprintf', 'memcpy', 'memmove', '_tcscpy',
+                           '_snwprintf', 'strcpy', 'CopyMemory', 'wcsncat', 'vsprintf', 'lstrcpyn', 'vsnprintf',
+                           '_mbsncat', 'wmemmove', 'memset', 'wmemcpy', 'strcat', 'fprintf', '_strncat', '_tcsncpy',
+                           '_mbsnbcpy', 'strncpy', 'strncat', 'wcscpy', 'snprintf', 'lstrcat']
 list_scanf_api = ['vfscanf', 'fscanf', 'vscanf', 'scanf', 'vsscanf', 'sscanf', 'swscanf']
 list_key_words = []
 
@@ -11,7 +15,7 @@ list_key_words = []
 def del_ctrl_edge(pdg):
     i = 0
     while i < pdg.ecount():
-        if pdg.es[i]['var'] == None:
+        if pdg.es[i]['var'] is None:
             pdg.delete_edges(i)
         else:
             i += 1
@@ -41,7 +45,7 @@ def isFuncCall(node):
 
 
 def getCalleeName(slicenode):
-    #get functions' name
+    # get functions' name
     code = slicenode['code']
     if slicenode['type'] == "Function":
         return []
@@ -56,7 +60,7 @@ def getCalleeName(slicenode):
         else:
             i += 1
 
-    return result #return is funcnamelist
+    return result  # return is funcnamelist
 
 
 def getFuncPDGBynodeIDAndtestID(list_cfgNodeID_funcID, testID):
@@ -64,7 +68,7 @@ def getFuncPDGBynodeIDAndtestID(list_cfgNodeID_funcID, testID):
     for _tuple in list_cfgNodeID_funcID:
         cfgNodeID = _tuple[0]
         func_id = _tuple[1]
-        path = os.path.join('/home/zheng/Desktop/locator_pdg/26/pdg_db', testID)
+        path = os.path.join('/home/anderson/Desktop/locator_pdg/1/pdg_db', testID)
         for _file in os.listdir(path):
             if _file.split('_')[-1] == func_id:
                 fpath = os.path.join(path, _file)
@@ -88,7 +92,7 @@ def getFuncPDGBynodeIDAndtestID_noctrl(list_cfgNodeID_funcID, testID):
             if testID not in list_testid:
                 continue
 
-            else:    
+            else:
                 path = os.path.join("pdg/", _dir, testID)
                 for _file in os.listdir(path):
                     if _file.split('_')[-1] == func_id:
@@ -102,8 +106,8 @@ def getFuncPDGBynodeIDAndtestID_noctrl(list_cfgNodeID_funcID, testID):
     return _dict
 
 
-def getFuncPDGByfuncIDAndtestID(func_ID, testID,slice_id):
-    path = os.path.join('/home/anderson/Desktop/locator_pdg/'+str(slice_id)+'/pdg_db', testID)
+def getFuncPDGByfuncIDAndtestID(func_ID, testID, slice_id):
+    path = os.path.join('/home/anderson/Desktop/locator_pdg/' + str(slice_id) + '/pdg_db', testID)
     pdg = False
     for _file in os.listdir(path):
         if _file.split('_')[-1] == str(func_ID):
@@ -255,7 +259,7 @@ def getReturnVarOfAPI(code):
     for scanfapi in list_scanf_api:
         if scanfapi in ['fscanf', 'sscanf', 'swscanf', 'vfscanf', 'vsscanf']:
             if code.find(scanfapi + ' ') != -1:
-                _list = code.split(scanfapi+' ')
+                _list = code.split(scanfapi + ' ')
                 if _list[0] == '' and _list[1][0] == '(':
                     list_var = _list[1].split(',')[2:]
                     list_var = [var.replace('(', '').strip() for var in list_var]
@@ -461,18 +465,19 @@ def getReturnVarOfAPI(code):
 
 def isEdgeExists(pdg, startnode, endnode, var):
     for edge in pdg.es:
-        if pdg.vs[edge.tuple]['name'][0] == startnode and pdg.vs[edge.tuple]['name'][1] == endnode and edge['var'] == var:
+        if pdg.vs[edge.tuple]['name'][0] == startnode and pdg.vs[edge.tuple]['name'][1] == endnode and edge[
+            'var'] == var:
             return True
         else:
             continue
 
-    return False 
+    return False
 
 
 def addDataEdge(pdg, startnode, endnode, var):
     if isEdgeExists(pdg, startnode, endnode, var):
         return pdg
-            
+
     edge_prop = {'var': var}
     edge_prop['label'] = 3
     pdg.add_edge(startnode, endnode, **edge_prop)
@@ -483,10 +488,10 @@ def getVarOfNode(code):
     list_var = []
     if code.find(' = ') != -1:
         _list = code.split(' = ')[0].split(' ')
-        if ']' in _list:        
+        if ']' in _list:
             index_right = _list.index(']')
             index_left = _list.index('[')
-            
+
             i = 0
             while i < len(_list):
                 if i < index_left or i > index_right:
@@ -498,12 +503,12 @@ def getVarOfNode(code):
         if '(' in code:
             list_var = False
         else:
-            list_value = code.split(',')#-1 is ;
+            list_value = code.split(',')  # -1 is ;
             for _list in list_value:
                 _list = code.split(' ')
                 if '[' in _list:
                     index = _list.index('[')
-                    var = _list[index-1]
+                    var = _list[index - 1]
                     list_var.append(var)
 
                 else:
@@ -514,12 +519,12 @@ def getVarOfNode(code):
         if '(' in code:
             list_var = False
         else:
-            list_value = code.split(',')#-1 is ;
+            list_value = code.split(',')  # -1 is ;
             for _list in list_value:
                 _list = code.split(' ')
                 if '[' in _list:
                     index = _list.index('[')
-                    var = _list[index-1]
+                    var = _list[index - 1]
                     list_var.append(var)
 
                 else:
@@ -540,22 +545,21 @@ def sortedNodesByLoc(list_node):
         _list.append((row, col, node))
     _list.sort(key=lambda x: (x[0], x[1]))
 
-
     list_ordered_nodes = [_tuple[2] for _tuple in _list]
 
     return list_ordered_nodes
 
 
-def getFuncPDGById(testID, pdg_funcid,slice_id):
-    file_dir = os.path.join("/home/anderson/Desktop/locator_pdg/"+str(slice_id)+"/pdg_db", testID)
+def getFuncPDGById(testID, pdg_funcid, slice_id):
+    file_dir = os.path.join("/home/anderson/Desktop/locator_pdg/" + str(slice_id) + "/pdg_db", testID)
 
     for _file in os.listdir(file_dir):
         func_id = _file.split('_')[-1]
-        if func_id == pdg_funcid:
+        if str(func_id) == str(pdg_funcid):
             pdg_path = os.path.join(file_dir, _file)
-            #print pdg_path
+            # print pdg_path
             f = open(pdg_path, 'rb')
-            #print pdg_path
+            # print pdg_path
             pdg = pickle.load(f)
             f.close()
             return pdg
@@ -582,14 +586,14 @@ def getFuncPDGById_noctrl(testID, pdg_funcid):
                     return pdg
 
 
-def getFuncPDGByNameAndtestID(func_name, testID,slice_id):
-    path = os.path.join("/home/anderson/Desktop/locator_pdg/"+str(slice_id)+"/pdg_db", testID)
+def getFuncPDGByNameAndtestID(func_name, testID, slice_id):
+    path = os.path.join("/home/anderson/Desktop/locator_pdg/" + str(slice_id) + "/pdg_db", testID)
     pdg = False
     for _file in os.listdir(path):
         if '_'.join(_file.split('_')[:-1]) == func_name:
             fpath = os.path.join(path, _file)
             fin = open(fpath, 'rb')
-            #print fpath
+            # print fpath
             pdg = pickle.load(fin)
             fin.close()
             break
@@ -597,10 +601,10 @@ def getFuncPDGByNameAndtestID(func_name, testID,slice_id):
     return pdg
 
 
-def getFuncPDGByNameAndtestID_noctrl(func_name, testID,slice_id):
+def getFuncPDGByNameAndtestID_noctrl(func_name, testID, slice_id):
     pdg = False
-    for _dir in os.listdir("/home/anderson/Desktop/locator_pdg/"+str(slice_id)+"/pdg_db"):
-        list_testid = os.listdir(os.path.join("/home/anderson/Desktop/locator_pdg/"+str(slice_id)+"/pdg_db", _dir))
+    for _dir in os.listdir("/home/anderson/Desktop/locator_pdg/" + str(slice_id) + "/pdg_db"):
+        list_testid = os.listdir(os.path.join("/home/anderson/Desktop/locator_pdg/" + str(slice_id) + "/pdg_db", _dir))
 
         if testID not in list_testid:
             continue
@@ -647,7 +651,7 @@ def isNewOrDelOp(node, testID):
 
                         start_n = pdg.vs[edge.tuple[0]]
                         if start_n['code'].find(' = new ') != -1:
-                        
+
                             tempvalue = start_n['code'].split(' = new ')[1].replace('*', '')
                             if tempvalue.split(' ')[0] != 'const':
                                 classname = tempvalue.split(' ')[0].strip()
@@ -689,13 +693,13 @@ def isNewOrDelOp_noctrl(node, testID, _type):
             pdg = getFuncPDGByfuncIDAndtestID(functionID, testID)
 
         for n in pdg.vs:
-            
+
             if n['name'] == node['name']:
                 list_s = n.predecessors()
 
                 for edge in pdg.es:
                     if pdg.vs[edge.tuple[0]] in list_s and pdg.vs[edge.tuple[1]] == n and edge['var'] == objectname:
-                        
+
                         start_n = pdg.vs[edge.tuple[0]]
                         if start_n['code'].find(' = new ') != -1:
                             tempvalue = start_n['code'].split(' = new ')[1].replace('*', '')

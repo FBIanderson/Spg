@@ -1,0 +1,23 @@
+fix/CVE-2010-1173/linux-4.18.9#sm_make_chunk.c#small#sctp_process_unk_param#2071.c row  19 			*errp = sctp_make_op_error_fixed(asoc, chunk);
+fix/CVE-2010-1173/linux-4.2.8#sm_make_chunk.c#small#sctp_process_unk_param#2053.c row  18 			*errp = sctp_make_op_error_fixed(asoc, chunk);
+fix/CVE-2010-1173/linux-4.9.115#sm_make_chunk.c#small#sctp_process_unk_param#2066.c row  18 			*errp = sctp_make_op_error_fixed(asoc, chunk);
+fix/CVE-2010-1173/linux-5.1.7#sm_make_chunk.c#small#sctp_process_unk_param#2082.c row  19 			*errp = sctp_make_op_error_limited(asoc, chunk);
+vul/CVE-2010-1173/linux-2.6.27.35#sm_make_chunk.c#small#sctp_process_unk_param#1939.c row  18 			*errp = sctp_make_op_error_space(asoc, chunk,
+vul/CVE-2010-1173/linux-2.6.8#sm_make_chunk.c#small#sctp_process_unk_param#1580.c row  15 			*errp = sctp_make_op_error_space(asoc, chunk,
+fix/CVE-2011-1044/linux-3.0.55#uverbs_cmd.c#small#ib_uverbs_poll_cq#922.c row  23 	memset(&resp, 0, sizeof resp);
+fix/CVE-2011-1044/linux-4.18.9#uverbs_cmd.c#small#ib_uverbs_poll_cq#1230.c row  24 	memset(&resp, 0, sizeof resp);
+fix/CVE-2011-1044/linux-4.18.9#uverbs_cmd.c#small#ib_uverbs_poll_cq#1233.c row  24 	memset(&resp, 0, sizeof resp);
+fix/CVE-2011-1044/linux-5.0.10#uverbs_cmd.c#small#ib_uverbs_poll_cq#1145.c row  22 	memset(&resp, 0, sizeof resp);
+fix/CVE-2011-1044/linux-5.1.14#uverbs_cmd.c#small#ib_uverbs_poll_cq#1156.c row  22 	memset(&resp, 0, sizeof resp);
+vul/CVE-2011-1044/linux-2.6.16#uverbs_cmd.c#small#ib_uverbs_poll_cq#678.c row  16 	wc = kmalloc(cmd.ne * sizeof *wc, GFP_KERNEL);
+vul/CVE-2011-1044/linux-2.6.19#uverbs_cmd.c#small#ib_uverbs_poll_cq#893.c row  16 	wc = kmalloc(cmd.ne * sizeof *wc, GFP_KERNEL);
+vul/CVE-2011-1044/linux-2.6.31#uverbs_cmd.c#small#ib_uverbs_poll_cq#878.c row  16 	wc = kmalloc(cmd.ne * sizeof *wc, GFP_KERNEL);
+fix/CVE-2009-1630/linux-3.0.21#dir.c#small#nfs_permission#2286.c row  11 	if ((mask & (MAY_READ | MAY_WRITE | MAY_EXEC)) == 0)
+fix/CVE-2009-1630/linux-3.10.5#dir.c#small#nfs_permission#2217.c row  11 	if ((mask & (MAY_READ | MAY_WRITE | MAY_EXEC)) == 0)
+fix/CVE-2009-1630/linux-3.12.1#dir.c#small#nfs_permission#2280.c row  11 	if ((mask & (MAY_READ | MAY_WRITE | MAY_EXEC)) == 0)
+fix/CVE-2009-1630/linux-3.14.44#dir.c#small#nfs_permission#2277.c row  11 	if ((mask & (MAY_READ | MAY_WRITE | MAY_EXEC)) == 0)
+fix/CVE-2009-1630/linux-3.16.62#dir.c#small#nfs_permission#2308.c row  11 	if ((mask & (MAY_READ | MAY_WRITE | MAY_EXEC)) == 0)
+fix/CVE-2009-1630/linux-3.19.2#dir.c#small#nfs_permission#2436.c row  8 	if ((mask & (MAY_READ | MAY_WRITE | MAY_EXEC)) == 0)
+fix/CVE-2009-1630/linux-4.9.23#dir.c#small#nfs_permission#2495.c row  8 	if ((mask & (MAY_READ | MAY_WRITE | MAY_EXEC)) == 0)
+fix/CVE-2009-1630/linux-5.1.17#dir.c#small#nfs_permission#2625.c row  8 	if ((mask & (MAY_READ | MAY_WRITE | MAY_EXEC)) == 0)
+vul/CVE-2009-1630/linux-2.6.10#dir.c#small#nfs_permission#1555.c row  17 	if ((mask & MAY_EXEC) == 0) {

@@ -1,6 +1,6 @@
 # -- coding: utf-8 --
 from access_db_operate import *
-from complete_PDG import *
+from complete_pdg import *
 import re
 import tqdm
 from py2neo.packages.httpstream import http
@@ -121,8 +121,8 @@ def getCtrlRealtionOfCFG(cfg):
             str_if_stmts = '\n'.join(content[if_line:start_line])
 
             if '{' in str_if_stmts:
-                if sorted_list_truestmt_nodes[-1]['location'] == None:
-                    if sorted_list_truestmt_nodes[-2]['location'] != None:
+                if sorted_list_truestmt_nodes[-1]['location'] is None:
+                    if sorted_list_truestmt_nodes[-2]['location'] is not None:
                         end_line = int(sorted_list_truestmt_nodes[-2]['location'].split(':')[0])
                     else:
                         end_line = int(sorted_list_truestmt_nodes[-3]['location'].split(':')[0])
@@ -255,14 +255,14 @@ def completeDataEdgeOfCFG(cfg):
             list_pre = node.predecessors()
             list_su = node.successors()
 
-            if list_pre == [] or list_pre == None:
+            if list_pre == [] or list_pre is None:
                 index = list_ordered_list.index(node)
                 start_node = list_ordered_list[index - 1]['name']
                 end_node = node['name']
                 var = None
                 addDataEdge(cfg, start_node, end_node, var)
 
-            if list_su == [] or list_su == None:
+            if list_su == [] or list_su is None:
                 index = list_ordered_list.index(node)
                 start_node = node['name']
                 end_node = list_ordered_list[index + 1]['name']
@@ -281,10 +281,10 @@ def main():
     for node in tqdm.tqdm(all_func_node):
         # 获取函数节点所在的文件ID的目录
         filename = getFuncFile(j, node._id)
-        testID = filename.split('/')[-3]+'/'+filename.split('/')[-2]  # vul + CWExxxx-xxxx
+        testID = filename.split('/')[-3] + '/' + filename.split('/')[-2]  # vul + CWExxxx-xxxx
 
         i = 1
-        path = os.path.join("/home/anderson/Desktop/locator_cfg/"+str(i)+"/cfg_db", testID)
+        path = os.path.join("/home/anderson/Desktop/locator_cfg/" + str(i) + "/cfg_db", testID)
         store_file_name = node.properties['name'] + '_' + str(node._id)  # vdadec_init_2
         store_path = os.path.join(path, store_file_name)
         if os.path.exists(store_path):
@@ -307,9 +307,6 @@ def main():
 
         for key in _dict_node2ifstmt.keys():
             _dict_node2ifstmt[key] = list(set(_dict_node2ifstmt[key]))
-
-        if not os.path.exists(path):
-            os.makedirs(path)
 
         if not os.path.exists(store_path):
             os.makedirs(store_path)

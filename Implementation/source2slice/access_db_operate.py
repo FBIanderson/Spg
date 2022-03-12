@@ -293,7 +293,7 @@ def drawGraph(db, edges, func_entry_node, graph_type):
     calleEdges = []
     if len(calleEdges) != 0:
         for edge in calleEdges:
-            if isNodeExist(g, edge[0]) == False:
+            if not isNodeExist(g, edge[0]):
                 node_prop = {'code': edge[0].properties['code'], 'type': edge[0].properties['type'],
                              'location': edge[0].properties['location'], 'filepath': edge[0].properties['filepath'],
                              'functionId': str(edge[0].properties['functionId'])}
@@ -308,7 +308,7 @@ def drawGraph(db, edges, func_entry_node, graph_type):
         if edge.start_node.properties['code'] == 'ERROR':
             continue
 
-        if isNodeExist(g, startNode) == False:
+        if not isNodeExist(g, startNode):
             if edge.start_node.properties['code'] == 'ENTRY':
                 node_prop = {'code': func_entry_node.properties['name'], 'type': func_entry_node.properties['type'],
                              'location': func_entry_node.properties['location'], 'filepath': filepath,
@@ -320,7 +320,7 @@ def drawGraph(db, edges, func_entry_node, graph_type):
             g.add_vertex(startNode, **node_prop)  # id is 'name'
 
         endNode = str(edge.end_node._id)
-        if isNodeExist(g, endNode) == False:
+        if not isNodeExist(g, endNode):
             if graph_type == 'pdg' and edge.end_node.properties['code'] == 'EXIT':
                 continue
 
@@ -345,7 +345,7 @@ def drawGraph(db, edges, func_entry_node, graph_type):
             edge_prop['label'] = 5
         if str(edge).find(':POST_DOM') != -1:
             edge_prop['label'] = 6
-        if edge_prop['label'] == None:
+        if edge_prop['label'] is None:
             print 'none'
         g.add_edge(startNode, endNode, **edge_prop)
         # print startNode, endNode
@@ -434,7 +434,7 @@ def translateASTByNode(db, func_node):
 def getUSENodesVar(db, func_id):
     query = "g.v(%s).out('USE').code" % func_id
     ret = db.runGremlinQuery(query)
-    if ret == []:
+    if not ret:
         return False
     else:
         return ret
@@ -443,7 +443,7 @@ def getUSENodesVar(db, func_id):
 def getDEFNodesVar(db, func_id):
     query = "g.v(%s).out('DEF').code" % func_id
     ret = db.runGremlinQuery(query)
-    if ret == []:
+    if not ret:
         return False
     else:
         return ret
@@ -591,10 +591,12 @@ def getCalleeNode(db, func_id):
     results = db.runGremlinQuery(query_str)
     return results
 
-def getAllNodesByFuncNode(db,func_id):
+
+def getAllNodesByFuncNode(db, func_id):
     query_str = "queryNodeIndex('functionId:%d')" % func_id
     results = db.runGremlinQuery(query_str)
     return results
+
 
 def get_all_calls_node(db, testID):
     list_all_funcID = [node._id for node in getFuncNodeInTestID(db, testID)]
@@ -895,16 +897,17 @@ def getCallGraph(db, testID):
     return call_g
 
 
-if __name__ == '__main__':
+def main():
     j = JoernSteps()
     j.connectToDatabase()
 
     i = 1
     pdg_db_path = "/home/anderson/Desktop/locator_pdg/" + str(i) + "/pdg_db"
     dict_path = "/home/anderson/Desktop/locator_dict/" + str(i) + "/dict_call2cfgNodeID_funcID"
-    list_testID = os.listdir(pdg_db_path)
-
-    for testID in tqdm.tqdm(list_testID):
+    fix_testID = os.listdir(pdg_db_path + '/fix')
+    vul_testID = os.listdir(pdg_db_path + '/vul')
+    for testID in tqdm.tqdm(fix_testID, desc='fix'):
+        testID = 'fix/' + testID
         if os.path.exists(os.path.join(dict_path, str(testID))):
             continue
         call_g = getCallGraph(j, testID)
@@ -924,3 +927,28 @@ if __name__ == '__main__':
         f = open(filepath, 'wb')
         pickle.dump(_dict, f, True)
         f.close()
+    for testID in tqdm.tqdm(vul_testID, desc='vul'):
+        testID = 'vul/' + testID
+        if os.path.exists(os.path.join(dict_path, str(testID))):
+            continue
+        call_g = getCallGraph(j, testID)
+        if call_g is False:
+            print ('false')
+            continue
+        _dict = {}
+        for edge in call_g.es:
+            endnode = call_g.vs[edge.tuple[1]]
+            if endnode['name'] not in _dict:
+                _dict[endnode['name']] = [(edge['var'], call_g.vs[edge.tuple[0]]['name'])]
+            else:
+                _dict[endnode['name']].append((edge['var'], call_g.vs[edge.tuple[0]]['name']))
+        if not os.path.exists(os.path.join(dict_path, str(testID))):
+            os.makedirs(os.path.join(dict_path, str(testID)))
+        filepath = os.path.join(dict_path, str(testID), "dict.pkl")
+        f = open(filepath, 'wb')
+        pickle.dump(_dict, f, True)
+        f.close()
+
+
+if __name__ == '__main__':
+    main()
