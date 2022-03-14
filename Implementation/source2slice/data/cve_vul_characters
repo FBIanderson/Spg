@@ -113,3 +113,32 @@ CVE-2017-18221@int delta_munlocked;@int delta_munlocked = -nr;
 CVE-2017-18249@if (build) {
 CVE-2018-6554@struct sockaddr_irda *addr = (struct sockaddr_irda *) uaddr;
 CVE-2018-6927@if (nr_wake < 0 || nr_requeue < 0)@list_for_each_safe@list_for_each_entry_safe
+
+CVE-2006-7250@if@strcmp
+CVE-2009-1377@if (!ssl3_setup_buffers(s))@ssl3_setup_buffers(s)
+CVE-2009-1378@pq_64bit_free@memset@p = (unsigned char *)s->init_buf->data;
+CVE-2009-1387@memcpy
+CVE-2010-0740@if ((s->version & 0xFF00) == (version & 0xFF00))@(s->version & 0xFF00) == (version & 0xFF00)@if (version != s->version)
+CVE-2010-2939@EC_KEY_free(s->session->sess_cert->peer_ecdh_tmp);@DH_free(s->session->sess_cert->peer_dh_tmp);
+CVE-2012-1165@if (!(*a)->param_name || !(*b)->param_name)@strcmp
+CVE-2012-2110@if (chunk_max < INT_MAX/2)@want -= i;@want-=i;
+CVE-2013-4353@if (s->s3->tmp.new_cipher == NULL)@if (s->state & SSL_ST_CONNECT)
+CVE-2013-6449@if (TLS1_get_version(s) >= TLS1_2_VERSION &&@s->method->version == TLS1_2_VERSION@s->method->ssl3_enc->enc_flags
+CVE-2014-0195@msg_hdr->msg_len > dtls1_max_handshake_message_len(s)@if ((msg_hdr->frag_off+frag_len) > msg_hdr->msg_len)
+CVE-2014-0198@if (s->s3->alert_dispatch)@if (wb->buf == NULL)
+CVE-2014-3511@else if (p[9] > SSL3_VERSION_MAJOR)@if (p[9] > SSL3_VERSION_MAJOR)
+CVE-2014-3569@ssl23_get_server_method@if (s->version == TLS1_2_VERSION)@if (s->version == TLS1_VERSION)
+CVE-2014-8176@while ( (item = pqueue_pop(s->d1->buffered_app_data.q)) != NULL)@
+CVE-2015-0207@SSL_clear(s);@if (!SSL_clear(s))@SSL_set_options(s, SSL_OP_COOKIE_EXCHANGE);
+CVE-2015-0285@if (i && ssl_fill_hello_random(s, 0, p,@if (i)
+CVE-2015-0290@if (i < 0 && (!s->wbio || !BIO_should_retry(s->wbio))) {@if (i<0)@if (i < 0) {
+CVE-2015-1794@if (BN_is_zero(dh->p)) {@if (BN_is_zero(dh->pub_key)) {@DH *dh = NULL;
+CVE-2015-3197@ if (sk_SSL_CIPHER_find(allow, sk_SSL_CIPHER_value(prio, z)) < 0) {@if (sk_SSL_CIPHER_find(allow,sk_SSL_CIPHER_value(prio,z)) < 0)@if (sk_SSL_CIPHER_find(cl,sk_SSL_CIPHER_value(cs,z)) < 0)
+CVE-2016-0703@if (s->s2->tmp.enc < num_encrypted_key_bytes) {@if ((i < 0)
+CVE-2016-0704@if (s->s2->tmp.enc < num_encrypted_key_bytes) {@if ((i < 0)
+CVE-2016-0705@if (privkey)@if (ndsa)
+CVE-2016-0799@fmtstr
+CVE-2016-2109@if (!BUF_MEM_grow_clean(b, len + want)) {@if (!BUF_MEM_grow_clean(b, len + chunk)) {
+CVE-2016-2178@BN_set_flags(&k, BN_FLG_CONSTTIME);@BN_set_flags(k, BN_FLG_CONSTTIME);
+CVE-2016-2842@doapr_outch
+CVE-2016-6305@if (!peek) {@if (peek) {

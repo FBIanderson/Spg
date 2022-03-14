@@ -272,7 +272,7 @@ def completeDataEdgeOfCFG(cfg):
     return cfg
 
 
-def main():
+def main(slice_id=1):
     j = JoernSteps()
     j.connectToDatabase()
     # 获取函数节点
@@ -283,8 +283,8 @@ def main():
         filename = getFuncFile(j, node._id)
         testID = filename.split('/')[-3] + '/' + filename.split('/')[-2]  # vul + CWExxxx-xxxx
 
-        i = 1
-        path = os.path.join("/home/anderson/Desktop/locator_cfg/" + str(i) + "/cfg_db", testID)
+
+        path = os.path.join("/home/anderson/Desktop/locator_cfg/" + str(slice_id) + "/cfg_db", testID)
         store_file_name = node.properties['name'] + '_' + str(node._id)  # vdadec_init_2
         store_path = os.path.join(path, store_file_name)
         if os.path.exists(store_path):
@@ -333,4 +333,4 @@ def main():
 
 
 if __name__ == '__main__':
-    main()
+    main(1)

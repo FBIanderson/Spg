@@ -474,7 +474,7 @@ def deleteCDG(pdg):
     return pdg
 
 
-def main(slice_id):
+def main(slice_id=1):
     j = JoernSteps()
     j.connectToDatabase()
     all_func_node = getALLFuncNode(j)

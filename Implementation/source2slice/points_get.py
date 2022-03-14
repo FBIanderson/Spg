@@ -427,13 +427,13 @@ def get_all_mvp_vul_points(db):
 """
 get the start point of each function
 """
-if __name__ == '__main__':
+def main(slice_id=1):
     j = JoernSteps()
     j.connectToDatabase()
 
-    i = 1
+
     # slice start point
-    path = "/home/anderson/Desktop/locator_point/" + str(i)
+    path = "/home/anderson/Desktop/locator_point/" + str(slice_id)
     if not os.path.exists(path):
         os.makedirs(path)
 
@@ -475,3 +475,6 @@ if __name__ == '__main__':
     # print _dict
     # for key in _dict:
     #     print(key)
+
+if __name__ == '__main__':
+    main(slice_id=1)

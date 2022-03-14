@@ -1631,10 +1631,10 @@ def mvp_slice(store_slice_path, load_point_path, store_record_path, store_real_p
             idx += 1
 
 
-def main():
-    i = 1  # slice id
+def main(slice_id=1):
+    i = slice_id
     # record path
-    record_path = "/home/anderson/Desktop/locator_record/" + str(i)
+    record_path = "/home/anderson/Desktop/locator_record/" + str(slice_id)
 
     # api path
     api_path = record_path + "/api_record/"
@@ -1731,4 +1731,4 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    main(slice_id=1)

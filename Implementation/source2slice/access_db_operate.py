@@ -897,13 +897,13 @@ def getCallGraph(db, testID):
     return call_g
 
 
-def main():
+def main(slice_id=1):
     j = JoernSteps()
     j.connectToDatabase()
 
-    i = 1
-    pdg_db_path = "/home/anderson/Desktop/locator_pdg/" + str(i) + "/pdg_db"
-    dict_path = "/home/anderson/Desktop/locator_dict/" + str(i) + "/dict_call2cfgNodeID_funcID"
+
+    pdg_db_path = "/home/anderson/Desktop/locator_pdg/" + str(slice_id) + "/pdg_db"
+    dict_path = "/home/anderson/Desktop/locator_dict/" + str(slice_id) + "/dict_call2cfgNodeID_funcID"
     fix_testID = os.listdir(pdg_db_path + '/fix')
     vul_testID = os.listdir(pdg_db_path + '/vul')
     for testID in tqdm.tqdm(fix_testID, desc='fix'):
