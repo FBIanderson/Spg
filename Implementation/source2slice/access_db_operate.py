@@ -132,6 +132,12 @@ def get_def_node(db, cfg_node_id):
     return results
 
 
+def get_node_by_id(db, id):
+    query_str = "g.v(%d)" % int(id)
+    results = db.runGremlinQuery(query_str)
+    return results
+
+
 def getFunctionNodeByName(db, funcname):
     query_str = "queryNodeIndex('type:Function AND name:%s')" % funcname
     results = db.runGremlinQuery(query_str)
@@ -283,6 +289,63 @@ def getCALLEdges(db, func_id, funcnode, caller, callEdges):
                         callEdges.append(calledge)
                 caller, valid_callees = getCALLEdges(db, int(code_def_item.ref[5:]), code_def_item, caller, callEdges)
     return caller, callEdges
+
+
+def drawAstTreeGraph(db, edges, func_id):
+    g = Graph(directed=True)
+    func_entry_node = get_node_by_id(db,func_id)
+    filepath = getFuncFile(db, int(func_id))
+
+    calleEdges = []
+    if len(calleEdges) != 0:
+        for edge in calleEdges:
+            if not isNodeExist(g, edge[0]):
+                node_prop = {'code': edge[0].properties['code'], 'type': edge[0].properties['type'],
+                             'location': edge[0].properties['location'], 'filepath': edge[0].properties['filepath'],
+                             'functionId': str(edge[0].properties['functionId'])}
+                g.add_vertex(edge[0], **node_prop)
+
+    for edge in edges:
+        if edge.start_node.properties['code'] == 'ENTRY':
+            startNode = str(edge.start_node.properties['functionId'])
+        else:
+            startNode = str(edge.start_node._id)
+
+        if edge.start_node.properties['code'] == 'ERROR':
+            continue
+
+        if not isNodeExist(g, startNode):
+            if edge.start_node.properties['code'] == 'ENTRY':
+                node_prop = {'code': func_entry_node.properties['name'], 'type': func_entry_node.properties['type'],
+                             'location': func_entry_node.properties['location'], 'filepath': filepath,
+                             'functionId': str(edge.start_node.properties['functionId'])}
+            else:
+                node_prop = {'code': edge.start_node.properties['code'], 'type': edge.start_node.properties['type'],
+                             'location': edge.start_node.properties['location'], 'filepath': filepath,
+                             'functionId': str(edge.start_node.properties['functionId'])}
+            g.add_vertex(startNode, **node_prop)  # id is 'name'
+
+        endNode = str(edge.end_node._id)
+        if not isNodeExist(g, endNode):
+            if edge.end_node.properties['code'] == 'EXIT':
+                continue
+
+            if edge.end_node.properties['code'] == 'ERROR':
+                continue
+
+            node_prop = {'code': edge.end_node.properties['code'], 'type': edge.end_node.properties['type'],
+                         'location': edge.end_node.properties['location'], 'filepath': filepath,
+                         'functionId': str(edge.end_node.properties['functionId'])}
+            g.add_vertex(endNode, **node_prop)
+
+        g.add_edge(startNode, endNode)
+    return g
+
+
+def drawAstTree(g, ast_start_node):
+    g = Graph(directed=True)
+    g.vs[ast_start_node]
+    pass
 
 
 def drawGraph(db, edges, func_entry_node, graph_type):
@@ -900,7 +963,6 @@ def getCallGraph(db, testID):
 def main(slice_id=1):
     j = JoernSteps()
     j.connectToDatabase()
-
 
     pdg_db_path = "/home/anderson/Desktop/locator_pdg/" + str(slice_id) + "/pdg_db"
     dict_path = "/home/anderson/Desktop/locator_dict/" + str(slice_id) + "/dict_call2cfgNodeID_funcID"
