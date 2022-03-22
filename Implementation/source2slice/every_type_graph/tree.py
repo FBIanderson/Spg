@@ -1,11 +1,12 @@
 # tree object from stanfordnlp/treelstm
 class Tree(object):
-    def __init__(self):
+    def __init__(self,_idx):
         self.parent = None
         self.num_children = 0
         self.children = list()
         self.ast_type = None
         self.code = None
+        self.idx = _idx
         self.is_leaf = True
 
     def add_child(self, child):
@@ -15,8 +16,8 @@ class Tree(object):
         self.children.append(child)
 
     def size(self):
-        if getattr(self, '_size'):
-            return self._size
+        # if getattr(self, '_size'):
+        #     return self._size
         count = 1
         for i in range(self.num_children):
             count += self.children[i].size()
