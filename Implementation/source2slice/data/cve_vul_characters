@@ -149,8 +149,8 @@ CVE-2016-2109@if (!BUF_MEM_grow_clean(b, len + want)) {@if (!BUF_MEM_grow_clean(
 CVE-2016-2178@BN_set_flags(&k, BN_FLG_CONSTTIME);@BN_set_flags(k, BN_FLG_CONSTTIME);
 CVE-2016-2842@doapr_outch
 CVE-2016-6305@if (!peek) {@if (peek) {
-CVE-2018-0732 CWE-320
-CVE-2018-0739 CWE-674
-CVE-2020-1967 CWE-476
-CVE-2020-1971 CWE-476
-CVE-2021-3711 CWE-120
+CVE-2018-0732@if (BN_num_bits(dh->p) > OPENSSL_DH_MAX_MODULUS_BITS) {@(BN_num_bits(dh->p) < OPENSSL_DH_FIPS_MIN_MODULUS_BITS)@BN_CTX *ctx;
+CVE-2018-0739@ASN1_TLC *ctx, int depth)@ASN1_TLC *ctx)
+CVE-2020-1967@if (sigalg != NULL && sig_nid == sigalg->sigandhash)@if (sig_nid == sigalg->sigandhash)
+CVE-2020-1971@result = ASN1_TYPE_cmp(a->d.x400Address, b->d.x400Address);@result = ASN1_TYPE_cmp(a->d.other, b->d.other);
+CVE-2021-3711@if (!sm2_plaintext_size(ec, md, inlen, outlen))@if (!sm2_plaintext_size(in, inlen, outlen))
