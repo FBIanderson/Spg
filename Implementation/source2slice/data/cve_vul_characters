@@ -113,6 +113,13 @@ CVE-2017-18221@int delta_munlocked;@int delta_munlocked = -nr;
 CVE-2017-18249@if (build) {
 CVE-2018-6554@struct sockaddr_irda *addr = (struct sockaddr_irda *) uaddr;
 CVE-2018-6927@if (nr_wake < 0 || nr_requeue < 0)@list_for_each_safe@list_for_each_entry_safe
+CVE-2019-18805@if (!delta)@u32 delta = tcp_time_stamp(tp) - tp->rx_opt.rcv_tsecr;
+CVE-2019-19602@this_cpu_read_stable@this_cpu_read
+CVE-2020-25643@if (len < 2 || opt[1] < 2 || len < opt[1])@if (len < 2 || len < opt[1]) {
+CVE-2020-27194@s32 smin_val = src_reg->s32_min_value;@s32 smin_val = src_reg->smin_value;
+CVE-2021-37576@if (be32_to_cpu(args.nargs) >= ARRAY_SIZE(args.args)) {@list_for_each_entry
+CVE-2021-43057@task_sid_obj(parent), task_sid_obj(current),@ task_sid_subj(parent), task_sid_obj(current),
+CVE-2022-25258@if (interface >= MAX_CONFIG_INTERFACES ||@interface = w_value & 0xFF;
 
 CVE-2006-7250@if@strcmp
 CVE-2009-1377@if (!ssl3_setup_buffers(s))@ssl3_setup_buffers(s)
@@ -142,3 +149,8 @@ CVE-2016-2109@if (!BUF_MEM_grow_clean(b, len + want)) {@if (!BUF_MEM_grow_clean(
 CVE-2016-2178@BN_set_flags(&k, BN_FLG_CONSTTIME);@BN_set_flags(k, BN_FLG_CONSTTIME);
 CVE-2016-2842@doapr_outch
 CVE-2016-6305@if (!peek) {@if (peek) {
+CVE-2018-0732 CWE-320
+CVE-2018-0739 CWE-674
+CVE-2020-1967 CWE-476
+CVE-2020-1971 CWE-476
+CVE-2021-3711 CWE-120
