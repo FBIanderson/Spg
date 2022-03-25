@@ -77,7 +77,6 @@ def sub_slice_forward(startnode, list_node, not_scan_list):
     return list_node, not_scan_list
 
 
-
 def program_slice_forward(pdg, list_startNode):  # startNode is a list of parameters, only consider data dependency
     pdg = del_ctrl_edge(pdg)
 
@@ -106,6 +105,8 @@ def program_slice_forward(pdg, list_startNode):  # startNode is a list of parame
             del list_ordered_node[a]
 
     return list_ordered_node
+
+
 def sub_slice_mvp_forward(startnode, list_node, not_scan_list, func_id):
     if startnode['name'] in not_scan_list:
         return list_node, not_scan_list
@@ -212,6 +213,7 @@ def sub_slice_mvp_forward(startnode, list_node, not_scan_list, func_id):
 
     return list_node, not_scan_list
 
+
 def program_slice_mvp_forward(pdg, list_startNode,
                               func_id):  # startNode is a list of parameters, only consider data dependency
     # pdg = del_ctrl_edge(pdg)
@@ -247,12 +249,12 @@ def process_cross_func(to_scan_list, testID, slicetype, list_result_node, not_sc
         if node['name'] in not_scan_func_list:
             continue
 
-        ret = isNewOrDelOp(node, testID)
+        ret = isNewOrDelOp(node, testID, slice_id)
         if ret:
             funcname = ret
             pdg = getFuncPDGByNameAndtestID(funcname, testID, slice_id)
 
-            if pdg == False:
+            if not pdg:
                 not_scan_func_list.append(node['name'])
                 continue
 
@@ -300,7 +302,7 @@ def process_cross_func(to_scan_list, testID, slicetype, list_result_node, not_sc
 
                                 break
 
-                        if classname == False:
+                        if not classname:
                             continue
 
                         funcname = classname + ' :: ' + real_funcname
@@ -562,7 +564,6 @@ def main():
     func_node = getFunctionNodeByName(j, 'WDA_TxPacket')
     initpdg = translatePDGfullByNode(j, func_node[0])
 
-
     filename = getFuncFile(j, func_node[0]._id)
     # print(func_node[])
     testID = filename.split('/')[-3] + '/' + filename.split('/')[-2]  # vul + CWExxxx-xxxx
@@ -620,16 +621,15 @@ def main():
     # res = program_slice_forward(pdg, list_startNode=return_startNode)
     # get_readable_word_by_nodes(res, type='pdg_return_normal')
 
-
     # temp = []
     # for edge in initpdg.es:
     #     print(edge)
     #     u = initpdg.vs[edge.source]
     #     v = initpdg.vs[edge.target]
 
-        # if u['location'] is not None and u['location'].split(':')[0] == str(
-        #         19) and v['location'] is not None and v['location'].split(':')[0] == str(20):
-        #     temp.append(edge)
+    # if u['location'] is not None and u['location'].split(':')[0] == str(
+    #         19) and v['location'] is not None and v['location'].split(':')[0] == str(20):
+    #     temp.append(edge)
     condition_startNode = []
     return_startNode = []
     expresssion_startNode = []

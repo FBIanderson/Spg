@@ -344,6 +344,7 @@ def get_all_vul_points(db):
 
 def get_all_mvp_vul_points(db):
     fin = open("data/cve_vul_characters", 'rb')
+    filepath_to_line = dict()
     cve2sensitiveKey = {}
     for line in fin:
         line = line.rstrip()
@@ -373,6 +374,7 @@ def get_all_mvp_vul_points(db):
                     line = lines[i]
                     if sensitiveWord in line:
                         sensitive_rows.append(i + 1)
+                        filepath_to_line[filepath] = i + 1
                         sensitive_lines.append(line)
                         break
             if 'fix' in filepath:
@@ -390,14 +392,14 @@ def get_all_mvp_vul_points(db):
                         _dict[curr] = [([str(node._id)], str(node.properties['functionId']), sensitive_lines[0])]
             if cnt > 0:
                 record_file = open('data/points_get_record.txt', 'a')
-                record_file.write(curr+'/'+filepath.split('/')[-1] + " row ")
+                record_file.write(curr + '/' + filepath.split('/')[-1] + " row ")
                 for temp in sensitive_rows:
-                    record_file.write(" "+str(temp))
+                    record_file.write(" " + str(temp))
                 for line in sensitive_lines:
-                    record_file.write(" "+line)
+                    record_file.write(" " + line)
                 continue
             error_file = open('data/points_get_error.txt', 'a')
-            error_file.write(curr+'/'+filepath.split('/')[-1] + " row not found \n")
+            error_file.write(curr + '/' + filepath.split('/')[-1] + " row not found \n")
             cnt = 0
             node_queue = []
             for sensitiveWord in sensitiveWords:
@@ -420,17 +422,18 @@ def get_all_mvp_vul_points(db):
                     _dict[curr].append(([str(node._id)], str(node.properties['functionId']), sensitiveWord))
                 else:
                     _dict[curr] = [([str(node._id)], str(node.properties['functionId']), sensitiveWord)]
-
+    pickle.dump(filepath_to_line, open('data/filepath_to_line_dict.pkl', 'wb'))
     return _dict
 
 
 """
 get the start point of each function
 """
+
+
 def main(slice_id=1):
     j = JoernSteps()
     j.connectToDatabase()
-
 
     # slice start point
     path = "/home/anderson/Desktop/locator_point/" + str(slice_id)
@@ -476,5 +479,6 @@ def main(slice_id=1):
     # for key in _dict:
     #     print(key)
 
+
 if __name__ == '__main__':
-    main(slice_id=1)
+    main(slice_id=4)

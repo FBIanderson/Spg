@@ -651,6 +651,8 @@ def api_slice(store_slice_path, load_point_path, store_record_path, record_type,
             pdg_funcid = _t[1]
             sensitive_funcname = _t[2]
             filename = getFuncFile(db=db, func_id=int(pdg_funcid))
+            vul_line = str(filepath_to_line_dict[filename])
+            label = 0
             ast_g = drawAstTreeGraph(db, getASTEdges(db, pdg_funcid), pdg_funcid)
             if sensitive_funcname.find("main") != -1:
                 continue  # todo
@@ -663,7 +665,7 @@ def api_slice(store_slice_path, load_point_path, store_record_path, record_type,
                 list_code, startline, startline_path = program_slice(pdg, list_sensitive_funcid, slice_dir, key,
                                                                      slice_id=slice_id)
                 # print len(list_code)
-                if list_code == []:
+                if not list_code:
                     fout = open("data/slice/api_error.txt", 'a')
                     fout.write(sensitive_funcname + ' ' + str(list_sensitive_funcid) + ' found nothing! \n')
                     fout.close()
@@ -679,27 +681,31 @@ def api_slice(store_slice_path, load_point_path, store_record_path, record_type,
                         elif _list[m]['functionId'] != _list[m + 1]['functionId']:
                             d = dict()
                             d['sid'] = str(_list[m]['name'])
-                            if _list[m]['location'] == None:
+                            if _list[m]['location'] is None:
                                 d['spro'] = {'type': str(_list[m]['type']),
                                              'code': str(_list[m]['code']),
                                              'lineNo': 'None',
                                              'ast_tree': sub_ast_tree(ast_g, _list[m])}
                             else:
+                                if str(_list[m]['location'].split(':')[0]) == vul_line:
+                                    label = 1
                                 d['spro'] = {'type': str(_list[m]['type']),
                                              'code': str(_list[m]['code']),
                                              'lineNo': str(_list[m]['location'].split(':')[0]),
                                              'ast_tree': sub_ast_tree(ast_g, _list[m])}
                             d['eid'] = str(_list[m + 1]['name'])
-                            if _list[m + 1]['location'] == None:
+                            if _list[m + 1]['location'] is None:
                                 d['epro'] = {'type': str(_list[m + 1]['type']),
                                              'code': str(_list[m + 1]['code']),
                                              'lineNo': 'None',
-                                             'ast_tree': sub_ast_tree(ast_g, _list[m+1])}
+                                             'ast_tree': sub_ast_tree(ast_g, _list[m + 1])}
                             else:
+                                if str(_list[m + 1]['location'].split(':')[0]) == vul_line:
+                                    label = 1
                                 d['epro'] = {'type': str(_list[m + 1]['type']),
                                              'code': str(_list[m + 1]['code']),
                                              'lineNo': str(_list[m + 1]['location'].split(':')[0]),
-                                             'ast_tree': sub_ast_tree(ast_g, _list[m+1])}
+                                             'ast_tree': sub_ast_tree(ast_g, _list[m + 1])}
                             d['label'] = str(4)
                             recordtemp.append(d)
 
@@ -742,6 +748,9 @@ def api_slice(store_slice_path, load_point_path, store_record_path, record_type,
                                              'lineNo': str(pdg.vs[pdg.es[i].target]['location'].split(':')[0]),
                                              'ast_tree': sub_ast_tree(ast_g, pdg.vs[pdg.es[i].target])}
                                 d['label'] = str(pdg.es[i]['label'])
+                                if str(pdg.vs[pdg.es[i].source]['location'].split(':')[0]) == vul_line or \
+                                        str(pdg.vs[pdg.es[i].target]['location'].split(':')[0]) == vul_line:
+                                    label = 1
                                 recordtemp.append(d)
                             i = i + 1
                         count += 1
@@ -749,10 +758,8 @@ def api_slice(store_slice_path, load_point_path, store_record_path, record_type,
                     print 'api norecord'
                     # print len(pdg_set)
             path = os.path.join(store_record_path, key)
-            all_type_path = os.path.join(all_test_type_path, key, filename.split("/")[-1],record_type)
-            if key.split('/')[0] == 'vul':
-                label = 1
-            else:
+            all_type_path = os.path.join(all_test_type_path, key, filename.split("/")[-1], record_type)
+            if key.split('/')[0] == 'fix':
                 label = 0
             if not os.path.exists(path):
                 os.makedirs(path)
@@ -762,7 +769,7 @@ def api_slice(store_slice_path, load_point_path, store_record_path, record_type,
             pickle.dump(recordtemp, record_file)
             record_file.close()
             all_type_record_file = open(os.path.join(all_type_path, str(label) + "_record" + str(idx) + ".pkl"), 'wb')
-            pickle.dump(recordtemp,all_type_record_file)
+            pickle.dump(recordtemp, all_type_record_file)
             all_type_record_file.close()
             idx += 1
 
@@ -810,8 +817,10 @@ def return_slice(store_slice_path, load_point_path, store_record_path, record_ty
             pdg_funcid = _t[1]
             pointers_name = str(_t[2])
             filename = getFuncFile(db=db, func_id=pdg_funcid)
+            vul_line = str(filepath_to_line_dict[filename])
             ast_g = drawAstTreeGraph(db, getASTEdges(db, pdg_funcid), pdg_funcid)
             slice_dir = 0
+            label = 0
             pdg = getFuncPDGById(key, pdg_funcid, slice_id=slice_id)
             if not pdg:
                 print 'return error'
@@ -845,6 +854,8 @@ def return_slice(store_slice_path, load_point_path, store_record_path, record_ty
                                          'lineNo': 'None',
                                          'ast_tree': sub_ast_tree(ast_g, _list[m])}
                         else:
+                            if str(_list[m]['location'].split(':')[0]) == vul_line:
+                                label = 1
                             d['spro'] = {'type': str(_list[m]['type']),
                                          'code': str(_list[m]['code']),
                                          'lineNo': str(_list[m]['location'].split(':')[0]),
@@ -855,12 +866,14 @@ def return_slice(store_slice_path, load_point_path, store_record_path, record_ty
                             d['epro'] = {'type': str(_list[m + 1]['type']),
                                          'code': str(_list[m + 1]['code']),
                                          'lineNo': 'None',
-                                         'ast_tree': sub_ast_tree(ast_g, _list[m+1])}
+                                         'ast_tree': sub_ast_tree(ast_g, _list[m + 1])}
                         else:
+                            if str(_list[m+1]['location'].split(':')[0]) == vul_line:
+                                label = 1
                             d['epro'] = {'type': str(_list[m + 1]['type']),
                                          'code': str(_list[m + 1]['code']),
                                          'lineNo': str(_list[m + 1]['location'].split(':')[0]),
-                                         'ast_tree': sub_ast_tree(ast_g, _list[m+1])}
+                                         'ast_tree': sub_ast_tree(ast_g, _list[m + 1])}
                         d['label'] = str(4)
                         recordtemp.append(d)
                 functionlist = set(functionlist)
@@ -900,14 +913,15 @@ def return_slice(store_slice_path, load_point_path, store_record_path, record_ty
                                          'lineNo': str(pdg.vs[pdg.es[i].target]['location'].split(':')[0]),
                                          'ast_tree': sub_ast_tree(ast_g, pdg.vs[pdg.es[i].target])}
                             d['label'] = str(pdg.es[i]['label'])
+                            if str(pdg.vs[pdg.es[i].source]['location'].split(':')[0]) == vul_line or \
+                                    str(pdg.vs[pdg.es[i].target]['location'].split(':')[0]) == vul_line:
+                                label = 1
                             recordtemp.append(d)
                         i = i + 1
                     count += 1
             path = os.path.join(store_record_path, key)
-            all_type_path = os.path.join(all_test_type_path, key, filename.split("/")[-1],record_type)
-            if key.split('/')[0] == 'vul':
-                label = 1
-            else:
+            all_type_path = os.path.join(all_test_type_path, key, filename.split("/")[-1], record_type)
+            if key.split('/')[0] == 'fix':
                 label = 0
             if not os.path.exists(path):
                 os.makedirs(path)
@@ -965,8 +979,10 @@ def param_slice(store_slice_path, load_point_path, store_record_path, record_typ
             pdg_funcid = _t[1]
             pointers_name = str(_t[2])
             filename = getFuncFile(db=db, func_id=pdg_funcid)
+            vul_line = str(filepath_to_line_dict[filename])
             ast_g = drawAstTreeGraph(db, getASTEdges(db, pdg_funcid), pdg_funcid)
             slice_dir = 1
+            label = 0
             pdg = getFuncPDGById(key, pdg_funcid, slice_id)
             if not pdg:
                 print 'error'
@@ -974,7 +990,7 @@ def param_slice(store_slice_path, load_point_path, store_record_path, record_typ
 
             list_code, startline, startline_path = program_slice(pdg, list_pointers_funcid, slice_dir, key, slice_id)
 
-            if list_code == []:
+            if not list_code:
                 fout = open("data/slice/param_error.txt", 'a')
                 fout.write(pointers_name + ' ' + str(list_pointers_funcid) + ' found nothing! \n')
                 fout.close()
@@ -995,25 +1011,27 @@ def param_slice(store_slice_path, load_point_path, store_record_path, record_typ
                         # call_functionID = _list[m+1]['functionId']
                         d = dict()
                         d['sid'] = str(_list[m]['name'])
-                        if _list[m]['location'] == None:
+                        if _list[m]['location'] is None:
                             d['spro'] = {'type': str(_list[m]['type']),
                                          'code': str(_list[m]['code']),
                                          'lineNo': 'None',
                                          'ast_tree': sub_ast_tree(ast_g, _list[m])}
                         else:
+                            if str(_list[m]['location'].split(':')[0]) == vul_line:
+                                label = 1
                             d['spro'] = {'type': str(_list[m]['type']),
                                          'code': str(_list[m]['code']),
                                          'lineNo': str(_list[m]['location'].split(':')[0]),
                                          'ast_tree': sub_ast_tree(ast_g, _list[m])}
                         d['eid'] = str(_list[m + 1]['name'])
                         if _list[m + 1]['location'] == None:
-                            print _list[m + 1]
-                        if _list[m + 1]['location'] == None:
                             d['epro'] = {'type': str(_list[m + 1]['type']),
                                          'code': str(_list[m + 1]['code']),
                                          'lineNo': 'None',
                                          'ast_tree': sub_ast_tree(ast_g, _list[m + 1])}
                         else:
+                            if str(_list[m+1]['location'].split(':')[0]) == vul_line:
+                                label = 1
                             d['epro'] = {'type': str(_list[m + 1]['type']),
                                          'code': str(_list[m + 1]['code']),
                                          'lineNo': str(_list[m + 1]['location'].split(':')[0]),
@@ -1058,13 +1076,14 @@ def param_slice(store_slice_path, load_point_path, store_record_path, record_typ
                                          'lineNo': str(pdg.vs[pdg.es[i].target]['location'].split(':')[0]),
                                          'ast_tree': sub_ast_tree(ast_g, pdg.vs[pdg.es[i].target])}
                             d['label'] = str(pdg.es[i]['label'])
+                            if str(pdg.vs[pdg.es[i].source]['location'].split(':')[0]) == vul_line or \
+                                    str(pdg.vs[pdg.es[i].target]['location'].split(':')[0]) == vul_line:
+                                label = 1
                             recordtemp.append(d)
                         i = i + 1
             path = os.path.join(store_record_path, key)
-            all_type_path = os.path.join(all_test_type_path, key,  filename.split("/")[-1],record_type)
-            if key.split('/')[0] == 'vul':
-                label = 1
-            else:
+            all_type_path = os.path.join(all_test_type_path, key, filename.split("/")[-1], record_type)
+            if key.split('/')[0] == 'fix':
                 label = 0
             if not os.path.exists(path):
                 os.makedirs(path)
@@ -1119,10 +1138,11 @@ def pointers_slice(store_slice_path, load_point_path, store_record_path, record_
             list_pointers_funcid = _t[0]
             pdg_funcid = _t[1]
             pointers_name = str(_t[2])
-
             filename = getFuncFile(db=db, func_id=pdg_funcid)
+            vul_line = str(filepath_to_line_dict[filename])
             ast_g = drawAstTreeGraph(db, getASTEdges(db, pdg_funcid), pdg_funcid)
             slice_dir = 2
+            label = 0
             pdg = getFuncPDGById(key, pdg_funcid, slice_id)
             if not pdg:
                 print 'pointers error'
@@ -1130,7 +1150,7 @@ def pointers_slice(store_slice_path, load_point_path, store_record_path, record_
 
             list_code, startline, startline_path = program_slice(pdg, list_pointers_funcid, slice_dir, key, slice_id)
 
-            if list_code == []:
+            if not list_code:
                 fout = open("data/slice/pointers_error.txt", 'a')
                 fout.write(pointers_name + ' ' + str(list_pointers_funcid) + ' found nothing! \n')
                 fout.close()
@@ -1144,7 +1164,7 @@ def pointers_slice(store_slice_path, load_point_path, store_record_path, record_
                 for m in range(len(_list)):
                     if m == len(_list) - 1:
                         continue
-                    elif (_list[m]['functionId'] != _list[m + 1]['functionId']):
+                    elif _list[m]['functionId'] != _list[m + 1]['functionId']:
                         # call_functionID = _list[m+1]['functionId']
                         d = dict()
                         d['sid'] = str(_list[m]['name'])
@@ -1154,6 +1174,8 @@ def pointers_slice(store_slice_path, load_point_path, store_record_path, record_
                                          'lineNo': 'None',
                                          'ast_tree': sub_ast_tree(ast_g, _list[m])}
                         else:
+                            if str(_list[m]['location'].split(':')[0]) == vul_line:
+                                label = 1
                             d['spro'] = {'type': str(_list[m]['type']),
                                          'code': str(_list[m]['code']),
                                          'lineNo': str(_list[m]['location'].split(':')[0]),
@@ -1165,6 +1187,8 @@ def pointers_slice(store_slice_path, load_point_path, store_record_path, record_
                                          'lineNo': 'None',
                                          'ast_tree': sub_ast_tree(ast_g, _list[m + 1])}
                         else:
+                            if str(_list[m+1]['location'].split(':')[0]) == vul_line:
+                                label = 1
                             d['epro'] = {'type': str(_list[m + 1]['type']),
                                          'code': str(_list[m + 1]['code']),
                                          'lineNo': str(_list[m + 1]['location'].split(':')[0]),
@@ -1209,16 +1233,17 @@ def pointers_slice(store_slice_path, load_point_path, store_record_path, record_
                                          'lineNo': str(pdg.vs[pdg.es[i].target]['location'].split(':')[0]),
                                          'ast_tree': sub_ast_tree(ast_g, pdg.vs[pdg.es[i].target])}
                             d['label'] = str(pdg.es[i]['label'])
+                            if str(pdg.vs[pdg.es[i].source]['location'].split(':')[0]) == vul_line or \
+                                    str(pdg.vs[pdg.es[i].target]['location'].split(':')[0]) == vul_line:
+                                label = 1
                             recordtemp.append(d)
                         i = i + 1
                     if len(recordtemp) == 0:
                         print 'pointers norecord'
                         print len(pdg_set)
             path = os.path.join(store_record_path, key)
-            all_type_path = os.path.join(all_test_type_path, key, filename.split("/")[-1],record_type)
-            if key.split('/')[0] == 'vul':
-                label = 1
-            else:
+            all_type_path = os.path.join(all_test_type_path, key, filename.split("/")[-1], record_type)
+            if key.split('/')[0] == 'fix':
                 label = 0
             if not os.path.exists(path):
                 os.makedirs(path)
@@ -1281,23 +1306,24 @@ def arrays_slice(store_slice_path, load_point_path, store_record_path, record_ty
             pdg_funcid = _t[1]
             arrays_name = str(_t[2])
             filename = getFuncFile(db=db, func_id=pdg_funcid)
+            vul_line = str(filepath_to_line_dict[filename])
             ast_g = drawAstTreeGraph(db, getASTEdges(db, pdg_funcid), pdg_funcid)
+            label = 0
             slice_dir = 2
             pdg = getFuncPDGById(key, pdg_funcid, slice_id)
             if not pdg:
-                print 'error'
+                print 'array error'
                 exit()
 
             list_code, startline, startline_path = program_slice(pdg, list_pointers_funcid, slice_dir, key, slice_id)
 
-            if list_code == []:
+            if not list_code:
                 fout = open("data/slice/array_error.txt", 'a')
                 fout.write(arrays_name + ' ' + str(list_pointers_funcid) + ' found nothing! \n')
                 fout.close()
             else:
                 _list = list_code[0]
                 get_slice_ciretion(store_filepath, _list, count, arrays_name, startline, startline_path)
-                # '''
                 functionlist = []
                 for node in _list:
                     functionID = node['functionId']
@@ -1305,41 +1331,46 @@ def arrays_slice(store_slice_path, load_point_path, store_record_path, record_ty
                 for m in range(len(_list)):
                     if m == len(_list) - 1:
                         continue
-                    elif (_list[m]['functionId'] != _list[m + 1]['functionId']):
+                    elif _list[m]['functionId'] != _list[m + 1]['functionId']:
                         # call_functionID = _list[m+1]['functionId']
                         d = dict()
                         d['sid'] = str(_list[m]['name'])
-                        if _list[m]['location'] == None:
+                        if _list[m]['location'] is None:
                             d['spro'] = {'type': str(_list[m]['type']),
                                          'code': str(_list[m]['code']),
                                          'lineNo': 'None',
                                          'ast_tree': sub_ast_tree(ast_g, _list[m])}
                         else:
+                            if str(_list[m]['location'].split(':')[0]) == vul_line:
+                                label = 1
                             d['spro'] = {'type': str(_list[m]['type']),
                                          'code': str(_list[m]['code']),
                                          'lineNo': str(_list[m]['location'].split(':')[0]),
                                          'ast_tree': sub_ast_tree(ast_g, _list[m])}
                         d['eid'] = str(_list[m + 1]['name'])
-                        if _list[m + 1]['location'] == None:
+                        if _list[m + 1]['location'] is None:
                             d['epro'] = {'type': str(_list[m + 1]['type']),
                                          'code': str(_list[m + 1]['code']),
                                          'lineNo': 'None',
                                          'ast_tree': sub_ast_tree(ast_g, _list[m + 1])}
                         else:
+                            if str(_list[m+1]['location'].split(':')[0]) == vul_line:
+                                label = 1
                             d['epro'] = {'type': str(_list[m + 1]['type']),
                                          'code': str(_list[m + 1]['code']),
                                          'lineNo': str(_list[m + 1]['location'].split(':')[0]),
-                                         'ast_tree': sub_ast_tree(ast_g,_list[m + 1])}
+                                         'ast_tree': sub_ast_tree(ast_g, _list[m + 1])}
                         d['label'] = str(4)
                         recordtemp.append(d)
-                    else:
-                        continue
                 functionlist = set(functionlist)
                 pdg_set = []
                 for functionID in functionlist:
                     pdg = getFuncPDGById(key, functionID, slice_id)
                     pdg_set.append(pdg)
+                my_count = 0
                 for pdg in pdg_set:
+                    if my_count > 3:
+                        break
                     i = 0
                     # pdg = getFuncPDGById(key, pdg_funcid)
                     while i < pdg.vcount():
@@ -1371,14 +1402,15 @@ def arrays_slice(store_slice_path, load_point_path, store_record_path, record_ty
                                          'lineNo': str(pdg.vs[pdg.es[i].target]['location'].split(':')[0]),
                                          'ast_tree': sub_ast_tree(ast_g, pdg.vs[pdg.es[i].target])}
                             d['label'] = str(pdg.es[i]['label'])
+                            if str(pdg.vs[pdg.es[i].source]['location'].split(':')[0]) == vul_line or \
+                                    str(pdg.vs[pdg.es[i].target]['location'].split(':')[0]) == vul_line:
+                                label = 1
                             recordtemp.append(d)
                         i = i + 1
-                    count += 1
+                        my_count += 1
             path = os.path.join(store_record_path, key)
-            all_type_path = os.path.join(all_test_type_path, key, filename.split("/")[-1],record_type)
-            if key.split('/')[0] == 'vul':
-                label = 1
-            else:
+            all_type_path = os.path.join(all_test_type_path, key, filename.split("/")[-1], record_type)
+            if key.split('/')[0] == 'fix':
                 label = 0
             if not os.path.exists(path):
                 os.makedirs(path)
@@ -1415,17 +1447,16 @@ def integeroverflow_slice(store_slice_path, load_point_path, store_record_path, 
         for _t in dict_unsliced_expr[key]:
             if _t not in dictlist:
                 dictlist.append(_t)
-            else:
-                continue
         for _t in dictlist:
             recordtemp = []
             list_expr_funcid = _t[0]
             pdg_funcid = _t[1]
             expr_name = str(_t[2])
-
             filename = getFuncFile(db=db, func_id=pdg_funcid)
+            vul_line = str(filepath_to_line_dict[filename])
             ast_g = drawAstTreeGraph(db, getASTEdges(db, pdg_funcid), pdg_funcid)
             slice_dir = 2
+            label = 0
             pdg = getFuncPDGById(key, pdg_funcid, slice_id)
             if not pdg:
                 print 'error'
@@ -1455,23 +1486,27 @@ def integeroverflow_slice(store_slice_path, load_point_path, store_record_path, 
                             d['spro'] = {'type': str(_list[m]['type']),
                                          'code': str(_list[m]['code']),
                                          'lineNo': 'None',
-                                         'ast_tree': sub_ast_tree(ast_g,_list[m])}
+                                         'ast_tree': sub_ast_tree(ast_g, _list[m])}
                         else:
+                            if str(_list[m]['location'].split(':')[0]) == vul_line:
+                                label = 1
                             d['spro'] = {'type': str(_list[m]['type']),
                                          'code': str(_list[m]['code']),
                                          'lineNo': str(_list[m]['location'].split(':')[0]),
-                                         'ast_tree': sub_ast_tree(ast_g,_list[m])}
+                                         'ast_tree': sub_ast_tree(ast_g, _list[m])}
                         d['eid'] = str(_list[m + 1]['name'])
                         if _list[m + 1]['location'] is None:
                             d['epro'] = {'type': str(_list[m + 1]['type']),
                                          'code': str(_list[m + 1]['code']),
                                          'lineNo': 'None',
-                                         'ast_tree': sub_ast_tree(ast_g,_list[m + 1])}
+                                         'ast_tree': sub_ast_tree(ast_g, _list[m + 1])}
                         else:
+                            if str(_list[m + 1]['location'].split(':')[0]) == vul_line:
+                                label = 1
                             d['epro'] = {'type': str(_list[m + 1]['type']),
                                          'code': str(_list[m + 1]['code']),
                                          'lineNo': str(_list[m + 1]['location'].split(':')[0]),
-                                         'ast_tree': sub_ast_tree(ast_g,_list[m + 1])}
+                                         'ast_tree': sub_ast_tree(ast_g, _list[m + 1])}
                         d['label'] = str(4)
                         recordtemp.append(d)
                     else:
@@ -1503,23 +1538,24 @@ def integeroverflow_slice(store_slice_path, load_point_path, store_record_path, 
                             d['spro'] = {'type': str(pdg.vs[pdg.es[i].source]['type']),
                                          'code': str(pdg.vs[pdg.es[i].source]['code']),
                                          'lineNo': str(pdg.vs[pdg.es[i].source]['location'].split(':')[0]),
-                                         'ast_tree': sub_ast_tree(ast_g,pdg.vs[pdg.es[i].source])}
+                                         'ast_tree': sub_ast_tree(ast_g, pdg.vs[pdg.es[i].source])}
                             d['eid'] = str(pdg.vs[pdg.es[i].target]['name'])
                             # if pdg.vs[pdg.es[i].target]['location'] == None:
                             #    print pdg.vs[pdg.es[i].target]
                             d['epro'] = {'type': str(pdg.vs[pdg.es[i].target]['type']),
                                          'code': str(pdg.vs[pdg.es[i].target]['code']),
                                          'lineNo': str(pdg.vs[pdg.es[i].target]['location'].split(':')[0]),
-                                         'ast_tree': sub_ast_tree(ast_g, pdg.vs[pdg.es[i].taget])}
+                                         'ast_tree': sub_ast_tree(ast_g, pdg.vs[pdg.es[i].target])}
                             d['label'] = str(pdg.es[i]['label'])
+                            if str(pdg.vs[pdg.es[i].source]['location'].split(':')[0]) == vul_line or \
+                                    str(pdg.vs[pdg.es[i].target]['location'].split(':')[0]) == vul_line:
+                                label = 1
                             recordtemp.append(d)
                         i = i + 1
                     count += 1
             path = os.path.join(store_record_path, key)
-            all_type_path = os.path.join(all_test_type_path, key, filename.split("/")[-1],record_type)
-            if key.split('/')[0] == 'vul':
-                label = 1
-            else:
+            all_type_path = os.path.join(all_test_type_path, key, filename.split("/")[-1], record_type)
+            if key.split('/')[0] == 'fix':
                 label = 0
             if not os.path.exists(path):
                 os.makedirs(path)
@@ -1534,7 +1570,7 @@ def integeroverflow_slice(store_slice_path, load_point_path, store_record_path, 
             idx += 1
 
 
-def mvp_slice(store_slice_path, load_point_path, store_record_path, store_real_path, slice_id, j):
+def mvp_slice(store_slice_path, load_point_path, store_record_path, store_real_path, slice_id, db):
     count = 1
     store_filepath = store_slice_path
     f = open(load_point_path, 'rb')
@@ -1553,7 +1589,7 @@ def mvp_slice(store_slice_path, load_point_path, store_record_path, store_real_p
             list_slice_start_node_ids = _t[0]
             pdg_funcid = _t[1]
             sensitive_funcname = _t[2]
-            ast_g = drawAstTreeGraph(j, getASTEdges(j, pdg_funcid), pdg_funcid)
+            ast_g = drawAstTreeGraph(db, getASTEdges(db, pdg_funcid), pdg_funcid)
             if sensitive_funcname.find("main") != -1:
                 continue  # todo
             else:
@@ -1669,7 +1705,6 @@ def mvp_slice(store_slice_path, load_point_path, store_record_path, store_real_p
 
 
 def sub_ast_tree(g, top_node):
-    global ast_type_idx
     idx2node = dict()
     node2idx = dict()
     nodeId2idx = dict()
@@ -1690,10 +1725,8 @@ def sub_ast_tree(g, top_node):
     if not int(top_node['name']) in nodeId2idx:
         root = Tree(_idx=0)
         root.ast_type = top_node['type']
-        # root.idx = 0
         if not top_node['type'] in ast_type_dict:
-            ast_type_dict[top_node['type']] = ast_type_idx
-            ast_type_idx += 1
+            ast_type_dict[top_node['type']] = len(ast_type_dict)
         root.code = top_node['code']
         return root
     node = idx2node[nodeId2idx[int(top_node['name'])]]
@@ -1701,8 +1734,7 @@ def sub_ast_tree(g, top_node):
     tree_idx = 1
     root.ast_type = node['type']
     if not node['type'] in ast_type_dict:
-        ast_type_dict[node['type']] = ast_type_idx
-        ast_type_idx += 1
+        ast_type_dict[node['type']] = len(ast_type_dict)
     root.code = node['code']
     q = queue.Queue()
     q.put([root, node])
@@ -1716,8 +1748,7 @@ def sub_ast_tree(g, top_node):
                 tree_idx += 1
                 child.ast_type = next['type']
                 if not next['type'] in ast_type_dict:
-                    ast_type_dict[next['type']] = ast_type_idx
-                    ast_type_idx += 1
+                    ast_type_dict[next['type']] = len(ast_type_dict)
                 child.code = next['code']
                 curr[0].add_child(child)
                 q.put([child, next])
@@ -1726,8 +1757,7 @@ def sub_ast_tree(g, top_node):
         else:
             curr[0].ast_type = curr[0].code
             if not curr[0].code in ast_type_dict:
-                ast_type_dict[curr[0].code] = ast_type_idx
-                ast_type_idx += 1
+                ast_type_dict[curr[0].code] = len(ast_type_dict)
             curr[0].is_leaf = True
     # if flag:
     #     print(root.children)
@@ -1738,9 +1768,10 @@ def sub_ast_tree(g, top_node):
 
 def main(slice_id=1):
     global ast_type_dict
-    global ast_type_idx
-    ast_type_idx = 0
-    ast_type_dict = {}
+    global filepath_to_line_dict
+
+    ast_type_dict = pickle.load(open('data/ast_type_dict.pkl'))
+    filepath_to_line_dict = pickle(open('data/filepath_to_line_dict.pkl'))
     i = slice_id
     # record path
     record_path = "/home/anderson/Desktop/locator_record/" + str(slice_id)
@@ -1796,11 +1827,11 @@ def main(slice_id=1):
     load_point_path = "/home/anderson/Desktop/locator_point/" + str(i)
 
     api_point_path = load_point_path + "/sensifunc_slice_points.pkl"
-    pointers_point_path = load_point_path + "/pointuse_slice_points_new.pkl"
+    pointers_point_path = load_point_path + "/pointuse_slice_points.pkl"
     array_use_point_path = load_point_path + "/arrayuse_slice_points.pkl"
-    integer_overflow_point_path = load_point_path + "/integeroverflow_slice_points_new.pkl"
-    parameter_use_point_path = load_point_path + "/param_slice_points_new.pkl"
-    return_point_path = load_point_path + "/return_slice_points_new.pkl"
+    integer_overflow_point_path = load_point_path + "/integeroverflow_slice_points.pkl"
+    parameter_use_point_path = load_point_path + "/param_slice_points.pkl"
+    return_point_path = load_point_path + "/return_slice_points.pkl"
     mvp_vul_point_path = load_point_path + "/mvp_vul_points.pkl"
     j = JoernSteps()
     j.connectToDatabase()
@@ -1840,13 +1871,13 @@ def main(slice_id=1):
                  record_type=return_type,
                  store_real_path=return_path,
                  slice_id=i, db=j)
-    mvp_slice(store_slice_path=mvp_vul_path,
-              load_point_path=mvp_vul_point_path,
-              store_record_path=mvp_vul_path,
-              store_real_path=mvp_vul_path,
-              slice_id=i, j=j)
-    pickle.dump(ast_type_dict, open('data/ast_type_dict', 'wb'))
+    # mvp_slice(store_slice_path=mvp_vul_path,
+    #           load_point_path=mvp_vul_point_path,
+    #           store_record_path=mvp_vul_path,
+    #           store_real_path=mvp_vul_path,
+    #           slice_id=i, db=j)
+    pickle.dump(ast_type_dict, open('data/ast_type_dict.pkl', 'wb'))
 
 
 if __name__ == "__main__":
-    main(slice_id=3)
+    main(slice_id=4)

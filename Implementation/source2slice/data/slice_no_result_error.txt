@@ -207,3 +207,2495 @@ vul/CVE-2015-3197:openssl-1.0.1h#s2_srvr.c#small#get_client_hello#521.c ['227008
 vul/CVE-2015-3197:openssl-engine-0.9.6b#s2_srvr.c#small#get_client_hello#448.c ['228980'] found nothing! 
 vul/CVE-2015-3197:openssl-engine-0.9.6d#s2_srvr.c#small#get_client_hello#510.c ['229774'] found nothing! 
 vul/CVE-2015-3197:openssl-engine-0.9.6f#s2_srvr.c#small#get_client_hello#529.c ['230650'] found nothing! 
+vul/CVE-2015-3197:openssl-1.0.1h#s2_srvr.c#small#get_client_hello#521.c ['227008'] found nothing! 
+vul/CVE-2015-3197:openssl-engine-0.9.6b#s2_srvr.c#small#get_client_hello#448.c ['228980'] found nothing! 
+vul/CVE-2015-3197:openssl-engine-0.9.6d#s2_srvr.c#small#get_client_hello#510.c ['229774'] found nothing! 
+vul/CVE-2015-3197:openssl-engine-0.9.6f#s2_srvr.c#small#get_client_hello#529.c ['230650'] found nothing! 
+vul/CVE-2016-0703:openssl-1.0.2a#s2_srvr.c#small#get_client_master_key#372.c ['236416'] found nothing! 
+vul/CVE-2016-0704:openssl-1.0.2a#s2_srvr.c#small#get_client_master_key#372.c ['245565'] found nothing! 
+vul/CVE-2016-2842:openssl-1.0.1b#b_print.c#small#doapr_outch#725.c ['257694'] found nothing! 
+vul/CVE-2016-2842:openssl-engine-0.9.6#b_print.c#small#doapr_outch#700.c ['258860'] found nothing! 
+vul/CVE-2016-2842:openssl-engine-0.9.6d#b_print.c#small#doapr_outch#705.c ['259089'] found nothing! 
+fix/CVE-2014-3569:openssl-1.0.1u#s23_srvr.c#small#ssl23_get_client_hello#236.c ['117779'] found nothing! 
+fix/CVE-2014-3569:openssl-1.0.2d#s23_srvr.c#small#ssl23_get_client_hello#236.c ['122823'] found nothing! 
+fix/CVE-2014-3569:openssl-1.0.2o#s23_srvr.c#small#ssl23_get_client_hello#239.c ['124511'] found nothing! 
+fix/CVE-2018-0732:openssl-fips-2.0.6#dh_key.c#small#generate_key#121.c ['180248'] found nothing! 
+fix/CVE-2018-0732:openssl-fips-2.0.rc1#dh_key.c#small#generate_key#121.c ['180783'] found nothing! 
+vul/CVE-2010-0740:openssl-0.9.8m#s3_pkt.c#small#ssl3_get_record#240.c ['185570'] found nothing! 
+vul/CVE-2010-0740:openssl-0.9.8m-beta1#s3_pkt.c#small#ssl3_get_record#240.c ['186472'] found nothing! 
+vul/CVE-2010-0740:openssl-1.0.0-beta4#s3_pkt.c#small#ssl3_get_record#282.c ['187419'] found nothing! 
+vul/CVE-2010-0740:openssl-engine-0.9.6a#s3_pkt.c#small#ssl3_get_record#231.c ['188326'] found nothing! 
+vul/CVE-2010-0740:openssl-engine-0.9.6c#s3_pkt.c#small#ssl3_get_record#231.c ['189167'] found nothing! 
+vul/CVE-2010-0740:openssl-engine-0.9.6f#s3_pkt.c#small#ssl3_get_record#229.c ['190003'] found nothing! 
+vul/CVE-2010-0740:openssl-engine-0.9.6j#s3_pkt.c#small#ssl3_get_record#229.c ['190890'] found nothing! 
+vul/CVE-2016-0799:openssl-1.0.1#b_print.c#small#fmtstr#432.c ['251617'] found nothing! 
+vul/CVE-2016-0799:openssl-engine-0.9.6m#b_print.c#small#fmtstr#432.c ['252241'] found nothing! 
+fix/CVE-2014-8176:openssl-1.0.1h#d1_lib.c#small#dtls1_clear_queues#133.c ['129157'] found nothing! 
+fix/CVE-2014-8176:openssl-1.0.1k#d1_lib.c#small#dtls1_clear_queues#136.c ['129493'] found nothing! 
+fix/CVE-2014-8176:openssl-1.0.2-beta1#d1_lib.c#small#dtls1_clear_queues#159.c ['129809'] found nothing! 
+vul/CVE-2015-0290:openssl-1.0.2-beta1#s3_pkt.c#small#ssl3_write_bytes#596.c ['215768'] found nothing! 
+vul/CVE-2015-0290:openssl-1.0.2-beta2#s3_pkt.c#small#ssl3_write_bytes#597.c ['216822'] found nothing! 
+vul/CVE-2013-4353:openssl-1.0.1d#s3_both.c#small#ssl3_take_mac#207.c ['199234'] found nothing! 
+vul/CVE-2016-2178:openssl-1.1.0-pre1#dsa_ossl.c#small#dsa_sign_setup#230.c ['256259'] found nothing! 
+vul/CVE-2014-8176:openssl-1.0.1#d1_lib.c#small#dtls1_clear_queues#133.c ['212397'] found nothing! 
+fix/CVE-2010-0740:openssl-1.0.1u#s3_pkt.c#small#ssl3_get_record#295.c ['26380'] found nothing! 
+fix/CVE-2010-0740:openssl-1.0.2e#s3_pkt.c#small#ssl3_get_record#306.c ['30756'] found nothing! 
+vul/CVE-2009-1527:		task_unlock(task);
+ ['365847'] found nothing! 
+vul/CVE-2009-1527:		task_unlock(task);
+ ['366071'] found nothing! 
+vul/CVE-2009-1527:		task_unlock(task);
+ ['366298'] found nothing! 
+vul/CVE-2010-2521:				argp->end = p + (argp->pagelen>>2);
+ ['399456'] found nothing! 
+vul/CVE-2010-2521:				argp->end = p + (argp->pagelen>>2);
+ ['399936'] found nothing! 
+fix/CVE-2009-3638:	case KVM_GET_SUPPORTED_CPUID: {
+ ['139092'] found nothing! 
+vul/CVE-2009-4005:	if(len && fifo->skbuff->len+len<fifo->max_size)
+ ['381497'] found nothing! 
+vul/CVE-2009-4005:		    && (fifo->skbuff->len > 3)) {
+ ['381801'] found nothing! 
+vul/CVE-2009-4005:		    && (fifo->skbuff->len > 3)) {
+ ['382068'] found nothing! 
+fix/CVE-2010-2240:	if (check_stack_guard_page(vma, address) < 0)
+ ['161644'] found nothing! 
+fix/CVE-2010-2240:	if (check_stack_guard_page(vma, address) < 0)
+ ['162009'] found nothing! 
+fix/CVE-2010-2240:	if (check_stack_guard_page(vma, address) < 0)
+ ['162385'] found nothing! 
+fix/CVE-2010-2240:	if (check_stack_guard_page(vma, address) < 0)
+ ['162750'] found nothing! 
+fix/CVE-2010-2240:	if (check_stack_guard_page(vma, address) < 0)
+ ['163141'] found nothing! 
+fix/CVE-2010-2240:	if (check_stack_guard_page(vma, address) < 0)
+ ['163539'] found nothing! 
+fix/CVE-2010-2240:	if (check_stack_guard_page(vma, address) < 0)
+ ['163947'] found nothing! 
+fix/CVE-2010-2240:	if (check_stack_guard_page(vma, address) < 0)
+ ['164413'] found nothing! 
+fix/CVE-2010-2240:	if (check_stack_guard_page(vma, address) < 0)
+ ['164923'] found nothing! 
+fix/CVE-2010-2240:	if (check_stack_guard_page(vma, address) < 0)
+ ['165433'] found nothing! 
+vul/CVE-2010-3442:	snd_runtime_check(control->count > 0, return NULL);
+ ['408457'] found nothing! 
+vul/CVE-2010-3442:	snd_runtime_check(control->count > 0, return NULL);
+ ['408459'] found nothing! 
+vul/CVE-2010-3442:	snd_runtime_check(control->count > 0, return NULL);
+ ['408460'] found nothing! 
+vul/CVE-2010-3442:	snd_runtime_check(control->count > 0, return NULL);
+ ['408461'] found nothing! 
+vul/CVE-2010-3442:	snd_runtime_check(control->count > 0, return NULL);
+ ['408462'] found nothing! 
+vul/CVE-2010-3442:	snd_runtime_check(control->count > 0, return NULL);
+ ['408463'] found nothing! 
+vul/CVE-2010-3442:	snd_runtime_check(control->count > 0, return NULL);
+ ['408464'] found nothing! 
+vul/CVE-2010-3442:	snd_runtime_check(control->count > 0, return NULL);
+ ['408465'] found nothing! 
+vul/CVE-2010-3442:	snd_runtime_check(control->count > 0, return NULL);
+ ['408466'] found nothing! 
+vul/CVE-2010-3442:	snd_runtime_check(control->count > 0, return NULL);
+ ['408467'] found nothing! 
+vul/CVE-2010-3442:	snd_runtime_check(control->count > 0, return NULL);
+ ['408468'] found nothing! 
+vul/CVE-2010-3442:	snd_runtime_check(control->count > 0, return NULL);
+ ['408581'] found nothing! 
+vul/CVE-2010-3442:	snd_runtime_check(control->count > 0, return NULL);
+ ['408583'] found nothing! 
+vul/CVE-2010-3442:	snd_runtime_check(control->count > 0, return NULL);
+ ['408584'] found nothing! 
+vul/CVE-2010-3442:	snd_runtime_check(control->count > 0, return NULL);
+ ['408585'] found nothing! 
+vul/CVE-2010-3442:	snd_runtime_check(control->count > 0, return NULL);
+ ['408586'] found nothing! 
+vul/CVE-2010-3442:	snd_runtime_check(control->count > 0, return NULL);
+ ['408587'] found nothing! 
+vul/CVE-2010-3442:	snd_runtime_check(control->count > 0, return NULL);
+ ['408588'] found nothing! 
+vul/CVE-2010-3442:	snd_runtime_check(control->count > 0, return NULL);
+ ['408589'] found nothing! 
+vul/CVE-2010-3442:	snd_runtime_check(control->count > 0, return NULL);
+ ['408590'] found nothing! 
+vul/CVE-2010-3442:	snd_runtime_check(control->count > 0, return NULL);
+ ['408591'] found nothing! 
+vul/CVE-2010-3442:	snd_runtime_check(control->count > 0, return NULL);
+ ['408592'] found nothing! 
+vul/CVE-2010-3442:	snd_assert(control->count > 0, return NULL);
+ ['408712'] found nothing! 
+vul/CVE-2010-3442:	snd_assert(control->count > 0, return NULL);
+ ['408714'] found nothing! 
+vul/CVE-2010-3442:	snd_assert(control->count > 0, return NULL);
+ ['408715'] found nothing! 
+vul/CVE-2010-3442:	snd_assert(control->count > 0, return NULL);
+ ['408716'] found nothing! 
+vul/CVE-2010-3442:	snd_assert(control->count > 0, return NULL);
+ ['408717'] found nothing! 
+vul/CVE-2010-3442:	snd_assert(control->count > 0, return NULL);
+ ['408718'] found nothing! 
+vul/CVE-2010-3442:	snd_assert(control->count > 0, return NULL);
+ ['408719'] found nothing! 
+vul/CVE-2010-3442:	snd_assert(control->count > 0, return NULL);
+ ['408720'] found nothing! 
+vul/CVE-2010-3442:	snd_assert(control->count > 0, return NULL);
+ ['408721'] found nothing! 
+vul/CVE-2010-3442:	snd_assert(control->count > 0, return NULL);
+ ['408722'] found nothing! 
+vul/CVE-2010-3442:	snd_assert(control->count > 0, return NULL);
+ ['408723'] found nothing! 
+vul/CVE-2010-3442:	snd_assert(control->count > 0, return NULL);
+ ['408807'] found nothing! 
+vul/CVE-2010-3442:	snd_assert(control->count > 0, return NULL);
+ ['408843'] found nothing! 
+vul/CVE-2010-3442:	snd_assert(control->count > 0, return NULL);
+ ['408845'] found nothing! 
+vul/CVE-2010-3442:	snd_assert(control->count > 0, return NULL);
+ ['408846'] found nothing! 
+vul/CVE-2010-3442:	snd_assert(control->count > 0, return NULL);
+ ['408847'] found nothing! 
+vul/CVE-2010-3442:	snd_assert(control->count > 0, return NULL);
+ ['408848'] found nothing! 
+vul/CVE-2010-3442:	snd_assert(control->count > 0, return NULL);
+ ['408849'] found nothing! 
+vul/CVE-2010-3442:	snd_assert(control->count > 0, return NULL);
+ ['408850'] found nothing! 
+vul/CVE-2010-3442:	snd_assert(control->count > 0, return NULL);
+ ['408851'] found nothing! 
+vul/CVE-2010-3442:	snd_assert(control->count > 0, return NULL);
+ ['408852'] found nothing! 
+vul/CVE-2010-3442:	snd_assert(control->count > 0, return NULL);
+ ['408853'] found nothing! 
+vul/CVE-2010-3442:	snd_assert(control->count > 0, return NULL);
+ ['408854'] found nothing! 
+vul/CVE-2010-3442:	snd_runtime_check(control->count > 0, return NULL);
+ ['409093'] found nothing! 
+vul/CVE-2010-3442:	snd_runtime_check(control->count > 0, return NULL);
+ ['409095'] found nothing! 
+vul/CVE-2010-3442:	snd_runtime_check(control->count > 0, return NULL);
+ ['409096'] found nothing! 
+vul/CVE-2010-3442:	snd_runtime_check(control->count > 0, return NULL);
+ ['409097'] found nothing! 
+vul/CVE-2010-3442:	snd_runtime_check(control->count > 0, return NULL);
+ ['409098'] found nothing! 
+vul/CVE-2010-3442:	snd_runtime_check(control->count > 0, return NULL);
+ ['409099'] found nothing! 
+vul/CVE-2010-3442:	snd_runtime_check(control->count > 0, return NULL);
+ ['409100'] found nothing! 
+vul/CVE-2010-3442:	snd_runtime_check(control->count > 0, return NULL);
+ ['409101'] found nothing! 
+vul/CVE-2010-3442:	snd_runtime_check(control->count > 0, return NULL);
+ ['409102'] found nothing! 
+vul/CVE-2010-3442:	snd_runtime_check(control->count > 0, return NULL);
+ ['409103'] found nothing! 
+vul/CVE-2010-3442:	snd_runtime_check(control->count > 0, return NULL);
+ ['409104'] found nothing! 
+fix/CVE-2011-1585:	list_for_each_entry(ses, &server->smb_ses_list, smb_ses_list) {
+ ['223061'] found nothing! 
+fix/CVE-2011-1585:	list_for_each_entry(ses, &server->smb_ses_list, smb_ses_list) {
+ ['223062'] found nothing! 
+fix/CVE-2011-1585:	list_for_each_entry(ses, &server->smb_ses_list, smb_ses_list) {
+ ['223063'] found nothing! 
+fix/CVE-2011-1585:	list_for_each_entry(ses, &server->smb_ses_list, smb_ses_list) {
+ ['223064'] found nothing! 
+fix/CVE-2011-1585:	list_for_each_entry(ses, &server->smb_ses_list, smb_ses_list) {
+ ['223065'] found nothing! 
+fix/CVE-2011-1585:	list_for_each_entry(ses, &server->smb_ses_list, smb_ses_list) {
+ ['223066'] found nothing! 
+fix/CVE-2011-1585:	list_for_each_entry(ses, &server->smb_ses_list, smb_ses_list) {
+ ['223067'] found nothing! 
+fix/CVE-2011-1585:	list_for_each_entry(ses, &server->smb_ses_list, smb_ses_list) {
+ ['223068'] found nothing! 
+fix/CVE-2011-1585:	list_for_each_entry(ses, &server->smb_ses_list, smb_ses_list) {
+ ['223069'] found nothing! 
+fix/CVE-2011-1585:	list_for_each_entry(ses, &server->smb_ses_list, smb_ses_list) {
+ ['223070'] found nothing! 
+fix/CVE-2011-1585:	list_for_each_entry(ses, &server->smb_ses_list, smb_ses_list) {
+ ['223229'] found nothing! 
+fix/CVE-2011-1585:	list_for_each_entry(ses, &server->smb_ses_list, smb_ses_list) {
+ ['223230'] found nothing! 
+fix/CVE-2011-1585:	list_for_each_entry(ses, &server->smb_ses_list, smb_ses_list) {
+ ['223231'] found nothing! 
+fix/CVE-2011-1585:	list_for_each_entry(ses, &server->smb_ses_list, smb_ses_list) {
+ ['223232'] found nothing! 
+fix/CVE-2011-1585:	list_for_each_entry(ses, &server->smb_ses_list, smb_ses_list) {
+ ['223233'] found nothing! 
+fix/CVE-2011-1585:	list_for_each_entry(ses, &server->smb_ses_list, smb_ses_list) {
+ ['223234'] found nothing! 
+fix/CVE-2011-1585:	list_for_each_entry(ses, &server->smb_ses_list, smb_ses_list) {
+ ['223235'] found nothing! 
+fix/CVE-2011-1585:	list_for_each_entry(ses, &server->smb_ses_list, smb_ses_list) {
+ ['223236'] found nothing! 
+fix/CVE-2011-1585:	list_for_each_entry(ses, &server->smb_ses_list, smb_ses_list) {
+ ['223237'] found nothing! 
+fix/CVE-2011-1585:	list_for_each_entry(ses, &server->smb_ses_list, smb_ses_list) {
+ ['223238'] found nothing! 
+fix/CVE-2011-1585:	list_for_each_entry(ses, &server->smb_ses_list, smb_ses_list) {
+ ['223405'] found nothing! 
+fix/CVE-2011-1585:	list_for_each_entry(ses, &server->smb_ses_list, smb_ses_list) {
+ ['223406'] found nothing! 
+fix/CVE-2011-1585:	list_for_each_entry(ses, &server->smb_ses_list, smb_ses_list) {
+ ['223407'] found nothing! 
+fix/CVE-2011-1585:	list_for_each_entry(ses, &server->smb_ses_list, smb_ses_list) {
+ ['223408'] found nothing! 
+fix/CVE-2011-1585:	list_for_each_entry(ses, &server->smb_ses_list, smb_ses_list) {
+ ['223409'] found nothing! 
+fix/CVE-2011-1585:	list_for_each_entry(ses, &server->smb_ses_list, smb_ses_list) {
+ ['223410'] found nothing! 
+fix/CVE-2011-1585:	list_for_each_entry(ses, &server->smb_ses_list, smb_ses_list) {
+ ['223411'] found nothing! 
+fix/CVE-2011-1585:	list_for_each_entry(ses, &server->smb_ses_list, smb_ses_list) {
+ ['223412'] found nothing! 
+fix/CVE-2011-1585:	list_for_each_entry(ses, &server->smb_ses_list, smb_ses_list) {
+ ['223413'] found nothing! 
+fix/CVE-2011-1585:	list_for_each_entry(ses, &server->smb_ses_list, smb_ses_list) {
+ ['223414'] found nothing! 
+fix/CVE-2011-1585:	list_for_each_entry(ses, &server->smb_ses_list, smb_ses_list) {
+ ['223505'] found nothing! 
+fix/CVE-2011-1585:	list_for_each_entry(ses, &server->smb_ses_list, smb_ses_list) {
+ ['223506'] found nothing! 
+fix/CVE-2011-1585:	list_for_each_entry(ses, &server->smb_ses_list, smb_ses_list) {
+ ['223507'] found nothing! 
+fix/CVE-2011-1585:	list_for_each_entry(ses, &server->smb_ses_list, smb_ses_list) {
+ ['223508'] found nothing! 
+fix/CVE-2011-1585:	list_for_each_entry(ses, &server->smb_ses_list, smb_ses_list) {
+ ['223509'] found nothing! 
+fix/CVE-2011-1585:	list_for_each_entry(ses, &server->smb_ses_list, smb_ses_list) {
+ ['223510'] found nothing! 
+fix/CVE-2011-1585:	list_for_each_entry(ses, &server->smb_ses_list, smb_ses_list) {
+ ['223511'] found nothing! 
+fix/CVE-2011-1585:	list_for_each_entry(ses, &server->smb_ses_list, smb_ses_list) {
+ ['223512'] found nothing! 
+fix/CVE-2011-1585:	list_for_each_entry(ses, &server->smb_ses_list, smb_ses_list) {
+ ['223513'] found nothing! 
+fix/CVE-2011-1585:	list_for_each_entry(ses, &server->smb_ses_list, smb_ses_list) {
+ ['223514'] found nothing! 
+fix/CVE-2011-1585:	list_for_each_entry(ses, &server->smb_ses_list, smb_ses_list) {
+ ['223600'] found nothing! 
+fix/CVE-2011-1585:	list_for_each_entry(ses, &server->smb_ses_list, smb_ses_list) {
+ ['223601'] found nothing! 
+fix/CVE-2011-1585:	list_for_each_entry(ses, &server->smb_ses_list, smb_ses_list) {
+ ['223602'] found nothing! 
+fix/CVE-2011-1585:	list_for_each_entry(ses, &server->smb_ses_list, smb_ses_list) {
+ ['223603'] found nothing! 
+fix/CVE-2011-1585:	list_for_each_entry(ses, &server->smb_ses_list, smb_ses_list) {
+ ['223604'] found nothing! 
+fix/CVE-2011-1585:	list_for_each_entry(ses, &server->smb_ses_list, smb_ses_list) {
+ ['223605'] found nothing! 
+fix/CVE-2011-1585:	list_for_each_entry(ses, &server->smb_ses_list, smb_ses_list) {
+ ['223606'] found nothing! 
+fix/CVE-2011-1585:	list_for_each_entry(ses, &server->smb_ses_list, smb_ses_list) {
+ ['223607'] found nothing! 
+fix/CVE-2011-1585:	list_for_each_entry(ses, &server->smb_ses_list, smb_ses_list) {
+ ['223608'] found nothing! 
+fix/CVE-2011-1585:	list_for_each_entry(ses, &server->smb_ses_list, smb_ses_list) {
+ ['223609'] found nothing! 
+fix/CVE-2010-4649:	memset(&resp, 0, sizeof resp);
+ ['215271'] found nothing! 
+fix/CVE-2010-4649:	memset(&resp, 0, sizeof resp);
+ ['215552'] found nothing! 
+fix/CVE-2010-4526:	if (sock_owned_by_user(sk)) {
+ ['212865'] found nothing! 
+fix/CVE-2010-4526:	if (sock_owned_by_user(sk)) {
+ ['213024'] found nothing! 
+fix/CVE-2010-4526:	if (sock_owned_by_user(sk)) {
+ ['213193'] found nothing! 
+vul/CVE-2011-1585:	list_for_each(tmp, &server->smb_ses_list) {
+ ['450865'] found nothing! 
+vul/CVE-2011-1585:	list_for_each(tmp, &server->smb_ses_list) {
+ ['450866'] found nothing! 
+vul/CVE-2011-1585:	list_for_each(tmp, &server->smb_ses_list) {
+ ['450867'] found nothing! 
+vul/CVE-2011-1585:	list_for_each(tmp, &server->smb_ses_list) {
+ ['450868'] found nothing! 
+vul/CVE-2011-1585:	list_for_each(tmp, &server->smb_ses_list) {
+ ['450869'] found nothing! 
+vul/CVE-2011-1585:	list_for_each(tmp, &server->smb_ses_list) {
+ ['450870'] found nothing! 
+vul/CVE-2011-1585:	list_for_each(tmp, &server->smb_ses_list) {
+ ['450871'] found nothing! 
+vul/CVE-2011-1585:	list_for_each(tmp, &server->smb_ses_list) {
+ ['450872'] found nothing! 
+vul/CVE-2011-1585:	list_for_each(tmp, &server->smb_ses_list) {
+ ['450873'] found nothing! 
+fix/CVE-2009-1527:	mutex_unlock(&task->signal->cred_guard_mutex);
+ ['71377'] found nothing! 
+fix/CVE-2009-1527:	mutex_unlock(&task->signal->cred_guard_mutex);
+ ['72177'] found nothing! 
+fix/CVE-2009-1527:	mutex_unlock(&task->signal->cred_guard_mutex);
+ ['72572'] found nothing! 
+vul/CVE-2009-3722:	dr = vmcs_readl(GUEST_DR7);
+ ['380435'] found nothing! 
+fix/CVE-2011-2906:	if (request_size < 0) {
+ ['236007'] found nothing! 
+fix/CVE-2011-2906:	if (request_size < 0) {
+ ['236930'] found nothing! 
+fix/CVE-2010-2954:	err = irda_open_tsap(self, addr->sir_lsap_sel, addr->sir_name);
+ ['175497'] found nothing! 
+fix/CVE-2010-2954:	err = irda_open_tsap(self, addr->sir_lsap_sel, addr->sir_name);
+ ['175827'] found nothing! 
+fix/CVE-2010-2954:	err = irda_open_tsap(self, addr->sir_lsap_sel, addr->sir_name);
+ ['176143'] found nothing! 
+fix/CVE-2010-2954:	err = irda_open_tsap(self, addr->sir_lsap_sel, addr->sir_name);
+ ['176469'] found nothing! 
+vul/CVE-2010-2954:	err = irda_open_tsap(self, addr->sir_lsap_sel, addr->sir_name);
+ ['405590'] found nothing! 
+vul/CVE-2010-2954:	err = irda_open_tsap(self, addr->sir_lsap_sel, addr->sir_name);
+ ['407243'] found nothing! 
+vul/CVE-2010-2954:	err = irda_open_tsap(self, addr->sir_lsap_sel, addr->sir_name);
+ ['407546'] found nothing! 
+vul/CVE-2009-1630:EACCES ['367177'] found nothing! 
+fix/CVE-2011-3359:	if (unlikely(len > ring->rx_buffersize)) {
+ ['237929'] found nothing! 
+fix/CVE-2011-1044:	memset(&resp, 0, sizeof resp);
+ ['220017'] found nothing! 
+fix/CVE-2011-1044:	memset(&resp, 0, sizeof resp);
+ ['220298'] found nothing! 
+vul/CVE-2018-6927:	list_for_each_safe(i, next, head1) {
+ ['535928'] found nothing! 
+vul/CVE-2018-6927:	list_for_each_safe(i, next, head1) {
+ ['535929'] found nothing! 
+vul/CVE-2018-6927:	list_for_each_safe(i, next, head1) {
+ ['535930'] found nothing! 
+vul/CVE-2018-6927:	list_for_each_safe(i, next, head1) {
+ ['535931'] found nothing! 
+vul/CVE-2018-6927:	list_for_each_safe(i, next, head1) {
+ ['535932'] found nothing! 
+vul/CVE-2018-6927:	list_for_each_safe(i, next, head1) {
+ ['535933'] found nothing! 
+vul/CVE-2018-6927:	list_for_each_safe(i, next, head1) {
+ ['535934'] found nothing! 
+vul/CVE-2018-6927:	list_for_each_safe(i, next, head1) {
+ ['535935'] found nothing! 
+vul/CVE-2018-6927:	list_for_each_entry_safe(this, next, head1, list) {
+ ['536268'] found nothing! 
+vul/CVE-2018-6927:	list_for_each_entry_safe(this, next, head1, list) {
+ ['536269'] found nothing! 
+vul/CVE-2018-6927:	list_for_each_entry_safe(this, next, head1, list) {
+ ['536270'] found nothing! 
+vul/CVE-2018-6927:	list_for_each_entry_safe(this, next, head1, list) {
+ ['536271'] found nothing! 
+vul/CVE-2018-6927:	list_for_each_entry_safe(this, next, head1, list) {
+ ['536272'] found nothing! 
+vul/CVE-2018-6927:	list_for_each_entry_safe(this, next, head1, list) {
+ ['536273'] found nothing! 
+vul/CVE-2018-6927:	list_for_each_entry_safe(this, next, head1, list) {
+ ['536274'] found nothing! 
+vul/CVE-2018-6927:	list_for_each_entry_safe(this, next, head1, list) {
+ ['536275'] found nothing! 
+vul/CVE-2018-6927:	list_for_each_entry_safe(this, next, head1, list) {
+ ['536276'] found nothing! 
+vul/CVE-2018-6927:	list_for_each_entry_safe(this, next, head1, list) {
+ ['536795'] found nothing! 
+vul/CVE-2018-6927:	list_for_each_entry_safe(this, next, head1, list) {
+ ['536796'] found nothing! 
+vul/CVE-2018-6927:	list_for_each_entry_safe(this, next, head1, list) {
+ ['536797'] found nothing! 
+vul/CVE-2018-6927:	list_for_each_entry_safe(this, next, head1, list) {
+ ['536798'] found nothing! 
+vul/CVE-2018-6927:	list_for_each_entry_safe(this, next, head1, list) {
+ ['536799'] found nothing! 
+vul/CVE-2018-6927:	list_for_each_entry_safe(this, next, head1, list) {
+ ['536800'] found nothing! 
+vul/CVE-2018-6927:	list_for_each_entry_safe(this, next, head1, list) {
+ ['536801'] found nothing! 
+vul/CVE-2018-6927:	list_for_each_entry_safe(this, next, head1, list) {
+ ['536802'] found nothing! 
+vul/CVE-2018-6927:	list_for_each_entry_safe(this, next, head1, list) {
+ ['536803'] found nothing! 
+vul/CVE-2018-6927:	list_for_each_entry_safe(this, next, head1, list) {
+ ['537361'] found nothing! 
+vul/CVE-2018-6927:	list_for_each_entry_safe(this, next, head1, list) {
+ ['537362'] found nothing! 
+vul/CVE-2018-6927:	list_for_each_entry_safe(this, next, head1, list) {
+ ['537363'] found nothing! 
+vul/CVE-2018-6927:	list_for_each_entry_safe(this, next, head1, list) {
+ ['537364'] found nothing! 
+vul/CVE-2018-6927:	list_for_each_entry_safe(this, next, head1, list) {
+ ['537365'] found nothing! 
+vul/CVE-2018-6927:	list_for_each_entry_safe(this, next, head1, list) {
+ ['537366'] found nothing! 
+vul/CVE-2018-6927:	list_for_each_entry_safe(this, next, head1, list) {
+ ['537367'] found nothing! 
+vul/CVE-2018-6927:	list_for_each_entry_safe(this, next, head1, list) {
+ ['537368'] found nothing! 
+vul/CVE-2018-6927:	list_for_each_entry_safe(this, next, head1, list) {
+ ['537369'] found nothing! 
+vul/CVE-2018-6927:	list_for_each_entry_safe(this, next, head1, list) {
+ ['537901'] found nothing! 
+vul/CVE-2018-6927:	list_for_each_entry_safe(this, next, head1, list) {
+ ['537902'] found nothing! 
+vul/CVE-2018-6927:	list_for_each_entry_safe(this, next, head1, list) {
+ ['537903'] found nothing! 
+vul/CVE-2018-6927:	list_for_each_entry_safe(this, next, head1, list) {
+ ['537904'] found nothing! 
+vul/CVE-2018-6927:	list_for_each_entry_safe(this, next, head1, list) {
+ ['537905'] found nothing! 
+vul/CVE-2018-6927:	list_for_each_entry_safe(this, next, head1, list) {
+ ['537906'] found nothing! 
+vul/CVE-2018-6927:	list_for_each_entry_safe(this, next, head1, list) {
+ ['537907'] found nothing! 
+vul/CVE-2018-6927:	list_for_each_entry_safe(this, next, head1, list) {
+ ['537908'] found nothing! 
+vul/CVE-2018-6927:	list_for_each_entry_safe(this, next, head1, list) {
+ ['537909'] found nothing! 
+vul/CVE-2018-6927:	plist_for_each_entry_safe(this, next, head1, list) {
+ ['538514'] found nothing! 
+vul/CVE-2018-6927:	plist_for_each_entry_safe(this, next, head1, list) {
+ ['538515'] found nothing! 
+vul/CVE-2018-6927:	plist_for_each_entry_safe(this, next, head1, list) {
+ ['538516'] found nothing! 
+vul/CVE-2018-6927:	plist_for_each_entry_safe(this, next, head1, list) {
+ ['538517'] found nothing! 
+vul/CVE-2018-6927:	plist_for_each_entry_safe(this, next, head1, list) {
+ ['538518'] found nothing! 
+vul/CVE-2018-6927:	plist_for_each_entry_safe(this, next, head1, list) {
+ ['538519'] found nothing! 
+vul/CVE-2018-6927:	plist_for_each_entry_safe(this, next, head1, list) {
+ ['538520'] found nothing! 
+vul/CVE-2018-6927:	plist_for_each_entry_safe(this, next, head1, list) {
+ ['538521'] found nothing! 
+vul/CVE-2018-6927:	plist_for_each_entry_safe(this, next, head1, list) {
+ ['538522'] found nothing! 
+vul/CVE-2018-6927:	plist_for_each_entry_safe(this, next, head1, list) {
+ ['539397'] found nothing! 
+vul/CVE-2018-6927:	plist_for_each_entry_safe(this, next, head1, list) {
+ ['539398'] found nothing! 
+vul/CVE-2018-6927:	plist_for_each_entry_safe(this, next, head1, list) {
+ ['539399'] found nothing! 
+vul/CVE-2018-6927:	plist_for_each_entry_safe(this, next, head1, list) {
+ ['539400'] found nothing! 
+vul/CVE-2018-6927:	plist_for_each_entry_safe(this, next, head1, list) {
+ ['539401'] found nothing! 
+vul/CVE-2018-6927:	plist_for_each_entry_safe(this, next, head1, list) {
+ ['539402'] found nothing! 
+vul/CVE-2018-6927:	plist_for_each_entry_safe(this, next, head1, list) {
+ ['539403'] found nothing! 
+vul/CVE-2018-6927:	plist_for_each_entry_safe(this, next, head1, list) {
+ ['539404'] found nothing! 
+vul/CVE-2018-6927:	plist_for_each_entry_safe(this, next, head1, list) {
+ ['539405'] found nothing! 
+vul/CVE-2018-6927:	plist_for_each_entry_safe(this, next, head1, list) {
+ ['540280'] found nothing! 
+vul/CVE-2018-6927:	plist_for_each_entry_safe(this, next, head1, list) {
+ ['540281'] found nothing! 
+vul/CVE-2018-6927:	plist_for_each_entry_safe(this, next, head1, list) {
+ ['540282'] found nothing! 
+vul/CVE-2018-6927:	plist_for_each_entry_safe(this, next, head1, list) {
+ ['540283'] found nothing! 
+vul/CVE-2018-6927:	plist_for_each_entry_safe(this, next, head1, list) {
+ ['540284'] found nothing! 
+vul/CVE-2018-6927:	plist_for_each_entry_safe(this, next, head1, list) {
+ ['540285'] found nothing! 
+vul/CVE-2018-6927:	plist_for_each_entry_safe(this, next, head1, list) {
+ ['540286'] found nothing! 
+vul/CVE-2018-6927:	plist_for_each_entry_safe(this, next, head1, list) {
+ ['540287'] found nothing! 
+vul/CVE-2018-6927:	plist_for_each_entry_safe(this, next, head1, list) {
+ ['540288'] found nothing! 
+vul/CVE-2018-6927:	plist_for_each_entry_safe(this, next, &hb1->chain, list) {
+ ['541173'] found nothing! 
+vul/CVE-2018-6927:	plist_for_each_entry_safe(this, next, &hb1->chain, list) {
+ ['541174'] found nothing! 
+vul/CVE-2018-6927:	plist_for_each_entry_safe(this, next, &hb1->chain, list) {
+ ['541175'] found nothing! 
+vul/CVE-2018-6927:	plist_for_each_entry_safe(this, next, &hb1->chain, list) {
+ ['541176'] found nothing! 
+vul/CVE-2018-6927:	plist_for_each_entry_safe(this, next, &hb1->chain, list) {
+ ['541177'] found nothing! 
+vul/CVE-2018-6927:	plist_for_each_entry_safe(this, next, &hb1->chain, list) {
+ ['541178'] found nothing! 
+vul/CVE-2018-6927:	plist_for_each_entry_safe(this, next, &hb1->chain, list) {
+ ['541179'] found nothing! 
+vul/CVE-2018-6927:	plist_for_each_entry_safe(this, next, &hb1->chain, list) {
+ ['541180'] found nothing! 
+vul/CVE-2018-6927:	plist_for_each_entry_safe(this, next, &hb1->chain, list) {
+ ['541181'] found nothing! 
+vul/CVE-2018-6927:	plist_for_each_entry_safe(this, next, &hb1->chain, list) {
+ ['541182'] found nothing! 
+vul/CVE-2018-6927:	plist_for_each_entry_safe(this, next, &hb1->chain, list) {
+ ['541183'] found nothing! 
+vul/CVE-2018-6927:	plist_for_each_entry_safe(this, next, &hb1->chain, list) {
+ ['541184'] found nothing! 
+vul/CVE-2010-2803:		   ((ioctl->flags & DRM_MASTER) && !priv->master)) {
+ ['401593'] found nothing! 
+vul/CVE-2010-2803:		   ((ioctl->flags & DRM_MASTER) && !priv->master)) {
+ ['401970'] found nothing! 
+vul/CVE-2010-2803:		   ((ioctl->flags & DRM_MASTER) && !file_priv->master)) {
+ ['402381'] found nothing! 
+vul/CVE-2011-3359:	if (unlikely(len > ring->rx_buffersize)) {
+ ['461233'] found nothing! 
+vul/CVE-2011-3359:	if (unlikely(len > ring->rx_buffersize)) {
+ ['461770'] found nothing! 
+fix/CVE-2014-0100:	struct inet_frag_bucket *hb = get_frag_bucket_locked(qp_in, f);
+ ['293287'] found nothing! 
+fix/CVE-2013-6380:	if ((fibsize < (sizeof(struct user_aac_srb) - sizeof(struct user_sgentry))) ||
+ ['283229'] found nothing! 
+fix/CVE-2013-6380:	if ((fibsize < (sizeof(struct user_aac_srb) - sizeof(struct user_sgentry))) ||
+ ['286411'] found nothing! 
+fix/CVE-2013-6380:	if ((fibsize < (sizeof(struct user_aac_srb) - sizeof(struct user_sgentry))) ||
+ ['288905'] found nothing! 
+fix/CVE-2013-6380:	if ((fibsize < (sizeof(struct user_aac_srb) - sizeof(struct user_sgentry))) ||
+ ['291322'] found nothing! 
+fix/CVE-2010-2942:	struct tc_mirred opt = {
+ ['172740'] found nothing! 
+fix/CVE-2010-2942:	struct tc_mirred opt = {
+ ['172741'] found nothing! 
+fix/CVE-2010-2942:	struct tc_mirred opt = {
+ ['172742'] found nothing! 
+fix/CVE-2010-2942:	struct tc_mirred opt = {
+ ['172743'] found nothing! 
+fix/CVE-2010-2942:	struct tc_defact opt = {
+ ['172964'] found nothing! 
+fix/CVE-2010-2942:	struct tc_defact opt = {
+ ['172965'] found nothing! 
+fix/CVE-2010-2942:	struct tc_defact opt = {
+ ['172966'] found nothing! 
+fix/CVE-2010-2942:	struct tc_defact opt = {
+ ['172967'] found nothing! 
+fix/CVE-2010-2942:	struct tc_defact opt = {
+ ['173196'] found nothing! 
+fix/CVE-2010-2942:	struct tc_defact opt = {
+ ['173197'] found nothing! 
+fix/CVE-2010-2942:	struct tc_defact opt = {
+ ['173198'] found nothing! 
+fix/CVE-2010-2942:	struct tc_defact opt = {
+ ['173199'] found nothing! 
+fix/CVE-2010-2942:	struct tc_mirred opt = {
+ ['173431'] found nothing! 
+fix/CVE-2010-2942:	struct tc_mirred opt = {
+ ['173432'] found nothing! 
+fix/CVE-2010-2942:	struct tc_mirred opt = {
+ ['173433'] found nothing! 
+fix/CVE-2010-2942:	struct tc_mirred opt = {
+ ['173434'] found nothing! 
+fix/CVE-2010-2942:	struct tc_mirred opt = {
+ ['173665'] found nothing! 
+fix/CVE-2010-2942:	struct tc_mirred opt = {
+ ['173666'] found nothing! 
+fix/CVE-2010-2942:	struct tc_mirred opt = {
+ ['173667'] found nothing! 
+fix/CVE-2010-2942:	struct tc_mirred opt = {
+ ['173668'] found nothing! 
+fix/CVE-2010-2942:	struct tc_defact opt = {
+ ['173900'] found nothing! 
+fix/CVE-2010-2942:	struct tc_defact opt = {
+ ['173901'] found nothing! 
+fix/CVE-2010-2942:	struct tc_defact opt = {
+ ['173902'] found nothing! 
+fix/CVE-2010-2942:	struct tc_defact opt = {
+ ['173903'] found nothing! 
+fix/CVE-2010-2942:	struct tc_mirred opt = {
+ ['174105'] found nothing! 
+fix/CVE-2010-2942:	struct tc_mirred opt = {
+ ['174106'] found nothing! 
+fix/CVE-2010-2942:	struct tc_mirred opt = {
+ ['174107'] found nothing! 
+fix/CVE-2010-2942:	struct tc_mirred opt = {
+ ['174108'] found nothing! 
+fix/CVE-2010-2942:	struct tc_defact opt = {
+ ['174300'] found nothing! 
+fix/CVE-2010-2942:	struct tc_defact opt = {
+ ['174301'] found nothing! 
+fix/CVE-2010-2942:	struct tc_defact opt = {
+ ['174302'] found nothing! 
+fix/CVE-2010-2942:	struct tc_defact opt = {
+ ['174303'] found nothing! 
+fix/CVE-2010-2942:	struct tc_mirred opt = {
+ ['174500'] found nothing! 
+fix/CVE-2010-2942:	struct tc_mirred opt = {
+ ['174501'] found nothing! 
+fix/CVE-2010-2942:	struct tc_mirred opt = {
+ ['174502'] found nothing! 
+fix/CVE-2010-2942:	struct tc_mirred opt = {
+ ['174503'] found nothing! 
+fix/CVE-2010-2942:	struct tc_defact opt = {
+ ['174737'] found nothing! 
+fix/CVE-2010-2942:	struct tc_defact opt = {
+ ['174738'] found nothing! 
+fix/CVE-2010-2942:	struct tc_defact opt = {
+ ['174739'] found nothing! 
+fix/CVE-2010-2942:	struct tc_defact opt = {
+ ['174740'] found nothing! 
+fix/CVE-2010-2942:	struct tc_mirred opt = {
+ ['175001'] found nothing! 
+fix/CVE-2010-2942:	struct tc_mirred opt = {
+ ['175002'] found nothing! 
+fix/CVE-2010-2942:	struct tc_mirred opt = {
+ ['175003'] found nothing! 
+fix/CVE-2010-2942:	struct tc_mirred opt = {
+ ['175004'] found nothing! 
+vul/CVE-2010-3850:		if (edev == NULL)
+ ['430210'] found nothing! 
+vul/CVE-2014-9584:      case SIG('E','R'):
+ ['512810'] found nothing! 
+vul/CVE-2014-9584:      case SIG('E','R'):
+ ['512811'] found nothing! 
+vul/CVE-2014-9584:      case SIG('E','R'):
+ ['512812'] found nothing! 
+vul/CVE-2014-9584:      case SIG('E','R'):
+ ['512813'] found nothing! 
+vul/CVE-2014-9584:      case SIG('E','R'):
+ ['512814'] found nothing! 
+vul/CVE-2014-9584:      case SIG('E','R'):
+ ['512815'] found nothing! 
+vul/CVE-2014-9584:      case SIG('E','R'):
+ ['512816'] found nothing! 
+vul/CVE-2014-9584:      case SIG('E','R'):
+ ['512817'] found nothing! 
+vul/CVE-2014-9584:      case SIG('E','R'):
+ ['513804'] found nothing! 
+vul/CVE-2014-9584:      case SIG('E','R'):
+ ['513805'] found nothing! 
+vul/CVE-2014-9584:      case SIG('E','R'):
+ ['513806'] found nothing! 
+vul/CVE-2014-9584:      case SIG('E','R'):
+ ['513807'] found nothing! 
+vul/CVE-2014-9584:      case SIG('E','R'):
+ ['513808'] found nothing! 
+vul/CVE-2014-9584:      case SIG('E','R'):
+ ['513809'] found nothing! 
+vul/CVE-2014-9584:      case SIG('E','R'):
+ ['513810'] found nothing! 
+vul/CVE-2014-9584:      case SIG('E','R'):
+ ['513811'] found nothing! 
+vul/CVE-2014-9584:      case SIG('E','R'):
+ ['514794'] found nothing! 
+vul/CVE-2014-9584:      case SIG('E','R'):
+ ['514795'] found nothing! 
+vul/CVE-2014-9584:      case SIG('E','R'):
+ ['514796'] found nothing! 
+vul/CVE-2014-9584:      case SIG('E','R'):
+ ['514797'] found nothing! 
+vul/CVE-2014-9584:      case SIG('E','R'):
+ ['514798'] found nothing! 
+vul/CVE-2014-9584:      case SIG('E','R'):
+ ['514799'] found nothing! 
+vul/CVE-2014-9584:      case SIG('E','R'):
+ ['514800'] found nothing! 
+vul/CVE-2014-9584:      case SIG('E','R'):
+ ['514801'] found nothing! 
+vul/CVE-2014-9584:      case SIG('E','R'):
+ ['515784'] found nothing! 
+vul/CVE-2014-9584:      case SIG('E','R'):
+ ['515785'] found nothing! 
+vul/CVE-2014-9584:      case SIG('E','R'):
+ ['515786'] found nothing! 
+vul/CVE-2014-9584:      case SIG('E','R'):
+ ['515787'] found nothing! 
+vul/CVE-2014-9584:      case SIG('E','R'):
+ ['515788'] found nothing! 
+vul/CVE-2014-9584:      case SIG('E','R'):
+ ['515789'] found nothing! 
+vul/CVE-2014-9584:      case SIG('E','R'):
+ ['515790'] found nothing! 
+vul/CVE-2014-9584:      case SIG('E','R'):
+ ['515791'] found nothing! 
+vul/CVE-2014-9584:      case SIG('E','R'):
+ ['516778'] found nothing! 
+vul/CVE-2014-9584:      case SIG('E','R'):
+ ['516779'] found nothing! 
+vul/CVE-2014-9584:      case SIG('E','R'):
+ ['516780'] found nothing! 
+vul/CVE-2014-9584:      case SIG('E','R'):
+ ['516781'] found nothing! 
+vul/CVE-2014-9584:      case SIG('E','R'):
+ ['516782'] found nothing! 
+vul/CVE-2014-9584:      case SIG('E','R'):
+ ['516783'] found nothing! 
+vul/CVE-2014-9584:      case SIG('E','R'):
+ ['516784'] found nothing! 
+vul/CVE-2014-9584:      case SIG('E','R'):
+ ['516785'] found nothing! 
+vul/CVE-2014-9584:      case SIG('E','R'):
+ ['517769'] found nothing! 
+vul/CVE-2014-9584:      case SIG('E','R'):
+ ['517770'] found nothing! 
+vul/CVE-2014-9584:      case SIG('E','R'):
+ ['517771'] found nothing! 
+vul/CVE-2014-9584:      case SIG('E','R'):
+ ['517772'] found nothing! 
+vul/CVE-2014-9584:      case SIG('E','R'):
+ ['517773'] found nothing! 
+vul/CVE-2014-9584:      case SIG('E','R'):
+ ['517774'] found nothing! 
+vul/CVE-2014-9584:      case SIG('E','R'):
+ ['517775'] found nothing! 
+vul/CVE-2014-9584:      case SIG('E','R'):
+ ['517776'] found nothing! 
+vul/CVE-2014-9584:      case SIG('E','R'):
+ ['518806'] found nothing! 
+vul/CVE-2014-9584:      case SIG('E','R'):
+ ['518807'] found nothing! 
+vul/CVE-2014-9584:      case SIG('E','R'):
+ ['518808'] found nothing! 
+vul/CVE-2014-9584:      case SIG('E','R'):
+ ['518809'] found nothing! 
+vul/CVE-2014-9584:      case SIG('E','R'):
+ ['518810'] found nothing! 
+vul/CVE-2014-9584:      case SIG('E','R'):
+ ['518811'] found nothing! 
+vul/CVE-2014-9584:      case SIG('E','R'):
+ ['518812'] found nothing! 
+vul/CVE-2014-9584:      case SIG('E','R'):
+ ['518813'] found nothing! 
+vul/CVE-2014-9584:      case SIG('E','R'):
+ ['519789'] found nothing! 
+vul/CVE-2014-9584:      case SIG('E','R'):
+ ['519848'] found nothing! 
+vul/CVE-2014-9584:      case SIG('E','R'):
+ ['519849'] found nothing! 
+vul/CVE-2014-9584:      case SIG('E','R'):
+ ['519850'] found nothing! 
+vul/CVE-2014-9584:      case SIG('E','R'):
+ ['519851'] found nothing! 
+vul/CVE-2014-9584:      case SIG('E','R'):
+ ['519852'] found nothing! 
+vul/CVE-2014-9584:      case SIG('E','R'):
+ ['519853'] found nothing! 
+vul/CVE-2014-9584:      case SIG('E','R'):
+ ['519854'] found nothing! 
+vul/CVE-2014-9584:      case SIG('E','R'):
+ ['519855'] found nothing! 
+vul/CVE-2014-9584:		case SIG('E', 'R'):
+ ['520899'] found nothing! 
+vul/CVE-2014-9584:		case SIG('E', 'R'):
+ ['520900'] found nothing! 
+vul/CVE-2014-9584:		case SIG('E', 'R'):
+ ['520901'] found nothing! 
+vul/CVE-2014-9584:		case SIG('E', 'R'):
+ ['520902'] found nothing! 
+vul/CVE-2014-9584:		case SIG('E', 'R'):
+ ['520903'] found nothing! 
+vul/CVE-2014-9584:		case SIG('E', 'R'):
+ ['520904'] found nothing! 
+vul/CVE-2014-9584:		case SIG('E', 'R'):
+ ['520905'] found nothing! 
+vul/CVE-2014-9584:		case SIG('E', 'R'):
+ ['520906'] found nothing! 
+vul/CVE-2014-9584:		case SIG('E', 'R'):
+ ['522072'] found nothing! 
+vul/CVE-2014-9584:		case SIG('E', 'R'):
+ ['522073'] found nothing! 
+vul/CVE-2014-9584:		case SIG('E', 'R'):
+ ['522074'] found nothing! 
+vul/CVE-2014-9584:		case SIG('E', 'R'):
+ ['522075'] found nothing! 
+vul/CVE-2014-9584:		case SIG('E', 'R'):
+ ['522076'] found nothing! 
+vul/CVE-2014-9584:		case SIG('E', 'R'):
+ ['522077'] found nothing! 
+vul/CVE-2014-9584:		case SIG('E', 'R'):
+ ['522078'] found nothing! 
+vul/CVE-2014-9584:		case SIG('E', 'R'):
+ ['522079'] found nothing! 
+vul/CVE-2014-9584:      case SIG('E','R'):
+ ['523235'] found nothing! 
+vul/CVE-2014-9584:      case SIG('E','R'):
+ ['523236'] found nothing! 
+vul/CVE-2014-9584:      case SIG('E','R'):
+ ['523237'] found nothing! 
+vul/CVE-2014-9584:      case SIG('E','R'):
+ ['523238'] found nothing! 
+vul/CVE-2014-9584:      case SIG('E','R'):
+ ['523239'] found nothing! 
+vul/CVE-2014-9584:      case SIG('E','R'):
+ ['523240'] found nothing! 
+vul/CVE-2014-9584:      case SIG('E','R'):
+ ['523241'] found nothing! 
+vul/CVE-2014-9584:      case SIG('E','R'):
+ ['523242'] found nothing! 
+vul/CVE-2014-9584:      case SIG('E','R'):
+ ['524277'] found nothing! 
+vul/CVE-2014-9584:      case SIG('E','R'):
+ ['524278'] found nothing! 
+vul/CVE-2014-9584:      case SIG('E','R'):
+ ['524279'] found nothing! 
+vul/CVE-2014-9584:      case SIG('E','R'):
+ ['524280'] found nothing! 
+vul/CVE-2014-9584:      case SIG('E','R'):
+ ['524281'] found nothing! 
+vul/CVE-2014-9584:      case SIG('E','R'):
+ ['524282'] found nothing! 
+vul/CVE-2014-9584:      case SIG('E','R'):
+ ['524283'] found nothing! 
+vul/CVE-2014-9584:      case SIG('E','R'):
+ ['524284'] found nothing! 
+vul/CVE-2014-9584:      case SIG('E','R'):
+ ['525260'] found nothing! 
+vul/CVE-2014-9584:      case SIG('E','R'):
+ ['525319'] found nothing! 
+vul/CVE-2014-9584:      case SIG('E','R'):
+ ['525320'] found nothing! 
+vul/CVE-2014-9584:      case SIG('E','R'):
+ ['525321'] found nothing! 
+vul/CVE-2014-9584:      case SIG('E','R'):
+ ['525322'] found nothing! 
+vul/CVE-2014-9584:      case SIG('E','R'):
+ ['525323'] found nothing! 
+vul/CVE-2014-9584:      case SIG('E','R'):
+ ['525324'] found nothing! 
+vul/CVE-2014-9584:      case SIG('E','R'):
+ ['525325'] found nothing! 
+vul/CVE-2014-9584:      case SIG('E','R'):
+ ['525326'] found nothing! 
+vul/CVE-2014-9584:		case SIG('E', 'R'):
+ ['526370'] found nothing! 
+vul/CVE-2014-9584:		case SIG('E', 'R'):
+ ['526371'] found nothing! 
+vul/CVE-2014-9584:		case SIG('E', 'R'):
+ ['526372'] found nothing! 
+vul/CVE-2014-9584:		case SIG('E', 'R'):
+ ['526373'] found nothing! 
+vul/CVE-2014-9584:		case SIG('E', 'R'):
+ ['526374'] found nothing! 
+vul/CVE-2014-9584:		case SIG('E', 'R'):
+ ['526375'] found nothing! 
+vul/CVE-2014-9584:		case SIG('E', 'R'):
+ ['526376'] found nothing! 
+vul/CVE-2014-9584:		case SIG('E', 'R'):
+ ['526377'] found nothing! 
+vul/CVE-2014-9584:		case SIG('E', 'R'):
+ ['527552'] found nothing! 
+vul/CVE-2014-9584:		case SIG('E', 'R'):
+ ['527553'] found nothing! 
+vul/CVE-2014-9584:		case SIG('E', 'R'):
+ ['527554'] found nothing! 
+vul/CVE-2014-9584:		case SIG('E', 'R'):
+ ['527555'] found nothing! 
+vul/CVE-2014-9584:		case SIG('E', 'R'):
+ ['527556'] found nothing! 
+vul/CVE-2014-9584:		case SIG('E', 'R'):
+ ['527557'] found nothing! 
+vul/CVE-2014-9584:		case SIG('E', 'R'):
+ ['527558'] found nothing! 
+vul/CVE-2014-9584:		case SIG('E', 'R'):
+ ['527559'] found nothing! 
+vul/CVE-2014-9584:		case SIG('E', 'R'):
+ ['528725'] found nothing! 
+vul/CVE-2014-9584:		case SIG('E', 'R'):
+ ['528726'] found nothing! 
+vul/CVE-2014-9584:		case SIG('E', 'R'):
+ ['528727'] found nothing! 
+vul/CVE-2014-9584:		case SIG('E', 'R'):
+ ['528728'] found nothing! 
+vul/CVE-2014-9584:		case SIG('E', 'R'):
+ ['528729'] found nothing! 
+vul/CVE-2014-9584:		case SIG('E', 'R'):
+ ['528730'] found nothing! 
+vul/CVE-2014-9584:		case SIG('E', 'R'):
+ ['528731'] found nothing! 
+vul/CVE-2014-9584:		case SIG('E', 'R'):
+ ['528732'] found nothing! 
+vul/CVE-2014-9584:		case SIG('E', 'R'):
+ ['529908'] found nothing! 
+vul/CVE-2014-9584:		case SIG('E', 'R'):
+ ['529909'] found nothing! 
+vul/CVE-2014-9584:		case SIG('E', 'R'):
+ ['529910'] found nothing! 
+vul/CVE-2014-9584:		case SIG('E', 'R'):
+ ['529911'] found nothing! 
+vul/CVE-2014-9584:		case SIG('E', 'R'):
+ ['529912'] found nothing! 
+vul/CVE-2014-9584:		case SIG('E', 'R'):
+ ['529913'] found nothing! 
+vul/CVE-2014-9584:		case SIG('E', 'R'):
+ ['529914'] found nothing! 
+vul/CVE-2014-9584:		case SIG('E', 'R'):
+ ['529915'] found nothing! 
+fix/CVE-2009-1338:			if (task_pid_vnr(p) > 1&& p->tgid != current->tgid) {
+ ['66018'] found nothing! 
+fix/CVE-2014-2309:	rt = ip6_route_info_create(cfg);
+ ['300283'] found nothing! 
+fix/CVE-2012-6547:		memset(&ifr, 0, sizeof(ifr));
+ ['261408'] found nothing! 
+fix/CVE-2012-6547:		memset(&ifr, 0, sizeof(ifr));
+ ['262728'] found nothing! 
+fix/CVE-2012-6547:		memset(&ifr, 0, sizeof(ifr));
+ ['264178'] found nothing! 
+fix/CVE-2012-6547:		memset(&ifr, 0, sizeof(ifr));
+ ['265561'] found nothing! 
+fix/CVE-2012-6547:		memset(&ifr, 0, sizeof(ifr));
+ ['266912'] found nothing! 
+fix/CVE-2012-6547:		memset(&ifr, 0, sizeof(ifr));
+ ['268404'] found nothing! 
+vul/CVE-2011-0711:	memcpy(geo->uuid, &mp->m_sb.sb_uuid, sizeof(mp->m_sb.sb_uuid));
+ ['445368'] found nothing! 
+vul/CVE-2011-0711:	memcpy(geo->uuid, &mp->m_sb.sb_uuid, sizeof(mp->m_sb.sb_uuid));
+ ['445874'] found nothing! 
+vul/CVE-2011-0711:	memcpy(geo->uuid, &mp->m_sb.sb_uuid, sizeof(mp->m_sb.sb_uuid));
+ ['446397'] found nothing! 
+vul/CVE-2014-0100:	hlist_for_each_entry(qp, &hb->chain, list) {
+ ['489968'] found nothing! 
+vul/CVE-2014-0100:	hlist_for_each_entry(qp, &hb->chain, list) {
+ ['489969'] found nothing! 
+vul/CVE-2014-0100:	hlist_for_each_entry(qp, &hb->chain, list) {
+ ['489970'] found nothing! 
+vul/CVE-2014-0100:	hlist_for_each_entry(qp, &hb->chain, list) {
+ ['489971'] found nothing! 
+vul/CVE-2014-0100:	hlist_for_each_entry(qp, &hb->chain, list) {
+ ['489972'] found nothing! 
+vul/CVE-2014-0100:	hlist_for_each_entry(qp, &hb->chain, list) {
+ ['489973'] found nothing! 
+vul/CVE-2014-0100:	hlist_for_each_entry(qp, &hb->chain, list) {
+ ['489974'] found nothing! 
+vul/CVE-2014-0100:	hlist_for_each_entry(qp, &hb->chain, list) {
+ ['489975'] found nothing! 
+vul/CVE-2014-0100:	hlist_for_each_entry(qp, &hb->chain, list) {
+ ['489976'] found nothing! 
+vul/CVE-2014-0100:	hlist_for_each_entry(qp, &hb->chain, list) {
+ ['489977'] found nothing! 
+vul/CVE-2014-0100:	hlist_for_each_entry(qp, n, &f->hash[hash], list) {
+ ['490198'] found nothing! 
+vul/CVE-2014-0100:	hlist_for_each_entry(qp, n, &f->hash[hash], list) {
+ ['490199'] found nothing! 
+vul/CVE-2014-0100:	hlist_for_each_entry(qp, n, &f->hash[hash], list) {
+ ['490200'] found nothing! 
+vul/CVE-2014-0100:	hlist_for_each_entry(qp, n, &f->hash[hash], list) {
+ ['490201'] found nothing! 
+vul/CVE-2014-0100:	hlist_for_each_entry(qp, n, &f->hash[hash], list) {
+ ['490202'] found nothing! 
+vul/CVE-2014-0100:	hlist_for_each_entry(qp, n, &f->hash[hash], list) {
+ ['490203'] found nothing! 
+vul/CVE-2014-0100:	hlist_for_each_entry(qp, n, &f->hash[hash], list) {
+ ['490204'] found nothing! 
+vul/CVE-2014-0100:	hlist_for_each_entry(qp, n, &f->hash[hash], list) {
+ ['490205'] found nothing! 
+vul/CVE-2014-0100:	hlist_for_each_entry(qp, n, &f->hash[hash], list) {
+ ['490206'] found nothing! 
+vul/CVE-2014-0100:	hlist_for_each_entry(qp, n, &f->hash[hash], list) {
+ ['490207'] found nothing! 
+vul/CVE-2014-0100:	hlist_for_each_entry(qp, n, &f->hash[hash], list) {
+ ['490208'] found nothing! 
+vul/CVE-2014-0100:	hlist_for_each_entry(qp, n, &f->hash[hash], list) {
+ ['490209'] found nothing! 
+vul/CVE-2014-0100:	hlist_for_each_entry(qp, n, &f->hash[hash], list) {
+ ['490210'] found nothing! 
+vul/CVE-2014-0100:	hlist_for_each_entry(qp, n, &f->hash[hash], list) {
+ ['490211'] found nothing! 
+vul/CVE-2014-0100:	hlist_for_each_entry(qp, n, &f->hash[hash], list) {
+ ['490212'] found nothing! 
+vul/CVE-2014-0100:	hlist_for_each_entry(qp, &hb->chain, list) {
+ ['490444'] found nothing! 
+vul/CVE-2014-0100:	hlist_for_each_entry(qp, &hb->chain, list) {
+ ['490445'] found nothing! 
+vul/CVE-2014-0100:	hlist_for_each_entry(qp, &hb->chain, list) {
+ ['490446'] found nothing! 
+vul/CVE-2014-0100:	hlist_for_each_entry(qp, &hb->chain, list) {
+ ['490447'] found nothing! 
+vul/CVE-2014-0100:	hlist_for_each_entry(qp, &hb->chain, list) {
+ ['490448'] found nothing! 
+vul/CVE-2014-0100:	hlist_for_each_entry(qp, &hb->chain, list) {
+ ['490449'] found nothing! 
+vul/CVE-2014-0100:	hlist_for_each_entry(qp, &hb->chain, list) {
+ ['490450'] found nothing! 
+vul/CVE-2014-0100:	hlist_for_each_entry(qp, &hb->chain, list) {
+ ['490451'] found nothing! 
+vul/CVE-2014-0100:	hlist_for_each_entry(qp, &hb->chain, list) {
+ ['490452'] found nothing! 
+vul/CVE-2014-0100:	hlist_for_each_entry(qp, &hb->chain, list) {
+ ['490453'] found nothing! 
+fix/CVE-2012-1583:	return xfrm6_rcv_spi(skb, IPPROTO_IPV6, spi) > 0 ? : 0;
+ ['249099'] found nothing! 
+fix/CVE-2012-1583:	return xfrm6_rcv_spi(skb, IPPROTO_IPV6, spi) > 0 ? : 0;
+ ['249102'] found nothing! 
+fix/CVE-2012-1583:	return xfrm6_rcv_spi(skb, IPPROTO_IPV6, spi) > 0 ? : 0;
+ ['249103'] found nothing! 
+fix/CVE-2012-1583:	return xfrm6_rcv_spi(skb, IPPROTO_IPV6, spi) > 0 ? : 0;
+ ['249104'] found nothing! 
+fix/CVE-2012-1583:	return xfrm6_rcv_spi(skb, IPPROTO_IPV6, spi) > 0 ? : 0;
+ ['249105'] found nothing! 
+fix/CVE-2012-1583:	return xfrm6_rcv_spi(skb, IPPROTO_IPV6, spi) > 0 ? : 0;
+ ['249106'] found nothing! 
+fix/CVE-2012-1583:	return xfrm6_rcv_spi(skb, IPPROTO_IPV6, spi) > 0 ? : 0;
+ ['249107'] found nothing! 
+fix/CVE-2012-1583:	return xfrm6_rcv_spi(skb, IPPROTO_IPV6, spi) > 0 ? : 0;
+ ['249108'] found nothing! 
+fix/CVE-2012-1583:	return xfrm6_rcv_spi(skb, IPPROTO_IPV6, spi) > 0 ? : 0;
+ ['249109'] found nothing! 
+fix/CVE-2012-1583:	return xfrm6_rcv_spi(skb, IPPROTO_IPV6, spi) > 0 ? : 0;
+ ['249110'] found nothing! 
+fix/CVE-2012-1583:	return xfrm6_rcv_spi(skb, IPPROTO_IPV6, spi) > 0 ? : 0;
+ ['249111'] found nothing! 
+fix/CVE-2012-1583:	return xfrm6_rcv_spi(skb, IPPROTO_IPV6, spi) > 0 ? : 0;
+ ['249112'] found nothing! 
+fix/CVE-2012-1583:	return xfrm6_rcv_spi(skb, IPPROTO_IPV6, spi) > 0 ? : 0;
+ ['249113'] found nothing! 
+fix/CVE-2012-1583:	return xfrm6_rcv_spi(skb, spi) > 0 ? : 0;
+ ['249183'] found nothing! 
+fix/CVE-2012-1583:	return xfrm6_rcv_spi(skb, spi) > 0 ? : 0;
+ ['249186'] found nothing! 
+fix/CVE-2012-1583:	return xfrm6_rcv_spi(skb, spi) > 0 ? : 0;
+ ['249187'] found nothing! 
+fix/CVE-2012-1583:	return xfrm6_rcv_spi(skb, spi) > 0 ? : 0;
+ ['249188'] found nothing! 
+fix/CVE-2012-1583:	return xfrm6_rcv_spi(skb, spi) > 0 ? : 0;
+ ['249189'] found nothing! 
+fix/CVE-2012-1583:	return xfrm6_rcv_spi(skb, spi) > 0 ? : 0;
+ ['249190'] found nothing! 
+fix/CVE-2012-1583:	return xfrm6_rcv_spi(skb, spi) > 0 ? : 0;
+ ['249191'] found nothing! 
+fix/CVE-2012-1583:	return xfrm6_rcv_spi(skb, spi) > 0 ? : 0;
+ ['249192'] found nothing! 
+fix/CVE-2012-1583:	return xfrm6_rcv_spi(skb, spi) > 0 ? : 0;
+ ['249193'] found nothing! 
+fix/CVE-2012-1583:	return xfrm6_rcv_spi(skb, spi) > 0 ? : 0;
+ ['249194'] found nothing! 
+fix/CVE-2012-1583:	return xfrm6_rcv_spi(skb, spi) > 0 ? : 0;
+ ['249195'] found nothing! 
+fix/CVE-2012-1583:	return xfrm6_rcv_spi(skb, IPPROTO_IPV6, spi) > 0 ? : 0;
+ ['249245'] found nothing! 
+fix/CVE-2012-1583:	return xfrm6_rcv_spi(skb, IPPROTO_IPV6, spi) > 0 ? : 0;
+ ['249248'] found nothing! 
+fix/CVE-2012-1583:	return xfrm6_rcv_spi(skb, IPPROTO_IPV6, spi) > 0 ? : 0;
+ ['249249'] found nothing! 
+fix/CVE-2012-1583:	return xfrm6_rcv_spi(skb, IPPROTO_IPV6, spi) > 0 ? : 0;
+ ['249250'] found nothing! 
+fix/CVE-2012-1583:	return xfrm6_rcv_spi(skb, IPPROTO_IPV6, spi) > 0 ? : 0;
+ ['249251'] found nothing! 
+fix/CVE-2012-1583:	return xfrm6_rcv_spi(skb, IPPROTO_IPV6, spi) > 0 ? : 0;
+ ['249252'] found nothing! 
+fix/CVE-2012-1583:	return xfrm6_rcv_spi(skb, IPPROTO_IPV6, spi) > 0 ? : 0;
+ ['249253'] found nothing! 
+fix/CVE-2012-1583:	return xfrm6_rcv_spi(skb, IPPROTO_IPV6, spi) > 0 ? : 0;
+ ['249254'] found nothing! 
+fix/CVE-2012-1583:	return xfrm6_rcv_spi(skb, IPPROTO_IPV6, spi) > 0 ? : 0;
+ ['249255'] found nothing! 
+fix/CVE-2012-1583:	return xfrm6_rcv_spi(skb, IPPROTO_IPV6, spi) > 0 ? : 0;
+ ['249256'] found nothing! 
+fix/CVE-2012-1583:	return xfrm6_rcv_spi(skb, IPPROTO_IPV6, spi) > 0 ? : 0;
+ ['249257'] found nothing! 
+fix/CVE-2012-1583:	return xfrm6_rcv_spi(skb, IPPROTO_IPV6, spi) > 0 ? : 0;
+ ['249258'] found nothing! 
+fix/CVE-2012-1583:	return xfrm6_rcv_spi(skb, IPPROTO_IPV6, spi) > 0 ? : 0;
+ ['249259'] found nothing! 
+fix/CVE-2012-1583:	return xfrm6_rcv_spi(skb, IPPROTO_IPV6, spi) > 0 ? : 0;
+ ['249309'] found nothing! 
+fix/CVE-2012-1583:	return xfrm6_rcv_spi(skb, IPPROTO_IPV6, spi) > 0 ? : 0;
+ ['249312'] found nothing! 
+fix/CVE-2012-1583:	return xfrm6_rcv_spi(skb, IPPROTO_IPV6, spi) > 0 ? : 0;
+ ['249313'] found nothing! 
+fix/CVE-2012-1583:	return xfrm6_rcv_spi(skb, IPPROTO_IPV6, spi) > 0 ? : 0;
+ ['249314'] found nothing! 
+fix/CVE-2012-1583:	return xfrm6_rcv_spi(skb, IPPROTO_IPV6, spi) > 0 ? : 0;
+ ['249315'] found nothing! 
+fix/CVE-2012-1583:	return xfrm6_rcv_spi(skb, IPPROTO_IPV6, spi) > 0 ? : 0;
+ ['249316'] found nothing! 
+fix/CVE-2012-1583:	return xfrm6_rcv_spi(skb, IPPROTO_IPV6, spi) > 0 ? : 0;
+ ['249317'] found nothing! 
+fix/CVE-2012-1583:	return xfrm6_rcv_spi(skb, IPPROTO_IPV6, spi) > 0 ? : 0;
+ ['249318'] found nothing! 
+fix/CVE-2012-1583:	return xfrm6_rcv_spi(skb, IPPROTO_IPV6, spi) > 0 ? : 0;
+ ['249319'] found nothing! 
+fix/CVE-2012-1583:	return xfrm6_rcv_spi(skb, IPPROTO_IPV6, spi) > 0 ? : 0;
+ ['249320'] found nothing! 
+fix/CVE-2012-1583:	return xfrm6_rcv_spi(skb, IPPROTO_IPV6, spi) > 0 ? : 0;
+ ['249321'] found nothing! 
+fix/CVE-2012-1583:	return xfrm6_rcv_spi(skb, IPPROTO_IPV6, spi) > 0 ? : 0;
+ ['249322'] found nothing! 
+fix/CVE-2012-1583:	return xfrm6_rcv_spi(skb, IPPROTO_IPV6, spi) > 0 ? : 0;
+ ['249323'] found nothing! 
+fix/CVE-2010-2521:				argp->end = argp->p + (argp->pagelen>>2);
+ ['165726'] found nothing! 
+fix/CVE-2010-2521:				argp->end = argp->p + (argp->pagelen>>2);
+ ['166226'] found nothing! 
+vul/CVE-2012-0044:	if (num_clips && clips_ptr) {
+ ['465416'] found nothing! 
+vul/CVE-2012-0044:	if (num_clips && clips_ptr) {
+ ['465779'] found nothing! 
+vul/CVE-2009-1338:			if (p->pid > 1 && p->tgid != current->tgid) {
+ ['361180'] found nothing! 
+vul/CVE-2009-1338:			if (p->pid > 1 && !same_thread_group(p, current)) {
+ ['361359'] found nothing! 
+fix/CVE-2014-9584:			if (rr->u.ER.len_id + offsetof(struct rock_ridge, u.ER.data) > rr->len)
+ ['319026'] found nothing! 
+fix/CVE-2014-9584:			if (rr->u.ER.len_id + offsetof(struct rock_ridge, u.ER.data) > rr->len)
+ ['319027'] found nothing! 
+fix/CVE-2014-9584:			if (rr->u.ER.len_id + offsetof(struct rock_ridge, u.ER.data) > rr->len)
+ ['319028'] found nothing! 
+fix/CVE-2014-9584:			if (rr->u.ER.len_id + offsetof(struct rock_ridge, u.ER.data) > rr->len)
+ ['319029'] found nothing! 
+fix/CVE-2014-9584:			if (rr->u.ER.len_id + offsetof(struct rock_ridge, u.ER.data) > rr->len)
+ ['319030'] found nothing! 
+fix/CVE-2014-9584:			if (rr->u.ER.len_id + offsetof(struct rock_ridge, u.ER.data) > rr->len)
+ ['319031'] found nothing! 
+fix/CVE-2014-9584:			if (rr->u.ER.len_id + offsetof(struct rock_ridge, u.ER.data) > rr->len)
+ ['319032'] found nothing! 
+fix/CVE-2014-9584:			if (rr->u.ER.len_id + offsetof(struct rock_ridge, u.ER.data) > rr->len)
+ ['319033'] found nothing! 
+fix/CVE-2014-9584:			if (rr->u.ER.len_id + offsetof(struct rock_ridge, u.ER.data) > rr->len)
+ ['319034'] found nothing! 
+fix/CVE-2014-9584:			if (rr->u.ER.len_id + offsetof(struct rock_ridge, u.ER.data) > rr->len)
+ ['319035'] found nothing! 
+fix/CVE-2014-9584:			if (rr->u.ER.len_id + offsetof(struct rock_ridge, u.ER.data) > rr->len)
+ ['319036'] found nothing! 
+fix/CVE-2014-9584:			if (rr->u.ER.len_id + offsetof(struct rock_ridge, u.ER.data) > rr->len)
+ ['319037'] found nothing! 
+fix/CVE-2014-9584:			if (rr->u.ER.len_id + offsetof(struct rock_ridge, u.ER.data) > rr->len)
+ ['319038'] found nothing! 
+fix/CVE-2014-9584:			if (rr->u.ER.len_id + offsetof(struct rock_ridge, u.ER.data) > rr->len)
+ ['319039'] found nothing! 
+fix/CVE-2014-9584:			if (rr->u.ER.len_id + offsetof(struct rock_ridge, u.ER.data) > rr->len)
+ ['319040'] found nothing! 
+fix/CVE-2014-9584:			if (rr->u.ER.len_id + offsetof(struct rock_ridge, u.ER.data) > rr->len)
+ ['319041'] found nothing! 
+fix/CVE-2014-9584:			if (rr->u.ER.len_id + offsetof(struct rock_ridge, u.ER.data) > rr->len)
+ ['319042'] found nothing! 
+fix/CVE-2014-9584:			if (rr->u.ER.len_id + offsetof(struct rock_ridge, u.ER.data) > rr->len)
+ ['319043'] found nothing! 
+fix/CVE-2014-9584:			if (rr->u.ER.len_id + offsetof(struct rock_ridge, u.ER.data) > rr->len)
+ ['319044'] found nothing! 
+fix/CVE-2014-9584:			if (rr->u.ER.len_id + offsetof(struct rock_ridge, u.ER.data) > rr->len)
+ ['319045'] found nothing! 
+fix/CVE-2014-9584:			if (rr->u.ER.len_id + offsetof(struct rock_ridge, u.ER.data) > rr->len)
+ ['319046'] found nothing! 
+fix/CVE-2014-9584:			if (rr->u.ER.len_id + offsetof(struct rock_ridge, u.ER.data) > rr->len)
+ ['319047'] found nothing! 
+fix/CVE-2014-9584:			if (rr->u.ER.len_id + offsetof(struct rock_ridge, u.ER.data) > rr->len)
+ ['319048'] found nothing! 
+fix/CVE-2014-9584:			if (rr->u.ER.len_id + offsetof(struct rock_ridge, u.ER.data) > rr->len)
+ ['319049'] found nothing! 
+fix/CVE-2014-9584:			if (rr->u.ER.len_id + offsetof(struct rock_ridge, u.ER.data) > rr->len)
+ ['319050'] found nothing! 
+fix/CVE-2014-9584:			if (rr->u.ER.len_id + offsetof(struct rock_ridge, u.ER.data) > rr->len)
+ ['319051'] found nothing! 
+fix/CVE-2014-9584:			if (rr->u.ER.len_id + offsetof(struct rock_ridge, u.ER.data) > rr->len)
+ ['320240'] found nothing! 
+fix/CVE-2014-9584:			if (rr->u.ER.len_id + offsetof(struct rock_ridge, u.ER.data) > rr->len)
+ ['320241'] found nothing! 
+fix/CVE-2014-9584:			if (rr->u.ER.len_id + offsetof(struct rock_ridge, u.ER.data) > rr->len)
+ ['320242'] found nothing! 
+fix/CVE-2014-9584:			if (rr->u.ER.len_id + offsetof(struct rock_ridge, u.ER.data) > rr->len)
+ ['320243'] found nothing! 
+fix/CVE-2014-9584:			if (rr->u.ER.len_id + offsetof(struct rock_ridge, u.ER.data) > rr->len)
+ ['320244'] found nothing! 
+fix/CVE-2014-9584:			if (rr->u.ER.len_id + offsetof(struct rock_ridge, u.ER.data) > rr->len)
+ ['320245'] found nothing! 
+fix/CVE-2014-9584:			if (rr->u.ER.len_id + offsetof(struct rock_ridge, u.ER.data) > rr->len)
+ ['320246'] found nothing! 
+fix/CVE-2014-9584:			if (rr->u.ER.len_id + offsetof(struct rock_ridge, u.ER.data) > rr->len)
+ ['320247'] found nothing! 
+fix/CVE-2014-9584:			if (rr->u.ER.len_id + offsetof(struct rock_ridge, u.ER.data) > rr->len)
+ ['320248'] found nothing! 
+fix/CVE-2014-9584:			if (rr->u.ER.len_id + offsetof(struct rock_ridge, u.ER.data) > rr->len)
+ ['320249'] found nothing! 
+fix/CVE-2014-9584:			if (rr->u.ER.len_id + offsetof(struct rock_ridge, u.ER.data) > rr->len)
+ ['320250'] found nothing! 
+fix/CVE-2014-9584:			if (rr->u.ER.len_id + offsetof(struct rock_ridge, u.ER.data) > rr->len)
+ ['320251'] found nothing! 
+fix/CVE-2014-9584:			if (rr->u.ER.len_id + offsetof(struct rock_ridge, u.ER.data) > rr->len)
+ ['320252'] found nothing! 
+fix/CVE-2014-9584:			if (rr->u.ER.len_id + offsetof(struct rock_ridge, u.ER.data) > rr->len)
+ ['320253'] found nothing! 
+fix/CVE-2014-9584:			if (rr->u.ER.len_id + offsetof(struct rock_ridge, u.ER.data) > rr->len)
+ ['320254'] found nothing! 
+fix/CVE-2014-9584:			if (rr->u.ER.len_id + offsetof(struct rock_ridge, u.ER.data) > rr->len)
+ ['320255'] found nothing! 
+fix/CVE-2014-9584:			if (rr->u.ER.len_id + offsetof(struct rock_ridge, u.ER.data) > rr->len)
+ ['320256'] found nothing! 
+fix/CVE-2014-9584:			if (rr->u.ER.len_id + offsetof(struct rock_ridge, u.ER.data) > rr->len)
+ ['320257'] found nothing! 
+fix/CVE-2014-9584:			if (rr->u.ER.len_id + offsetof(struct rock_ridge, u.ER.data) > rr->len)
+ ['320258'] found nothing! 
+fix/CVE-2014-9584:			if (rr->u.ER.len_id + offsetof(struct rock_ridge, u.ER.data) > rr->len)
+ ['320259'] found nothing! 
+fix/CVE-2014-9584:			if (rr->u.ER.len_id + offsetof(struct rock_ridge, u.ER.data) > rr->len)
+ ['320260'] found nothing! 
+fix/CVE-2014-9584:			if (rr->u.ER.len_id + offsetof(struct rock_ridge, u.ER.data) > rr->len)
+ ['320261'] found nothing! 
+fix/CVE-2014-9584:			if (rr->u.ER.len_id + offsetof(struct rock_ridge, u.ER.data) > rr->len)
+ ['320262'] found nothing! 
+fix/CVE-2014-9584:			if (rr->u.ER.len_id + offsetof(struct rock_ridge, u.ER.data) > rr->len)
+ ['320263'] found nothing! 
+fix/CVE-2014-9584:			if (rr->u.ER.len_id + offsetof(struct rock_ridge, u.ER.data) > rr->len)
+ ['320264'] found nothing! 
+fix/CVE-2014-9584:			if (rr->u.ER.len_id + offsetof(struct rock_ridge, u.ER.data) > rr->len)
+ ['320265'] found nothing! 
+vul/CVE-2009-3638:	case KVM_GET_SUPPORTED_CPUID: {
+ ['378904'] found nothing! 
+vul/CVE-2009-3638:	case KVM_GET_SUPPORTED_CPUID: {
+ ['379223'] found nothing! 
+vul/CVE-2009-3638:	case KVM_GET_SUPPORTED_CPUID: {
+ ['379542'] found nothing! 
+fix/CVE-2011-1927:	if ((qp->last_in&FIRST_IN) && qp->fragments != NULL) {
+ ['224745'] found nothing! 
+fix/CVE-2011-1927:	if ((qp->last_in&FIRST_IN) && qp->fragments != NULL) {
+ ['224907'] found nothing! 
+fix/CVE-2011-1927:	if ((qp->last_in&FIRST_IN) && qp->fragments != NULL) {
+ ['225071'] found nothing! 
+vul/CVE-2015-3197:openssl-1.0.1h#s2_srvr.c#small#get_client_hello#521.c ['227008'] found nothing! 
+vul/CVE-2015-3197:openssl-engine-0.9.6b#s2_srvr.c#small#get_client_hello#448.c ['228980'] found nothing! 
+vul/CVE-2015-3197:openssl-engine-0.9.6d#s2_srvr.c#small#get_client_hello#510.c ['229774'] found nothing! 
+vul/CVE-2015-3197:openssl-engine-0.9.6f#s2_srvr.c#small#get_client_hello#529.c ['230650'] found nothing! 
+vul/CVE-2016-0703:openssl-1.0.2a#s2_srvr.c#small#get_client_master_key#372.c ['236416'] found nothing! 
+vul/CVE-2016-0704:openssl-1.0.2a#s2_srvr.c#small#get_client_master_key#372.c ['245565'] found nothing! 
+vul/CVE-2016-2842:openssl-1.0.1b#b_print.c#small#doapr_outch#725.c ['257694'] found nothing! 
+vul/CVE-2016-2842:openssl-engine-0.9.6#b_print.c#small#doapr_outch#700.c ['258860'] found nothing! 
+vul/CVE-2016-2842:openssl-engine-0.9.6d#b_print.c#small#doapr_outch#705.c ['259089'] found nothing! 
+fix/CVE-2014-3569:openssl-1.0.1u#s23_srvr.c#small#ssl23_get_client_hello#236.c ['117779'] found nothing! 
+fix/CVE-2014-3569:openssl-1.0.2d#s23_srvr.c#small#ssl23_get_client_hello#236.c ['122823'] found nothing! 
+fix/CVE-2014-3569:openssl-1.0.2o#s23_srvr.c#small#ssl23_get_client_hello#239.c ['124511'] found nothing! 
+fix/CVE-2018-0732:openssl-fips-2.0.6#dh_key.c#small#generate_key#121.c ['180248'] found nothing! 
+fix/CVE-2018-0732:openssl-fips-2.0.rc1#dh_key.c#small#generate_key#121.c ['180783'] found nothing! 
+vul/CVE-2010-0740:openssl-0.9.8m#s3_pkt.c#small#ssl3_get_record#240.c ['185570'] found nothing! 
+vul/CVE-2010-0740:openssl-0.9.8m-beta1#s3_pkt.c#small#ssl3_get_record#240.c ['186472'] found nothing! 
+vul/CVE-2010-0740:openssl-1.0.0-beta4#s3_pkt.c#small#ssl3_get_record#282.c ['187419'] found nothing! 
+vul/CVE-2010-0740:openssl-engine-0.9.6a#s3_pkt.c#small#ssl3_get_record#231.c ['188326'] found nothing! 
+vul/CVE-2010-0740:openssl-engine-0.9.6c#s3_pkt.c#small#ssl3_get_record#231.c ['189167'] found nothing! 
+vul/CVE-2010-0740:openssl-engine-0.9.6f#s3_pkt.c#small#ssl3_get_record#229.c ['190003'] found nothing! 
+vul/CVE-2010-0740:openssl-engine-0.9.6j#s3_pkt.c#small#ssl3_get_record#229.c ['190890'] found nothing! 
+vul/CVE-2016-0799:openssl-1.0.1#b_print.c#small#fmtstr#432.c ['251617'] found nothing! 
+vul/CVE-2016-0799:openssl-engine-0.9.6m#b_print.c#small#fmtstr#432.c ['252241'] found nothing! 
+fix/CVE-2014-8176:openssl-1.0.1h#d1_lib.c#small#dtls1_clear_queues#133.c ['129157'] found nothing! 
+fix/CVE-2014-8176:openssl-1.0.1k#d1_lib.c#small#dtls1_clear_queues#136.c ['129493'] found nothing! 
+fix/CVE-2014-8176:openssl-1.0.2-beta1#d1_lib.c#small#dtls1_clear_queues#159.c ['129809'] found nothing! 
+vul/CVE-2015-0290:openssl-1.0.2-beta1#s3_pkt.c#small#ssl3_write_bytes#596.c ['215768'] found nothing! 
+vul/CVE-2015-0290:openssl-1.0.2-beta2#s3_pkt.c#small#ssl3_write_bytes#597.c ['216822'] found nothing! 
+vul/CVE-2013-4353:openssl-1.0.1d#s3_both.c#small#ssl3_take_mac#207.c ['199234'] found nothing! 
+vul/CVE-2016-2178:openssl-1.1.0-pre1#dsa_ossl.c#small#dsa_sign_setup#230.c ['256259'] found nothing! 
+vul/CVE-2014-8176:openssl-1.0.1#d1_lib.c#small#dtls1_clear_queues#133.c ['212397'] found nothing! 
+fix/CVE-2010-0740:openssl-1.0.1u#s3_pkt.c#small#ssl3_get_record#295.c ['26380'] found nothing! 
+fix/CVE-2010-0740:openssl-1.0.2e#s3_pkt.c#small#ssl3_get_record#306.c ['30756'] found nothing! 
+vul/CVE-2009-1527:		task_unlock(task);
+ ['365847'] found nothing! 
+vul/CVE-2009-1527:		task_unlock(task);
+ ['366071'] found nothing! 
+vul/CVE-2009-1527:		task_unlock(task);
+ ['366298'] found nothing! 
+vul/CVE-2010-2521:				argp->end = p + (argp->pagelen>>2);
+ ['399456'] found nothing! 
+vul/CVE-2010-2521:				argp->end = p + (argp->pagelen>>2);
+ ['399936'] found nothing! 
+fix/CVE-2009-3638:	case KVM_GET_SUPPORTED_CPUID: {
+ ['139092'] found nothing! 
+vul/CVE-2009-4005:	if(len && fifo->skbuff->len+len<fifo->max_size)
+ ['381497'] found nothing! 
+vul/CVE-2009-4005:		    && (fifo->skbuff->len > 3)) {
+ ['381801'] found nothing! 
+vul/CVE-2009-4005:		    && (fifo->skbuff->len > 3)) {
+ ['382068'] found nothing! 
+fix/CVE-2010-2240:	if (check_stack_guard_page(vma, address) < 0)
+ ['161644'] found nothing! 
+fix/CVE-2010-2240:	if (check_stack_guard_page(vma, address) < 0)
+ ['162009'] found nothing! 
+fix/CVE-2010-2240:	if (check_stack_guard_page(vma, address) < 0)
+ ['162385'] found nothing! 
+fix/CVE-2010-2240:	if (check_stack_guard_page(vma, address) < 0)
+ ['162750'] found nothing! 
+fix/CVE-2010-2240:	if (check_stack_guard_page(vma, address) < 0)
+ ['163141'] found nothing! 
+fix/CVE-2010-2240:	if (check_stack_guard_page(vma, address) < 0)
+ ['163539'] found nothing! 
+fix/CVE-2010-2240:	if (check_stack_guard_page(vma, address) < 0)
+ ['163947'] found nothing! 
+fix/CVE-2010-2240:	if (check_stack_guard_page(vma, address) < 0)
+ ['164413'] found nothing! 
+fix/CVE-2010-2240:	if (check_stack_guard_page(vma, address) < 0)
+ ['164923'] found nothing! 
+fix/CVE-2010-2240:	if (check_stack_guard_page(vma, address) < 0)
+ ['165433'] found nothing! 
+vul/CVE-2010-3442:	snd_runtime_check(control->count > 0, return NULL);
+ ['408457'] found nothing! 
+vul/CVE-2010-3442:	snd_runtime_check(control->count > 0, return NULL);
+ ['408459'] found nothing! 
+vul/CVE-2010-3442:	snd_runtime_check(control->count > 0, return NULL);
+ ['408460'] found nothing! 
+vul/CVE-2010-3442:	snd_runtime_check(control->count > 0, return NULL);
+ ['408461'] found nothing! 
+vul/CVE-2010-3442:	snd_runtime_check(control->count > 0, return NULL);
+ ['408462'] found nothing! 
+vul/CVE-2010-3442:	snd_runtime_check(control->count > 0, return NULL);
+ ['408463'] found nothing! 
+vul/CVE-2010-3442:	snd_runtime_check(control->count > 0, return NULL);
+ ['408464'] found nothing! 
+vul/CVE-2010-3442:	snd_runtime_check(control->count > 0, return NULL);
+ ['408465'] found nothing! 
+vul/CVE-2010-3442:	snd_runtime_check(control->count > 0, return NULL);
+ ['408466'] found nothing! 
+vul/CVE-2010-3442:	snd_runtime_check(control->count > 0, return NULL);
+ ['408467'] found nothing! 
+vul/CVE-2010-3442:	snd_runtime_check(control->count > 0, return NULL);
+ ['408468'] found nothing! 
+vul/CVE-2010-3442:	snd_runtime_check(control->count > 0, return NULL);
+ ['408581'] found nothing! 
+vul/CVE-2010-3442:	snd_runtime_check(control->count > 0, return NULL);
+ ['408583'] found nothing! 
+vul/CVE-2010-3442:	snd_runtime_check(control->count > 0, return NULL);
+ ['408584'] found nothing! 
+vul/CVE-2010-3442:	snd_runtime_check(control->count > 0, return NULL);
+ ['408585'] found nothing! 
+vul/CVE-2010-3442:	snd_runtime_check(control->count > 0, return NULL);
+ ['408586'] found nothing! 
+vul/CVE-2010-3442:	snd_runtime_check(control->count > 0, return NULL);
+ ['408587'] found nothing! 
+vul/CVE-2010-3442:	snd_runtime_check(control->count > 0, return NULL);
+ ['408588'] found nothing! 
+vul/CVE-2010-3442:	snd_runtime_check(control->count > 0, return NULL);
+ ['408589'] found nothing! 
+vul/CVE-2010-3442:	snd_runtime_check(control->count > 0, return NULL);
+ ['408590'] found nothing! 
+vul/CVE-2010-3442:	snd_runtime_check(control->count > 0, return NULL);
+ ['408591'] found nothing! 
+vul/CVE-2010-3442:	snd_runtime_check(control->count > 0, return NULL);
+ ['408592'] found nothing! 
+vul/CVE-2010-3442:	snd_assert(control->count > 0, return NULL);
+ ['408712'] found nothing! 
+vul/CVE-2010-3442:	snd_assert(control->count > 0, return NULL);
+ ['408714'] found nothing! 
+vul/CVE-2010-3442:	snd_assert(control->count > 0, return NULL);
+ ['408715'] found nothing! 
+vul/CVE-2010-3442:	snd_assert(control->count > 0, return NULL);
+ ['408716'] found nothing! 
+vul/CVE-2010-3442:	snd_assert(control->count > 0, return NULL);
+ ['408717'] found nothing! 
+vul/CVE-2010-3442:	snd_assert(control->count > 0, return NULL);
+ ['408718'] found nothing! 
+vul/CVE-2010-3442:	snd_assert(control->count > 0, return NULL);
+ ['408719'] found nothing! 
+vul/CVE-2010-3442:	snd_assert(control->count > 0, return NULL);
+ ['408720'] found nothing! 
+vul/CVE-2010-3442:	snd_assert(control->count > 0, return NULL);
+ ['408721'] found nothing! 
+vul/CVE-2010-3442:	snd_assert(control->count > 0, return NULL);
+ ['408722'] found nothing! 
+vul/CVE-2010-3442:	snd_assert(control->count > 0, return NULL);
+ ['408723'] found nothing! 
+vul/CVE-2010-3442:	snd_assert(control->count > 0, return NULL);
+ ['408807'] found nothing! 
+vul/CVE-2010-3442:	snd_assert(control->count > 0, return NULL);
+ ['408843'] found nothing! 
+vul/CVE-2010-3442:	snd_assert(control->count > 0, return NULL);
+ ['408845'] found nothing! 
+vul/CVE-2010-3442:	snd_assert(control->count > 0, return NULL);
+ ['408846'] found nothing! 
+vul/CVE-2010-3442:	snd_assert(control->count > 0, return NULL);
+ ['408847'] found nothing! 
+vul/CVE-2010-3442:	snd_assert(control->count > 0, return NULL);
+ ['408848'] found nothing! 
+vul/CVE-2010-3442:	snd_assert(control->count > 0, return NULL);
+ ['408849'] found nothing! 
+vul/CVE-2010-3442:	snd_assert(control->count > 0, return NULL);
+ ['408850'] found nothing! 
+vul/CVE-2010-3442:	snd_assert(control->count > 0, return NULL);
+ ['408851'] found nothing! 
+vul/CVE-2010-3442:	snd_assert(control->count > 0, return NULL);
+ ['408852'] found nothing! 
+vul/CVE-2010-3442:	snd_assert(control->count > 0, return NULL);
+ ['408853'] found nothing! 
+vul/CVE-2010-3442:	snd_assert(control->count > 0, return NULL);
+ ['408854'] found nothing! 
+vul/CVE-2010-3442:	snd_runtime_check(control->count > 0, return NULL);
+ ['409093'] found nothing! 
+vul/CVE-2010-3442:	snd_runtime_check(control->count > 0, return NULL);
+ ['409095'] found nothing! 
+vul/CVE-2010-3442:	snd_runtime_check(control->count > 0, return NULL);
+ ['409096'] found nothing! 
+vul/CVE-2010-3442:	snd_runtime_check(control->count > 0, return NULL);
+ ['409097'] found nothing! 
+vul/CVE-2010-3442:	snd_runtime_check(control->count > 0, return NULL);
+ ['409098'] found nothing! 
+vul/CVE-2010-3442:	snd_runtime_check(control->count > 0, return NULL);
+ ['409099'] found nothing! 
+vul/CVE-2010-3442:	snd_runtime_check(control->count > 0, return NULL);
+ ['409100'] found nothing! 
+vul/CVE-2010-3442:	snd_runtime_check(control->count > 0, return NULL);
+ ['409101'] found nothing! 
+vul/CVE-2010-3442:	snd_runtime_check(control->count > 0, return NULL);
+ ['409102'] found nothing! 
+vul/CVE-2010-3442:	snd_runtime_check(control->count > 0, return NULL);
+ ['409103'] found nothing! 
+vul/CVE-2010-3442:	snd_runtime_check(control->count > 0, return NULL);
+ ['409104'] found nothing! 
+fix/CVE-2011-1585:	list_for_each_entry(ses, &server->smb_ses_list, smb_ses_list) {
+ ['223061'] found nothing! 
+fix/CVE-2011-1585:	list_for_each_entry(ses, &server->smb_ses_list, smb_ses_list) {
+ ['223062'] found nothing! 
+fix/CVE-2011-1585:	list_for_each_entry(ses, &server->smb_ses_list, smb_ses_list) {
+ ['223063'] found nothing! 
+fix/CVE-2011-1585:	list_for_each_entry(ses, &server->smb_ses_list, smb_ses_list) {
+ ['223064'] found nothing! 
+fix/CVE-2011-1585:	list_for_each_entry(ses, &server->smb_ses_list, smb_ses_list) {
+ ['223065'] found nothing! 
+fix/CVE-2011-1585:	list_for_each_entry(ses, &server->smb_ses_list, smb_ses_list) {
+ ['223066'] found nothing! 
+fix/CVE-2011-1585:	list_for_each_entry(ses, &server->smb_ses_list, smb_ses_list) {
+ ['223067'] found nothing! 
+fix/CVE-2011-1585:	list_for_each_entry(ses, &server->smb_ses_list, smb_ses_list) {
+ ['223068'] found nothing! 
+fix/CVE-2011-1585:	list_for_each_entry(ses, &server->smb_ses_list, smb_ses_list) {
+ ['223069'] found nothing! 
+fix/CVE-2011-1585:	list_for_each_entry(ses, &server->smb_ses_list, smb_ses_list) {
+ ['223070'] found nothing! 
+fix/CVE-2011-1585:	list_for_each_entry(ses, &server->smb_ses_list, smb_ses_list) {
+ ['223229'] found nothing! 
+fix/CVE-2011-1585:	list_for_each_entry(ses, &server->smb_ses_list, smb_ses_list) {
+ ['223230'] found nothing! 
+fix/CVE-2011-1585:	list_for_each_entry(ses, &server->smb_ses_list, smb_ses_list) {
+ ['223231'] found nothing! 
+fix/CVE-2011-1585:	list_for_each_entry(ses, &server->smb_ses_list, smb_ses_list) {
+ ['223232'] found nothing! 
+fix/CVE-2011-1585:	list_for_each_entry(ses, &server->smb_ses_list, smb_ses_list) {
+ ['223233'] found nothing! 
+fix/CVE-2011-1585:	list_for_each_entry(ses, &server->smb_ses_list, smb_ses_list) {
+ ['223234'] found nothing! 
+fix/CVE-2011-1585:	list_for_each_entry(ses, &server->smb_ses_list, smb_ses_list) {
+ ['223235'] found nothing! 
+fix/CVE-2011-1585:	list_for_each_entry(ses, &server->smb_ses_list, smb_ses_list) {
+ ['223236'] found nothing! 
+fix/CVE-2011-1585:	list_for_each_entry(ses, &server->smb_ses_list, smb_ses_list) {
+ ['223237'] found nothing! 
+fix/CVE-2011-1585:	list_for_each_entry(ses, &server->smb_ses_list, smb_ses_list) {
+ ['223238'] found nothing! 
+fix/CVE-2011-1585:	list_for_each_entry(ses, &server->smb_ses_list, smb_ses_list) {
+ ['223405'] found nothing! 
+fix/CVE-2011-1585:	list_for_each_entry(ses, &server->smb_ses_list, smb_ses_list) {
+ ['223406'] found nothing! 
+fix/CVE-2011-1585:	list_for_each_entry(ses, &server->smb_ses_list, smb_ses_list) {
+ ['223407'] found nothing! 
+fix/CVE-2011-1585:	list_for_each_entry(ses, &server->smb_ses_list, smb_ses_list) {
+ ['223408'] found nothing! 
+fix/CVE-2011-1585:	list_for_each_entry(ses, &server->smb_ses_list, smb_ses_list) {
+ ['223409'] found nothing! 
+fix/CVE-2011-1585:	list_for_each_entry(ses, &server->smb_ses_list, smb_ses_list) {
+ ['223410'] found nothing! 
+fix/CVE-2011-1585:	list_for_each_entry(ses, &server->smb_ses_list, smb_ses_list) {
+ ['223411'] found nothing! 
+fix/CVE-2011-1585:	list_for_each_entry(ses, &server->smb_ses_list, smb_ses_list) {
+ ['223412'] found nothing! 
+fix/CVE-2011-1585:	list_for_each_entry(ses, &server->smb_ses_list, smb_ses_list) {
+ ['223413'] found nothing! 
+fix/CVE-2011-1585:	list_for_each_entry(ses, &server->smb_ses_list, smb_ses_list) {
+ ['223414'] found nothing! 
+fix/CVE-2011-1585:	list_for_each_entry(ses, &server->smb_ses_list, smb_ses_list) {
+ ['223505'] found nothing! 
+fix/CVE-2011-1585:	list_for_each_entry(ses, &server->smb_ses_list, smb_ses_list) {
+ ['223506'] found nothing! 
+fix/CVE-2011-1585:	list_for_each_entry(ses, &server->smb_ses_list, smb_ses_list) {
+ ['223507'] found nothing! 
+fix/CVE-2011-1585:	list_for_each_entry(ses, &server->smb_ses_list, smb_ses_list) {
+ ['223508'] found nothing! 
+fix/CVE-2011-1585:	list_for_each_entry(ses, &server->smb_ses_list, smb_ses_list) {
+ ['223509'] found nothing! 
+fix/CVE-2011-1585:	list_for_each_entry(ses, &server->smb_ses_list, smb_ses_list) {
+ ['223510'] found nothing! 
+fix/CVE-2011-1585:	list_for_each_entry(ses, &server->smb_ses_list, smb_ses_list) {
+ ['223511'] found nothing! 
+fix/CVE-2011-1585:	list_for_each_entry(ses, &server->smb_ses_list, smb_ses_list) {
+ ['223512'] found nothing! 
+fix/CVE-2011-1585:	list_for_each_entry(ses, &server->smb_ses_list, smb_ses_list) {
+ ['223513'] found nothing! 
+fix/CVE-2011-1585:	list_for_each_entry(ses, &server->smb_ses_list, smb_ses_list) {
+ ['223514'] found nothing! 
+fix/CVE-2011-1585:	list_for_each_entry(ses, &server->smb_ses_list, smb_ses_list) {
+ ['223600'] found nothing! 
+fix/CVE-2011-1585:	list_for_each_entry(ses, &server->smb_ses_list, smb_ses_list) {
+ ['223601'] found nothing! 
+fix/CVE-2011-1585:	list_for_each_entry(ses, &server->smb_ses_list, smb_ses_list) {
+ ['223602'] found nothing! 
+fix/CVE-2011-1585:	list_for_each_entry(ses, &server->smb_ses_list, smb_ses_list) {
+ ['223603'] found nothing! 
+fix/CVE-2011-1585:	list_for_each_entry(ses, &server->smb_ses_list, smb_ses_list) {
+ ['223604'] found nothing! 
+fix/CVE-2011-1585:	list_for_each_entry(ses, &server->smb_ses_list, smb_ses_list) {
+ ['223605'] found nothing! 
+fix/CVE-2011-1585:	list_for_each_entry(ses, &server->smb_ses_list, smb_ses_list) {
+ ['223606'] found nothing! 
+fix/CVE-2011-1585:	list_for_each_entry(ses, &server->smb_ses_list, smb_ses_list) {
+ ['223607'] found nothing! 
+fix/CVE-2011-1585:	list_for_each_entry(ses, &server->smb_ses_list, smb_ses_list) {
+ ['223608'] found nothing! 
+fix/CVE-2011-1585:	list_for_each_entry(ses, &server->smb_ses_list, smb_ses_list) {
+ ['223609'] found nothing! 
+fix/CVE-2010-4649:	memset(&resp, 0, sizeof resp);
+ ['215271'] found nothing! 
+fix/CVE-2010-4649:	memset(&resp, 0, sizeof resp);
+ ['215552'] found nothing! 
+fix/CVE-2010-4526:	if (sock_owned_by_user(sk)) {
+ ['212865'] found nothing! 
+fix/CVE-2010-4526:	if (sock_owned_by_user(sk)) {
+ ['213024'] found nothing! 
+fix/CVE-2010-4526:	if (sock_owned_by_user(sk)) {
+ ['213193'] found nothing! 
+fix/CVE-2011-1044:	memset(&resp, 0, sizeof resp);
+ ['220017'] found nothing! 
+fix/CVE-2011-1044:	memset(&resp, 0, sizeof resp);
+ ['220298'] found nothing! 
+vul/CVE-2011-1585:	list_for_each(tmp, &server->smb_ses_list) {
+ ['450865'] found nothing! 
+vul/CVE-2011-1585:	list_for_each(tmp, &server->smb_ses_list) {
+ ['450866'] found nothing! 
+vul/CVE-2011-1585:	list_for_each(tmp, &server->smb_ses_list) {
+ ['450867'] found nothing! 
+vul/CVE-2011-1585:	list_for_each(tmp, &server->smb_ses_list) {
+ ['450868'] found nothing! 
+vul/CVE-2011-1585:	list_for_each(tmp, &server->smb_ses_list) {
+ ['450869'] found nothing! 
+vul/CVE-2011-1585:	list_for_each(tmp, &server->smb_ses_list) {
+ ['450870'] found nothing! 
+vul/CVE-2011-1585:	list_for_each(tmp, &server->smb_ses_list) {
+ ['450871'] found nothing! 
+vul/CVE-2011-1585:	list_for_each(tmp, &server->smb_ses_list) {
+ ['450872'] found nothing! 
+vul/CVE-2011-1585:	list_for_each(tmp, &server->smb_ses_list) {
+ ['450873'] found nothing! 
+fix/CVE-2009-1527:	mutex_unlock(&task->signal->cred_guard_mutex);
+ ['71377'] found nothing! 
+fix/CVE-2009-1527:	mutex_unlock(&task->signal->cred_guard_mutex);
+ ['72177'] found nothing! 
+fix/CVE-2009-1527:	mutex_unlock(&task->signal->cred_guard_mutex);
+ ['72572'] found nothing! 
+vul/CVE-2009-3722:	dr = vmcs_readl(GUEST_DR7);
+ ['380435'] found nothing! 
+fix/CVE-2011-2906:	if (request_size < 0) {
+ ['236007'] found nothing! 
+fix/CVE-2011-2906:	if (request_size < 0) {
+ ['236930'] found nothing! 
+fix/CVE-2010-2954:	err = irda_open_tsap(self, addr->sir_lsap_sel, addr->sir_name);
+ ['175497'] found nothing! 
+fix/CVE-2010-2954:	err = irda_open_tsap(self, addr->sir_lsap_sel, addr->sir_name);
+ ['175827'] found nothing! 
+fix/CVE-2010-2954:	err = irda_open_tsap(self, addr->sir_lsap_sel, addr->sir_name);
+ ['176143'] found nothing! 
+fix/CVE-2010-2954:	err = irda_open_tsap(self, addr->sir_lsap_sel, addr->sir_name);
+ ['176469'] found nothing! 
+vul/CVE-2010-2954:	err = irda_open_tsap(self, addr->sir_lsap_sel, addr->sir_name);
+ ['405590'] found nothing! 
+vul/CVE-2010-2954:	err = irda_open_tsap(self, addr->sir_lsap_sel, addr->sir_name);
+ ['407243'] found nothing! 
+vul/CVE-2010-2954:	err = irda_open_tsap(self, addr->sir_lsap_sel, addr->sir_name);
+ ['407546'] found nothing! 
+vul/CVE-2009-1630:EACCES ['367177'] found nothing! 
+fix/CVE-2011-3359:	if (unlikely(len > ring->rx_buffersize)) {
+ ['237929'] found nothing! 
+vul/CVE-2018-6927:	list_for_each_safe(i, next, head1) {
+ ['535928'] found nothing! 
+vul/CVE-2018-6927:	list_for_each_safe(i, next, head1) {
+ ['535929'] found nothing! 
+vul/CVE-2018-6927:	list_for_each_safe(i, next, head1) {
+ ['535930'] found nothing! 
+vul/CVE-2018-6927:	list_for_each_safe(i, next, head1) {
+ ['535931'] found nothing! 
+vul/CVE-2018-6927:	list_for_each_safe(i, next, head1) {
+ ['535932'] found nothing! 
+vul/CVE-2018-6927:	list_for_each_safe(i, next, head1) {
+ ['535933'] found nothing! 
+vul/CVE-2018-6927:	list_for_each_safe(i, next, head1) {
+ ['535934'] found nothing! 
+vul/CVE-2018-6927:	list_for_each_safe(i, next, head1) {
+ ['535935'] found nothing! 
+vul/CVE-2018-6927:	list_for_each_entry_safe(this, next, head1, list) {
+ ['536268'] found nothing! 
+vul/CVE-2018-6927:	list_for_each_entry_safe(this, next, head1, list) {
+ ['536269'] found nothing! 
+vul/CVE-2018-6927:	list_for_each_entry_safe(this, next, head1, list) {
+ ['536270'] found nothing! 
+vul/CVE-2018-6927:	list_for_each_entry_safe(this, next, head1, list) {
+ ['536271'] found nothing! 
+vul/CVE-2018-6927:	list_for_each_entry_safe(this, next, head1, list) {
+ ['536272'] found nothing! 
+vul/CVE-2018-6927:	list_for_each_entry_safe(this, next, head1, list) {
+ ['536273'] found nothing! 
+vul/CVE-2018-6927:	list_for_each_entry_safe(this, next, head1, list) {
+ ['536274'] found nothing! 
+vul/CVE-2018-6927:	list_for_each_entry_safe(this, next, head1, list) {
+ ['536275'] found nothing! 
+vul/CVE-2018-6927:	list_for_each_entry_safe(this, next, head1, list) {
+ ['536276'] found nothing! 
+vul/CVE-2018-6927:	list_for_each_entry_safe(this, next, head1, list) {
+ ['536795'] found nothing! 
+vul/CVE-2018-6927:	list_for_each_entry_safe(this, next, head1, list) {
+ ['536796'] found nothing! 
+vul/CVE-2018-6927:	list_for_each_entry_safe(this, next, head1, list) {
+ ['536797'] found nothing! 
+vul/CVE-2018-6927:	list_for_each_entry_safe(this, next, head1, list) {
+ ['536798'] found nothing! 
+vul/CVE-2018-6927:	list_for_each_entry_safe(this, next, head1, list) {
+ ['536799'] found nothing! 
+vul/CVE-2018-6927:	list_for_each_entry_safe(this, next, head1, list) {
+ ['536800'] found nothing! 
+vul/CVE-2018-6927:	list_for_each_entry_safe(this, next, head1, list) {
+ ['536801'] found nothing! 
+vul/CVE-2018-6927:	list_for_each_entry_safe(this, next, head1, list) {
+ ['536802'] found nothing! 
+vul/CVE-2018-6927:	list_for_each_entry_safe(this, next, head1, list) {
+ ['536803'] found nothing! 
+vul/CVE-2018-6927:	list_for_each_entry_safe(this, next, head1, list) {
+ ['537361'] found nothing! 
+vul/CVE-2018-6927:	list_for_each_entry_safe(this, next, head1, list) {
+ ['537362'] found nothing! 
+vul/CVE-2018-6927:	list_for_each_entry_safe(this, next, head1, list) {
+ ['537363'] found nothing! 
+vul/CVE-2018-6927:	list_for_each_entry_safe(this, next, head1, list) {
+ ['537364'] found nothing! 
+vul/CVE-2018-6927:	list_for_each_entry_safe(this, next, head1, list) {
+ ['537365'] found nothing! 
+vul/CVE-2018-6927:	list_for_each_entry_safe(this, next, head1, list) {
+ ['537366'] found nothing! 
+vul/CVE-2018-6927:	list_for_each_entry_safe(this, next, head1, list) {
+ ['537367'] found nothing! 
+vul/CVE-2018-6927:	list_for_each_entry_safe(this, next, head1, list) {
+ ['537368'] found nothing! 
+vul/CVE-2018-6927:	list_for_each_entry_safe(this, next, head1, list) {
+ ['537369'] found nothing! 
+vul/CVE-2018-6927:	list_for_each_entry_safe(this, next, head1, list) {
+ ['537901'] found nothing! 
+vul/CVE-2018-6927:	list_for_each_entry_safe(this, next, head1, list) {
+ ['537902'] found nothing! 
+vul/CVE-2018-6927:	list_for_each_entry_safe(this, next, head1, list) {
+ ['537903'] found nothing! 
+vul/CVE-2018-6927:	list_for_each_entry_safe(this, next, head1, list) {
+ ['537904'] found nothing! 
+vul/CVE-2018-6927:	list_for_each_entry_safe(this, next, head1, list) {
+ ['537905'] found nothing! 
+vul/CVE-2018-6927:	list_for_each_entry_safe(this, next, head1, list) {
+ ['537906'] found nothing! 
+vul/CVE-2018-6927:	list_for_each_entry_safe(this, next, head1, list) {
+ ['537907'] found nothing! 
+vul/CVE-2018-6927:	list_for_each_entry_safe(this, next, head1, list) {
+ ['537908'] found nothing! 
+vul/CVE-2018-6927:	list_for_each_entry_safe(this, next, head1, list) {
+ ['537909'] found nothing! 
+vul/CVE-2018-6927:	plist_for_each_entry_safe(this, next, head1, list) {
+ ['538514'] found nothing! 
+vul/CVE-2018-6927:	plist_for_each_entry_safe(this, next, head1, list) {
+ ['538515'] found nothing! 
+vul/CVE-2018-6927:	plist_for_each_entry_safe(this, next, head1, list) {
+ ['538516'] found nothing! 
+vul/CVE-2018-6927:	plist_for_each_entry_safe(this, next, head1, list) {
+ ['538517'] found nothing! 
+vul/CVE-2018-6927:	plist_for_each_entry_safe(this, next, head1, list) {
+ ['538518'] found nothing! 
+vul/CVE-2018-6927:	plist_for_each_entry_safe(this, next, head1, list) {
+ ['538519'] found nothing! 
+vul/CVE-2018-6927:	plist_for_each_entry_safe(this, next, head1, list) {
+ ['538520'] found nothing! 
+vul/CVE-2018-6927:	plist_for_each_entry_safe(this, next, head1, list) {
+ ['538521'] found nothing! 
+vul/CVE-2018-6927:	plist_for_each_entry_safe(this, next, head1, list) {
+ ['538522'] found nothing! 
+vul/CVE-2018-6927:	plist_for_each_entry_safe(this, next, head1, list) {
+ ['539397'] found nothing! 
+vul/CVE-2018-6927:	plist_for_each_entry_safe(this, next, head1, list) {
+ ['539398'] found nothing! 
+vul/CVE-2018-6927:	plist_for_each_entry_safe(this, next, head1, list) {
+ ['539399'] found nothing! 
+vul/CVE-2018-6927:	plist_for_each_entry_safe(this, next, head1, list) {
+ ['539400'] found nothing! 
+vul/CVE-2018-6927:	plist_for_each_entry_safe(this, next, head1, list) {
+ ['539401'] found nothing! 
+vul/CVE-2018-6927:	plist_for_each_entry_safe(this, next, head1, list) {
+ ['539402'] found nothing! 
+vul/CVE-2018-6927:	plist_for_each_entry_safe(this, next, head1, list) {
+ ['539403'] found nothing! 
+vul/CVE-2018-6927:	plist_for_each_entry_safe(this, next, head1, list) {
+ ['539404'] found nothing! 
+vul/CVE-2018-6927:	plist_for_each_entry_safe(this, next, head1, list) {
+ ['539405'] found nothing! 
+vul/CVE-2018-6927:	plist_for_each_entry_safe(this, next, head1, list) {
+ ['540280'] found nothing! 
+vul/CVE-2018-6927:	plist_for_each_entry_safe(this, next, head1, list) {
+ ['540281'] found nothing! 
+vul/CVE-2018-6927:	plist_for_each_entry_safe(this, next, head1, list) {
+ ['540282'] found nothing! 
+vul/CVE-2018-6927:	plist_for_each_entry_safe(this, next, head1, list) {
+ ['540283'] found nothing! 
+vul/CVE-2018-6927:	plist_for_each_entry_safe(this, next, head1, list) {
+ ['540284'] found nothing! 
+vul/CVE-2018-6927:	plist_for_each_entry_safe(this, next, head1, list) {
+ ['540285'] found nothing! 
+vul/CVE-2018-6927:	plist_for_each_entry_safe(this, next, head1, list) {
+ ['540286'] found nothing! 
+vul/CVE-2018-6927:	plist_for_each_entry_safe(this, next, head1, list) {
+ ['540287'] found nothing! 
+vul/CVE-2018-6927:	plist_for_each_entry_safe(this, next, head1, list) {
+ ['540288'] found nothing! 
+vul/CVE-2018-6927:	plist_for_each_entry_safe(this, next, &hb1->chain, list) {
+ ['541173'] found nothing! 
+vul/CVE-2018-6927:	plist_for_each_entry_safe(this, next, &hb1->chain, list) {
+ ['541174'] found nothing! 
+vul/CVE-2018-6927:	plist_for_each_entry_safe(this, next, &hb1->chain, list) {
+ ['541175'] found nothing! 
+vul/CVE-2018-6927:	plist_for_each_entry_safe(this, next, &hb1->chain, list) {
+ ['541176'] found nothing! 
+vul/CVE-2018-6927:	plist_for_each_entry_safe(this, next, &hb1->chain, list) {
+ ['541177'] found nothing! 
+vul/CVE-2018-6927:	plist_for_each_entry_safe(this, next, &hb1->chain, list) {
+ ['541178'] found nothing! 
+vul/CVE-2018-6927:	plist_for_each_entry_safe(this, next, &hb1->chain, list) {
+ ['541179'] found nothing! 
+vul/CVE-2018-6927:	plist_for_each_entry_safe(this, next, &hb1->chain, list) {
+ ['541180'] found nothing! 
+vul/CVE-2018-6927:	plist_for_each_entry_safe(this, next, &hb1->chain, list) {
+ ['541181'] found nothing! 
+vul/CVE-2018-6927:	plist_for_each_entry_safe(this, next, &hb1->chain, list) {
+ ['541182'] found nothing! 
+vul/CVE-2018-6927:	plist_for_each_entry_safe(this, next, &hb1->chain, list) {
+ ['541183'] found nothing! 
+vul/CVE-2018-6927:	plist_for_each_entry_safe(this, next, &hb1->chain, list) {
+ ['541184'] found nothing! 
+vul/CVE-2010-2803:		   ((ioctl->flags & DRM_MASTER) && !priv->master)) {
+ ['401593'] found nothing! 
+vul/CVE-2010-2803:		   ((ioctl->flags & DRM_MASTER) && !priv->master)) {
+ ['401970'] found nothing! 
+vul/CVE-2010-2803:		   ((ioctl->flags & DRM_MASTER) && !file_priv->master)) {
+ ['402381'] found nothing! 
+vul/CVE-2011-3359:	if (unlikely(len > ring->rx_buffersize)) {
+ ['461233'] found nothing! 
+vul/CVE-2011-3359:	if (unlikely(len > ring->rx_buffersize)) {
+ ['461770'] found nothing! 
+fix/CVE-2014-0100:	struct inet_frag_bucket *hb = get_frag_bucket_locked(qp_in, f);
+ ['293287'] found nothing! 
+fix/CVE-2013-6380:	if ((fibsize < (sizeof(struct user_aac_srb) - sizeof(struct user_sgentry))) ||
+ ['283229'] found nothing! 
+fix/CVE-2013-6380:	if ((fibsize < (sizeof(struct user_aac_srb) - sizeof(struct user_sgentry))) ||
+ ['286411'] found nothing! 
+fix/CVE-2013-6380:	if ((fibsize < (sizeof(struct user_aac_srb) - sizeof(struct user_sgentry))) ||
+ ['288905'] found nothing! 
+fix/CVE-2013-6380:	if ((fibsize < (sizeof(struct user_aac_srb) - sizeof(struct user_sgentry))) ||
+ ['291322'] found nothing! 
+fix/CVE-2010-2942:	struct tc_mirred opt = {
+ ['172740'] found nothing! 
+fix/CVE-2010-2942:	struct tc_mirred opt = {
+ ['172741'] found nothing! 
+fix/CVE-2010-2942:	struct tc_mirred opt = {
+ ['172742'] found nothing! 
+fix/CVE-2010-2942:	struct tc_mirred opt = {
+ ['172743'] found nothing! 
+fix/CVE-2010-2942:	struct tc_defact opt = {
+ ['172964'] found nothing! 
+fix/CVE-2010-2942:	struct tc_defact opt = {
+ ['172965'] found nothing! 
+fix/CVE-2010-2942:	struct tc_defact opt = {
+ ['172966'] found nothing! 
+fix/CVE-2010-2942:	struct tc_defact opt = {
+ ['172967'] found nothing! 
+fix/CVE-2010-2942:	struct tc_defact opt = {
+ ['173196'] found nothing! 
+fix/CVE-2010-2942:	struct tc_defact opt = {
+ ['173197'] found nothing! 
+fix/CVE-2010-2942:	struct tc_defact opt = {
+ ['173198'] found nothing! 
+fix/CVE-2010-2942:	struct tc_defact opt = {
+ ['173199'] found nothing! 
+fix/CVE-2010-2942:	struct tc_mirred opt = {
+ ['173431'] found nothing! 
+fix/CVE-2010-2942:	struct tc_mirred opt = {
+ ['173432'] found nothing! 
+fix/CVE-2010-2942:	struct tc_mirred opt = {
+ ['173433'] found nothing! 
+fix/CVE-2010-2942:	struct tc_mirred opt = {
+ ['173434'] found nothing! 
+fix/CVE-2010-2942:	struct tc_mirred opt = {
+ ['173665'] found nothing! 
+fix/CVE-2010-2942:	struct tc_mirred opt = {
+ ['173666'] found nothing! 
+fix/CVE-2010-2942:	struct tc_mirred opt = {
+ ['173667'] found nothing! 
+fix/CVE-2010-2942:	struct tc_mirred opt = {
+ ['173668'] found nothing! 
+fix/CVE-2010-2942:	struct tc_defact opt = {
+ ['173900'] found nothing! 
+fix/CVE-2010-2942:	struct tc_defact opt = {
+ ['173901'] found nothing! 
+fix/CVE-2010-2942:	struct tc_defact opt = {
+ ['173902'] found nothing! 
+fix/CVE-2010-2942:	struct tc_defact opt = {
+ ['173903'] found nothing! 
+fix/CVE-2010-2942:	struct tc_mirred opt = {
+ ['174105'] found nothing! 
+fix/CVE-2010-2942:	struct tc_mirred opt = {
+ ['174106'] found nothing! 
+fix/CVE-2010-2942:	struct tc_mirred opt = {
+ ['174107'] found nothing! 
+fix/CVE-2010-2942:	struct tc_mirred opt = {
+ ['174108'] found nothing! 
+fix/CVE-2010-2942:	struct tc_defact opt = {
+ ['174300'] found nothing! 
+fix/CVE-2010-2942:	struct tc_defact opt = {
+ ['174301'] found nothing! 
+fix/CVE-2010-2942:	struct tc_defact opt = {
+ ['174302'] found nothing! 
+fix/CVE-2010-2942:	struct tc_defact opt = {
+ ['174303'] found nothing! 
+fix/CVE-2010-2942:	struct tc_mirred opt = {
+ ['174500'] found nothing! 
+fix/CVE-2010-2942:	struct tc_mirred opt = {
+ ['174501'] found nothing! 
+fix/CVE-2010-2942:	struct tc_mirred opt = {
+ ['174502'] found nothing! 
+fix/CVE-2010-2942:	struct tc_mirred opt = {
+ ['174503'] found nothing! 
+fix/CVE-2010-2942:	struct tc_defact opt = {
+ ['174737'] found nothing! 
+fix/CVE-2010-2942:	struct tc_defact opt = {
+ ['174738'] found nothing! 
+fix/CVE-2010-2942:	struct tc_defact opt = {
+ ['174739'] found nothing! 
+fix/CVE-2010-2942:	struct tc_defact opt = {
+ ['174740'] found nothing! 
+fix/CVE-2010-2942:	struct tc_mirred opt = {
+ ['175001'] found nothing! 
+fix/CVE-2010-2942:	struct tc_mirred opt = {
+ ['175002'] found nothing! 
+fix/CVE-2010-2942:	struct tc_mirred opt = {
+ ['175003'] found nothing! 
+fix/CVE-2010-2942:	struct tc_mirred opt = {
+ ['175004'] found nothing! 
+vul/CVE-2021-37576:	list_for_each_entry(d, &vcpu->kvm->arch.rtas_tokens, list) {
+ ['544485'] found nothing! 
+vul/CVE-2021-37576:	list_for_each_entry(d, &vcpu->kvm->arch.rtas_tokens, list) {
+ ['544520'] found nothing! 
+vul/CVE-2021-37576:	list_for_each_entry(d, &vcpu->kvm->arch.rtas_tokens, list) {
+ ['544521'] found nothing! 
+vul/CVE-2021-37576:	list_for_each_entry(d, &vcpu->kvm->arch.rtas_tokens, list) {
+ ['544522'] found nothing! 
+vul/CVE-2021-37576:	list_for_each_entry(d, &vcpu->kvm->arch.rtas_tokens, list) {
+ ['544523'] found nothing! 
+vul/CVE-2021-37576:	list_for_each_entry(d, &vcpu->kvm->arch.rtas_tokens, list) {
+ ['544524'] found nothing! 
+vul/CVE-2021-37576:	list_for_each_entry(d, &vcpu->kvm->arch.rtas_tokens, list) {
+ ['544525'] found nothing! 
+vul/CVE-2021-37576:	list_for_each_entry(d, &vcpu->kvm->arch.rtas_tokens, list) {
+ ['544526'] found nothing! 
+vul/CVE-2021-37576:	list_for_each_entry(d, &vcpu->kvm->arch.rtas_tokens, list) {
+ ['544527'] found nothing! 
+vul/CVE-2021-37576:	list_for_each_entry(d, &vcpu->kvm->arch.rtas_tokens, list) {
+ ['544528'] found nothing! 
+vul/CVE-2021-37576:	list_for_each_entry(d, &vcpu->kvm->arch.rtas_tokens, list) {
+ ['544529'] found nothing! 
+vul/CVE-2021-37576:	list_for_each_entry(d, &vcpu->kvm->arch.rtas_tokens, list) {
+ ['544530'] found nothing! 
+vul/CVE-2021-37576:	list_for_each_entry(d, &vcpu->kvm->arch.rtas_tokens, list) {
+ ['544531'] found nothing! 
+vul/CVE-2021-37576:	list_for_each_entry(d, &vcpu->kvm->arch.rtas_tokens, list) {
+ ['544532'] found nothing! 
+vul/CVE-2021-37576:	list_for_each_entry(d, &vcpu->kvm->arch.rtas_tokens, list) {
+ ['544533'] found nothing! 
+vul/CVE-2021-37576:	list_for_each_entry(d, &vcpu->kvm->arch.rtas_tokens, list) {
+ ['544781'] found nothing! 
+vul/CVE-2021-37576:	list_for_each_entry(d, &vcpu->kvm->arch.rtas_tokens, list) {
+ ['544816'] found nothing! 
+vul/CVE-2021-37576:	list_for_each_entry(d, &vcpu->kvm->arch.rtas_tokens, list) {
+ ['544817'] found nothing! 
+vul/CVE-2021-37576:	list_for_each_entry(d, &vcpu->kvm->arch.rtas_tokens, list) {
+ ['544818'] found nothing! 
+vul/CVE-2021-37576:	list_for_each_entry(d, &vcpu->kvm->arch.rtas_tokens, list) {
+ ['544819'] found nothing! 
+vul/CVE-2021-37576:	list_for_each_entry(d, &vcpu->kvm->arch.rtas_tokens, list) {
+ ['544820'] found nothing! 
+vul/CVE-2021-37576:	list_for_each_entry(d, &vcpu->kvm->arch.rtas_tokens, list) {
+ ['544821'] found nothing! 
+vul/CVE-2021-37576:	list_for_each_entry(d, &vcpu->kvm->arch.rtas_tokens, list) {
+ ['544822'] found nothing! 
+vul/CVE-2021-37576:	list_for_each_entry(d, &vcpu->kvm->arch.rtas_tokens, list) {
+ ['544823'] found nothing! 
+vul/CVE-2021-37576:	list_for_each_entry(d, &vcpu->kvm->arch.rtas_tokens, list) {
+ ['544824'] found nothing! 
+vul/CVE-2021-37576:	list_for_each_entry(d, &vcpu->kvm->arch.rtas_tokens, list) {
+ ['544825'] found nothing! 
+vul/CVE-2021-37576:	list_for_each_entry(d, &vcpu->kvm->arch.rtas_tokens, list) {
+ ['544826'] found nothing! 
+vul/CVE-2021-37576:	list_for_each_entry(d, &vcpu->kvm->arch.rtas_tokens, list) {
+ ['544827'] found nothing! 
+vul/CVE-2021-37576:	list_for_each_entry(d, &vcpu->kvm->arch.rtas_tokens, list) {
+ ['544828'] found nothing! 
+vul/CVE-2021-37576:	list_for_each_entry(d, &vcpu->kvm->arch.rtas_tokens, list) {
+ ['544829'] found nothing! 
+vul/CVE-2010-3850:		if (edev == NULL)
+ ['430210'] found nothing! 
+vul/CVE-2014-9584:      case SIG('E','R'):
+ ['512810'] found nothing! 
+vul/CVE-2014-9584:      case SIG('E','R'):
+ ['512811'] found nothing! 
+vul/CVE-2014-9584:      case SIG('E','R'):
+ ['512812'] found nothing! 
+vul/CVE-2014-9584:      case SIG('E','R'):
+ ['512813'] found nothing! 
+vul/CVE-2014-9584:      case SIG('E','R'):
+ ['512814'] found nothing! 
+vul/CVE-2014-9584:      case SIG('E','R'):
+ ['512815'] found nothing! 
+vul/CVE-2014-9584:      case SIG('E','R'):
+ ['512816'] found nothing! 
+vul/CVE-2014-9584:      case SIG('E','R'):
+ ['512817'] found nothing! 
+vul/CVE-2014-9584:      case SIG('E','R'):
+ ['513804'] found nothing! 
+vul/CVE-2014-9584:      case SIG('E','R'):
+ ['513805'] found nothing! 
+vul/CVE-2014-9584:      case SIG('E','R'):
+ ['513806'] found nothing! 
+vul/CVE-2014-9584:      case SIG('E','R'):
+ ['513807'] found nothing! 
+vul/CVE-2014-9584:      case SIG('E','R'):
+ ['513808'] found nothing! 
+vul/CVE-2014-9584:      case SIG('E','R'):
+ ['513809'] found nothing! 
+vul/CVE-2014-9584:      case SIG('E','R'):
+ ['513810'] found nothing! 
+vul/CVE-2014-9584:      case SIG('E','R'):
+ ['513811'] found nothing! 
+vul/CVE-2014-9584:      case SIG('E','R'):
+ ['514794'] found nothing! 
+vul/CVE-2014-9584:      case SIG('E','R'):
+ ['514795'] found nothing! 
+vul/CVE-2014-9584:      case SIG('E','R'):
+ ['514796'] found nothing! 
+vul/CVE-2014-9584:      case SIG('E','R'):
+ ['514797'] found nothing! 
+vul/CVE-2014-9584:      case SIG('E','R'):
+ ['514798'] found nothing! 
+vul/CVE-2014-9584:      case SIG('E','R'):
+ ['514799'] found nothing! 
+vul/CVE-2014-9584:      case SIG('E','R'):
+ ['514800'] found nothing! 
+vul/CVE-2014-9584:      case SIG('E','R'):
+ ['514801'] found nothing! 
+vul/CVE-2014-9584:      case SIG('E','R'):
+ ['515784'] found nothing! 
+vul/CVE-2014-9584:      case SIG('E','R'):
+ ['515785'] found nothing! 
+vul/CVE-2014-9584:      case SIG('E','R'):
+ ['515786'] found nothing! 
+vul/CVE-2014-9584:      case SIG('E','R'):
+ ['515787'] found nothing! 
+vul/CVE-2014-9584:      case SIG('E','R'):
+ ['515788'] found nothing! 
+vul/CVE-2014-9584:      case SIG('E','R'):
+ ['515789'] found nothing! 
+vul/CVE-2014-9584:      case SIG('E','R'):
+ ['515790'] found nothing! 
+vul/CVE-2014-9584:      case SIG('E','R'):
+ ['515791'] found nothing! 
+vul/CVE-2014-9584:      case SIG('E','R'):
+ ['516778'] found nothing! 
+vul/CVE-2014-9584:      case SIG('E','R'):
+ ['516779'] found nothing! 
+vul/CVE-2014-9584:      case SIG('E','R'):
+ ['516780'] found nothing! 
+vul/CVE-2014-9584:      case SIG('E','R'):
+ ['516781'] found nothing! 
+vul/CVE-2014-9584:      case SIG('E','R'):
+ ['516782'] found nothing! 
+vul/CVE-2014-9584:      case SIG('E','R'):
+ ['516783'] found nothing! 
+vul/CVE-2014-9584:      case SIG('E','R'):
+ ['516784'] found nothing! 
+vul/CVE-2014-9584:      case SIG('E','R'):
+ ['516785'] found nothing! 
+vul/CVE-2014-9584:      case SIG('E','R'):
+ ['517769'] found nothing! 
+vul/CVE-2014-9584:      case SIG('E','R'):
+ ['517770'] found nothing! 
+vul/CVE-2014-9584:      case SIG('E','R'):
+ ['517771'] found nothing! 
+vul/CVE-2014-9584:      case SIG('E','R'):
+ ['517772'] found nothing! 
+vul/CVE-2014-9584:      case SIG('E','R'):
+ ['517773'] found nothing! 
+vul/CVE-2014-9584:      case SIG('E','R'):
+ ['517774'] found nothing! 
+vul/CVE-2014-9584:      case SIG('E','R'):
+ ['517775'] found nothing! 
+vul/CVE-2014-9584:      case SIG('E','R'):
+ ['517776'] found nothing! 
+vul/CVE-2014-9584:      case SIG('E','R'):
+ ['518806'] found nothing! 
+vul/CVE-2014-9584:      case SIG('E','R'):
+ ['518807'] found nothing! 
+vul/CVE-2014-9584:      case SIG('E','R'):
+ ['518808'] found nothing! 
+vul/CVE-2014-9584:      case SIG('E','R'):
+ ['518809'] found nothing! 
+vul/CVE-2014-9584:      case SIG('E','R'):
+ ['518810'] found nothing! 
+vul/CVE-2014-9584:      case SIG('E','R'):
+ ['518811'] found nothing! 
+vul/CVE-2014-9584:      case SIG('E','R'):
+ ['518812'] found nothing! 
+vul/CVE-2014-9584:      case SIG('E','R'):
+ ['518813'] found nothing! 
+vul/CVE-2014-9584:      case SIG('E','R'):
+ ['519789'] found nothing! 
+vul/CVE-2014-9584:      case SIG('E','R'):
+ ['519848'] found nothing! 
+vul/CVE-2014-9584:      case SIG('E','R'):
+ ['519849'] found nothing! 
+vul/CVE-2014-9584:      case SIG('E','R'):
+ ['519850'] found nothing! 
+vul/CVE-2014-9584:      case SIG('E','R'):
+ ['519851'] found nothing! 
+vul/CVE-2014-9584:      case SIG('E','R'):
+ ['519852'] found nothing! 
+vul/CVE-2014-9584:      case SIG('E','R'):
+ ['519853'] found nothing! 
+vul/CVE-2014-9584:      case SIG('E','R'):
+ ['519854'] found nothing! 
+vul/CVE-2014-9584:      case SIG('E','R'):
+ ['519855'] found nothing! 
+vul/CVE-2014-9584:		case SIG('E', 'R'):
+ ['520899'] found nothing! 
+vul/CVE-2014-9584:		case SIG('E', 'R'):
+ ['520900'] found nothing! 
+vul/CVE-2014-9584:		case SIG('E', 'R'):
+ ['520901'] found nothing! 
+vul/CVE-2014-9584:		case SIG('E', 'R'):
+ ['520902'] found nothing! 
+vul/CVE-2014-9584:		case SIG('E', 'R'):
+ ['520903'] found nothing! 
+vul/CVE-2014-9584:		case SIG('E', 'R'):
+ ['520904'] found nothing! 
+vul/CVE-2014-9584:		case SIG('E', 'R'):
+ ['520905'] found nothing! 
+vul/CVE-2014-9584:		case SIG('E', 'R'):
+ ['520906'] found nothing! 
+vul/CVE-2014-9584:		case SIG('E', 'R'):
+ ['522072'] found nothing! 
+vul/CVE-2014-9584:		case SIG('E', 'R'):
+ ['522073'] found nothing! 
+vul/CVE-2014-9584:		case SIG('E', 'R'):
+ ['522074'] found nothing! 
+vul/CVE-2014-9584:		case SIG('E', 'R'):
+ ['522075'] found nothing! 
+vul/CVE-2014-9584:		case SIG('E', 'R'):
+ ['522076'] found nothing! 
+vul/CVE-2014-9584:		case SIG('E', 'R'):
+ ['522077'] found nothing! 
+vul/CVE-2014-9584:		case SIG('E', 'R'):
+ ['522078'] found nothing! 
+vul/CVE-2014-9584:		case SIG('E', 'R'):
+ ['522079'] found nothing! 
+vul/CVE-2014-9584:      case SIG('E','R'):
+ ['523235'] found nothing! 
+vul/CVE-2014-9584:      case SIG('E','R'):
+ ['523236'] found nothing! 
+vul/CVE-2014-9584:      case SIG('E','R'):
+ ['523237'] found nothing! 
+vul/CVE-2014-9584:      case SIG('E','R'):
+ ['523238'] found nothing! 
+vul/CVE-2014-9584:      case SIG('E','R'):
+ ['523239'] found nothing! 
+vul/CVE-2014-9584:      case SIG('E','R'):
+ ['523240'] found nothing! 
+vul/CVE-2014-9584:      case SIG('E','R'):
+ ['523241'] found nothing! 
+vul/CVE-2014-9584:      case SIG('E','R'):
+ ['523242'] found nothing! 
+vul/CVE-2014-9584:      case SIG('E','R'):
+ ['524277'] found nothing! 
+vul/CVE-2014-9584:      case SIG('E','R'):
+ ['524278'] found nothing! 
+vul/CVE-2014-9584:      case SIG('E','R'):
+ ['524279'] found nothing! 
+vul/CVE-2014-9584:      case SIG('E','R'):
+ ['524280'] found nothing! 
+vul/CVE-2014-9584:      case SIG('E','R'):
+ ['524281'] found nothing! 
+vul/CVE-2014-9584:      case SIG('E','R'):
+ ['524282'] found nothing! 
+vul/CVE-2014-9584:      case SIG('E','R'):
+ ['524283'] found nothing! 
+vul/CVE-2014-9584:      case SIG('E','R'):
+ ['524284'] found nothing! 
+vul/CVE-2014-9584:      case SIG('E','R'):
+ ['525260'] found nothing! 
+vul/CVE-2014-9584:      case SIG('E','R'):
+ ['525319'] found nothing! 
+vul/CVE-2014-9584:      case SIG('E','R'):
+ ['525320'] found nothing! 
+vul/CVE-2014-9584:      case SIG('E','R'):
+ ['525321'] found nothing! 
+vul/CVE-2014-9584:      case SIG('E','R'):
+ ['525322'] found nothing! 
+vul/CVE-2014-9584:      case SIG('E','R'):
+ ['525323'] found nothing! 
+vul/CVE-2014-9584:      case SIG('E','R'):
+ ['525324'] found nothing! 
+vul/CVE-2014-9584:      case SIG('E','R'):
+ ['525325'] found nothing! 
+vul/CVE-2014-9584:      case SIG('E','R'):
+ ['525326'] found nothing! 
+vul/CVE-2014-9584:		case SIG('E', 'R'):
+ ['526370'] found nothing! 
+vul/CVE-2014-9584:		case SIG('E', 'R'):
+ ['526371'] found nothing! 
+vul/CVE-2014-9584:		case SIG('E', 'R'):
+ ['526372'] found nothing! 
+vul/CVE-2014-9584:		case SIG('E', 'R'):
+ ['526373'] found nothing! 
+vul/CVE-2014-9584:		case SIG('E', 'R'):
+ ['526374'] found nothing! 
+vul/CVE-2014-9584:		case SIG('E', 'R'):
+ ['526375'] found nothing! 
+vul/CVE-2014-9584:		case SIG('E', 'R'):
+ ['526376'] found nothing! 
+vul/CVE-2014-9584:		case SIG('E', 'R'):
+ ['526377'] found nothing! 
+vul/CVE-2014-9584:		case SIG('E', 'R'):
+ ['527552'] found nothing! 
+vul/CVE-2014-9584:		case SIG('E', 'R'):
+ ['527553'] found nothing! 
+vul/CVE-2014-9584:		case SIG('E', 'R'):
+ ['527554'] found nothing! 
+vul/CVE-2014-9584:		case SIG('E', 'R'):
+ ['527555'] found nothing! 
+vul/CVE-2014-9584:		case SIG('E', 'R'):
+ ['527556'] found nothing! 
+vul/CVE-2014-9584:		case SIG('E', 'R'):
+ ['527557'] found nothing! 
+vul/CVE-2014-9584:		case SIG('E', 'R'):
+ ['527558'] found nothing! 
+vul/CVE-2014-9584:		case SIG('E', 'R'):
+ ['527559'] found nothing! 
+vul/CVE-2014-9584:		case SIG('E', 'R'):
+ ['528725'] found nothing! 
+vul/CVE-2014-9584:		case SIG('E', 'R'):
+ ['528726'] found nothing! 
+vul/CVE-2014-9584:		case SIG('E', 'R'):
+ ['528727'] found nothing! 
+vul/CVE-2014-9584:		case SIG('E', 'R'):
+ ['528728'] found nothing! 
+vul/CVE-2014-9584:		case SIG('E', 'R'):
+ ['528729'] found nothing! 
+vul/CVE-2014-9584:		case SIG('E', 'R'):
+ ['528730'] found nothing! 
+vul/CVE-2014-9584:		case SIG('E', 'R'):
+ ['528731'] found nothing! 
+vul/CVE-2014-9584:		case SIG('E', 'R'):
+ ['528732'] found nothing! 
+vul/CVE-2014-9584:		case SIG('E', 'R'):
+ ['529908'] found nothing! 
+vul/CVE-2014-9584:		case SIG('E', 'R'):
+ ['529909'] found nothing! 
+vul/CVE-2014-9584:		case SIG('E', 'R'):
+ ['529910'] found nothing! 
+vul/CVE-2014-9584:		case SIG('E', 'R'):
+ ['529911'] found nothing! 
+vul/CVE-2014-9584:		case SIG('E', 'R'):
+ ['529912'] found nothing! 
+vul/CVE-2014-9584:		case SIG('E', 'R'):
+ ['529913'] found nothing! 
+vul/CVE-2014-9584:		case SIG('E', 'R'):
+ ['529914'] found nothing! 
+vul/CVE-2014-9584:		case SIG('E', 'R'):
+ ['529915'] found nothing! 
+fix/CVE-2009-1338:			if (task_pid_vnr(p) > 1&& p->tgid != current->tgid) {
+ ['66018'] found nothing! 
+fix/CVE-2014-2309:	rt = ip6_route_info_create(cfg);
+ ['300283'] found nothing! 
+fix/CVE-2012-6547:		memset(&ifr, 0, sizeof(ifr));
+ ['261408'] found nothing! 
+fix/CVE-2012-6547:		memset(&ifr, 0, sizeof(ifr));
+ ['262728'] found nothing! 
+fix/CVE-2012-6547:		memset(&ifr, 0, sizeof(ifr));
+ ['264178'] found nothing! 
+fix/CVE-2012-6547:		memset(&ifr, 0, sizeof(ifr));
+ ['265561'] found nothing! 
+fix/CVE-2012-6547:		memset(&ifr, 0, sizeof(ifr));
+ ['266912'] found nothing! 
+fix/CVE-2012-6547:		memset(&ifr, 0, sizeof(ifr));
+ ['268404'] found nothing! 
+vul/CVE-2011-0711:	memcpy(geo->uuid, &mp->m_sb.sb_uuid, sizeof(mp->m_sb.sb_uuid));
+ ['445368'] found nothing! 
+vul/CVE-2011-0711:	memcpy(geo->uuid, &mp->m_sb.sb_uuid, sizeof(mp->m_sb.sb_uuid));
+ ['445874'] found nothing! 
+vul/CVE-2011-0711:	memcpy(geo->uuid, &mp->m_sb.sb_uuid, sizeof(mp->m_sb.sb_uuid));
+ ['446397'] found nothing! 
+vul/CVE-2014-0100:	hlist_for_each_entry(qp, &hb->chain, list) {
+ ['489968'] found nothing! 
+vul/CVE-2014-0100:	hlist_for_each_entry(qp, &hb->chain, list) {
+ ['489969'] found nothing! 
+vul/CVE-2014-0100:	hlist_for_each_entry(qp, &hb->chain, list) {
+ ['489970'] found nothing! 
+vul/CVE-2014-0100:	hlist_for_each_entry(qp, &hb->chain, list) {
+ ['489971'] found nothing! 
+vul/CVE-2014-0100:	hlist_for_each_entry(qp, &hb->chain, list) {
+ ['489972'] found nothing! 
+vul/CVE-2014-0100:	hlist_for_each_entry(qp, &hb->chain, list) {
+ ['489973'] found nothing! 
+vul/CVE-2014-0100:	hlist_for_each_entry(qp, &hb->chain, list) {
+ ['489974'] found nothing! 
+vul/CVE-2014-0100:	hlist_for_each_entry(qp, &hb->chain, list) {
+ ['489975'] found nothing! 
+vul/CVE-2014-0100:	hlist_for_each_entry(qp, &hb->chain, list) {
+ ['489976'] found nothing! 
+vul/CVE-2014-0100:	hlist_for_each_entry(qp, &hb->chain, list) {
+ ['489977'] found nothing! 
+vul/CVE-2014-0100:	hlist_for_each_entry(qp, n, &f->hash[hash], list) {
+ ['490198'] found nothing! 
+vul/CVE-2014-0100:	hlist_for_each_entry(qp, n, &f->hash[hash], list) {
+ ['490199'] found nothing! 
+vul/CVE-2014-0100:	hlist_for_each_entry(qp, n, &f->hash[hash], list) {
+ ['490200'] found nothing! 
+vul/CVE-2014-0100:	hlist_for_each_entry(qp, n, &f->hash[hash], list) {
+ ['490201'] found nothing! 
+vul/CVE-2014-0100:	hlist_for_each_entry(qp, n, &f->hash[hash], list) {
+ ['490202'] found nothing! 
+vul/CVE-2014-0100:	hlist_for_each_entry(qp, n, &f->hash[hash], list) {
+ ['490203'] found nothing! 
+vul/CVE-2014-0100:	hlist_for_each_entry(qp, n, &f->hash[hash], list) {
+ ['490204'] found nothing! 
+vul/CVE-2014-0100:	hlist_for_each_entry(qp, n, &f->hash[hash], list) {
+ ['490205'] found nothing! 
+vul/CVE-2014-0100:	hlist_for_each_entry(qp, n, &f->hash[hash], list) {
+ ['490206'] found nothing! 
+vul/CVE-2014-0100:	hlist_for_each_entry(qp, n, &f->hash[hash], list) {
+ ['490207'] found nothing! 
+vul/CVE-2014-0100:	hlist_for_each_entry(qp, n, &f->hash[hash], list) {
+ ['490208'] found nothing! 
+vul/CVE-2014-0100:	hlist_for_each_entry(qp, n, &f->hash[hash], list) {
+ ['490209'] found nothing! 
+vul/CVE-2014-0100:	hlist_for_each_entry(qp, n, &f->hash[hash], list) {
+ ['490210'] found nothing! 
+vul/CVE-2014-0100:	hlist_for_each_entry(qp, n, &f->hash[hash], list) {
+ ['490211'] found nothing! 
+vul/CVE-2014-0100:	hlist_for_each_entry(qp, n, &f->hash[hash], list) {
+ ['490212'] found nothing! 
+vul/CVE-2014-0100:	hlist_for_each_entry(qp, &hb->chain, list) {
+ ['490444'] found nothing! 
+vul/CVE-2014-0100:	hlist_for_each_entry(qp, &hb->chain, list) {
+ ['490445'] found nothing! 
+vul/CVE-2014-0100:	hlist_for_each_entry(qp, &hb->chain, list) {
+ ['490446'] found nothing! 
+vul/CVE-2014-0100:	hlist_for_each_entry(qp, &hb->chain, list) {
+ ['490447'] found nothing! 
+vul/CVE-2014-0100:	hlist_for_each_entry(qp, &hb->chain, list) {
+ ['490448'] found nothing! 
+vul/CVE-2014-0100:	hlist_for_each_entry(qp, &hb->chain, list) {
+ ['490449'] found nothing! 
+vul/CVE-2014-0100:	hlist_for_each_entry(qp, &hb->chain, list) {
+ ['490450'] found nothing! 
+vul/CVE-2014-0100:	hlist_for_each_entry(qp, &hb->chain, list) {
+ ['490451'] found nothing! 
+vul/CVE-2014-0100:	hlist_for_each_entry(qp, &hb->chain, list) {
+ ['490452'] found nothing! 
+vul/CVE-2014-0100:	hlist_for_each_entry(qp, &hb->chain, list) {
+ ['490453'] found nothing! 
+fix/CVE-2012-1583:	return xfrm6_rcv_spi(skb, IPPROTO_IPV6, spi) > 0 ? : 0;
+ ['249099'] found nothing! 
+fix/CVE-2012-1583:	return xfrm6_rcv_spi(skb, IPPROTO_IPV6, spi) > 0 ? : 0;
+ ['249102'] found nothing! 
+fix/CVE-2012-1583:	return xfrm6_rcv_spi(skb, IPPROTO_IPV6, spi) > 0 ? : 0;
+ ['249103'] found nothing! 
+fix/CVE-2012-1583:	return xfrm6_rcv_spi(skb, IPPROTO_IPV6, spi) > 0 ? : 0;
+ ['249104'] found nothing! 
+fix/CVE-2012-1583:	return xfrm6_rcv_spi(skb, IPPROTO_IPV6, spi) > 0 ? : 0;
+ ['249105'] found nothing! 
+fix/CVE-2012-1583:	return xfrm6_rcv_spi(skb, IPPROTO_IPV6, spi) > 0 ? : 0;
+ ['249106'] found nothing! 
+fix/CVE-2012-1583:	return xfrm6_rcv_spi(skb, IPPROTO_IPV6, spi) > 0 ? : 0;
+ ['249107'] found nothing! 
+fix/CVE-2012-1583:	return xfrm6_rcv_spi(skb, IPPROTO_IPV6, spi) > 0 ? : 0;
+ ['249108'] found nothing! 
+fix/CVE-2012-1583:	return xfrm6_rcv_spi(skb, IPPROTO_IPV6, spi) > 0 ? : 0;
+ ['249109'] found nothing! 
+fix/CVE-2012-1583:	return xfrm6_rcv_spi(skb, IPPROTO_IPV6, spi) > 0 ? : 0;
+ ['249110'] found nothing! 
+fix/CVE-2012-1583:	return xfrm6_rcv_spi(skb, IPPROTO_IPV6, spi) > 0 ? : 0;
+ ['249111'] found nothing! 
+fix/CVE-2012-1583:	return xfrm6_rcv_spi(skb, IPPROTO_IPV6, spi) > 0 ? : 0;
+ ['249112'] found nothing! 
+fix/CVE-2012-1583:	return xfrm6_rcv_spi(skb, IPPROTO_IPV6, spi) > 0 ? : 0;
+ ['249113'] found nothing! 
+fix/CVE-2012-1583:	return xfrm6_rcv_spi(skb, spi) > 0 ? : 0;
+ ['249183'] found nothing! 
+fix/CVE-2012-1583:	return xfrm6_rcv_spi(skb, spi) > 0 ? : 0;
+ ['249186'] found nothing! 
+fix/CVE-2012-1583:	return xfrm6_rcv_spi(skb, spi) > 0 ? : 0;
+ ['249187'] found nothing! 
+fix/CVE-2012-1583:	return xfrm6_rcv_spi(skb, spi) > 0 ? : 0;
+ ['249188'] found nothing! 
+fix/CVE-2012-1583:	return xfrm6_rcv_spi(skb, spi) > 0 ? : 0;
+ ['249189'] found nothing! 
+fix/CVE-2012-1583:	return xfrm6_rcv_spi(skb, spi) > 0 ? : 0;
+ ['249190'] found nothing! 
+fix/CVE-2012-1583:	return xfrm6_rcv_spi(skb, spi) > 0 ? : 0;
+ ['249191'] found nothing! 
+fix/CVE-2012-1583:	return xfrm6_rcv_spi(skb, spi) > 0 ? : 0;
+ ['249192'] found nothing! 
+fix/CVE-2012-1583:	return xfrm6_rcv_spi(skb, spi) > 0 ? : 0;
+ ['249193'] found nothing! 
+fix/CVE-2012-1583:	return xfrm6_rcv_spi(skb, spi) > 0 ? : 0;
+ ['249194'] found nothing! 
+fix/CVE-2012-1583:	return xfrm6_rcv_spi(skb, spi) > 0 ? : 0;
+ ['249195'] found nothing! 
+fix/CVE-2012-1583:	return xfrm6_rcv_spi(skb, IPPROTO_IPV6, spi) > 0 ? : 0;
+ ['249245'] found nothing! 
+fix/CVE-2012-1583:	return xfrm6_rcv_spi(skb, IPPROTO_IPV6, spi) > 0 ? : 0;
+ ['249248'] found nothing! 
+fix/CVE-2012-1583:	return xfrm6_rcv_spi(skb, IPPROTO_IPV6, spi) > 0 ? : 0;
+ ['249249'] found nothing! 
+fix/CVE-2012-1583:	return xfrm6_rcv_spi(skb, IPPROTO_IPV6, spi) > 0 ? : 0;
+ ['249250'] found nothing! 
+fix/CVE-2012-1583:	return xfrm6_rcv_spi(skb, IPPROTO_IPV6, spi) > 0 ? : 0;
+ ['249251'] found nothing! 
+fix/CVE-2012-1583:	return xfrm6_rcv_spi(skb, IPPROTO_IPV6, spi) > 0 ? : 0;
+ ['249252'] found nothing! 
+fix/CVE-2012-1583:	return xfrm6_rcv_spi(skb, IPPROTO_IPV6, spi) > 0 ? : 0;
+ ['249253'] found nothing! 
+fix/CVE-2012-1583:	return xfrm6_rcv_spi(skb, IPPROTO_IPV6, spi) > 0 ? : 0;
+ ['249254'] found nothing! 
+fix/CVE-2012-1583:	return xfrm6_rcv_spi(skb, IPPROTO_IPV6, spi) > 0 ? : 0;
+ ['249255'] found nothing! 
+fix/CVE-2012-1583:	return xfrm6_rcv_spi(skb, IPPROTO_IPV6, spi) > 0 ? : 0;
+ ['249256'] found nothing! 
+fix/CVE-2012-1583:	return xfrm6_rcv_spi(skb, IPPROTO_IPV6, spi) > 0 ? : 0;
+ ['249257'] found nothing! 
+fix/CVE-2012-1583:	return xfrm6_rcv_spi(skb, IPPROTO_IPV6, spi) > 0 ? : 0;
+ ['249258'] found nothing! 
+fix/CVE-2012-1583:	return xfrm6_rcv_spi(skb, IPPROTO_IPV6, spi) > 0 ? : 0;
+ ['249259'] found nothing! 
+fix/CVE-2012-1583:	return xfrm6_rcv_spi(skb, IPPROTO_IPV6, spi) > 0 ? : 0;
+ ['249309'] found nothing! 
+fix/CVE-2012-1583:	return xfrm6_rcv_spi(skb, IPPROTO_IPV6, spi) > 0 ? : 0;
+ ['249312'] found nothing! 
+fix/CVE-2012-1583:	return xfrm6_rcv_spi(skb, IPPROTO_IPV6, spi) > 0 ? : 0;
+ ['249313'] found nothing! 
+fix/CVE-2012-1583:	return xfrm6_rcv_spi(skb, IPPROTO_IPV6, spi) > 0 ? : 0;
+ ['249314'] found nothing! 
+fix/CVE-2012-1583:	return xfrm6_rcv_spi(skb, IPPROTO_IPV6, spi) > 0 ? : 0;
+ ['249315'] found nothing! 
+fix/CVE-2012-1583:	return xfrm6_rcv_spi(skb, IPPROTO_IPV6, spi) > 0 ? : 0;
+ ['249316'] found nothing! 
+fix/CVE-2012-1583:	return xfrm6_rcv_spi(skb, IPPROTO_IPV6, spi) > 0 ? : 0;
+ ['249317'] found nothing! 
+fix/CVE-2012-1583:	return xfrm6_rcv_spi(skb, IPPROTO_IPV6, spi) > 0 ? : 0;
+ ['249318'] found nothing! 
+fix/CVE-2012-1583:	return xfrm6_rcv_spi(skb, IPPROTO_IPV6, spi) > 0 ? : 0;
+ ['249319'] found nothing! 
+fix/CVE-2012-1583:	return xfrm6_rcv_spi(skb, IPPROTO_IPV6, spi) > 0 ? : 0;
+ ['249320'] found nothing! 
+fix/CVE-2012-1583:	return xfrm6_rcv_spi(skb, IPPROTO_IPV6, spi) > 0 ? : 0;
+ ['249321'] found nothing! 
+fix/CVE-2012-1583:	return xfrm6_rcv_spi(skb, IPPROTO_IPV6, spi) > 0 ? : 0;
+ ['249322'] found nothing! 
+fix/CVE-2012-1583:	return xfrm6_rcv_spi(skb, IPPROTO_IPV6, spi) > 0 ? : 0;
+ ['249323'] found nothing! 
+fix/CVE-2010-2521:				argp->end = argp->p + (argp->pagelen>>2);
+ ['165726'] found nothing! 
+fix/CVE-2010-2521:				argp->end = argp->p + (argp->pagelen>>2);
+ ['166226'] found nothing! 
+vul/CVE-2012-0044:	if (num_clips && clips_ptr) {
+ ['465416'] found nothing! 
+vul/CVE-2012-0044:	if (num_clips && clips_ptr) {
+ ['465779'] found nothing! 
+vul/CVE-2009-1338:			if (p->pid > 1 && p->tgid != current->tgid) {
+ ['361180'] found nothing! 
+vul/CVE-2009-1338:			if (p->pid > 1 && !same_thread_group(p, current)) {
+ ['361359'] found nothing! 
+fix/CVE-2014-9584:			if (rr->u.ER.len_id + offsetof(struct rock_ridge, u.ER.data) > rr->len)
+ ['319026'] found nothing! 
+fix/CVE-2014-9584:			if (rr->u.ER.len_id + offsetof(struct rock_ridge, u.ER.data) > rr->len)
+ ['319027'] found nothing! 
+fix/CVE-2014-9584:			if (rr->u.ER.len_id + offsetof(struct rock_ridge, u.ER.data) > rr->len)
+ ['319028'] found nothing! 
+fix/CVE-2014-9584:			if (rr->u.ER.len_id + offsetof(struct rock_ridge, u.ER.data) > rr->len)
+ ['319029'] found nothing! 
+fix/CVE-2014-9584:			if (rr->u.ER.len_id + offsetof(struct rock_ridge, u.ER.data) > rr->len)
+ ['319030'] found nothing! 
+fix/CVE-2014-9584:			if (rr->u.ER.len_id + offsetof(struct rock_ridge, u.ER.data) > rr->len)
+ ['319031'] found nothing! 
+fix/CVE-2014-9584:			if (rr->u.ER.len_id + offsetof(struct rock_ridge, u.ER.data) > rr->len)
+ ['319032'] found nothing! 
+fix/CVE-2014-9584:			if (rr->u.ER.len_id + offsetof(struct rock_ridge, u.ER.data) > rr->len)
+ ['319033'] found nothing! 
+fix/CVE-2014-9584:			if (rr->u.ER.len_id + offsetof(struct rock_ridge, u.ER.data) > rr->len)
+ ['319034'] found nothing! 
+fix/CVE-2014-9584:			if (rr->u.ER.len_id + offsetof(struct rock_ridge, u.ER.data) > rr->len)
+ ['319035'] found nothing! 
+fix/CVE-2014-9584:			if (rr->u.ER.len_id + offsetof(struct rock_ridge, u.ER.data) > rr->len)
+ ['319036'] found nothing! 
+fix/CVE-2014-9584:			if (rr->u.ER.len_id + offsetof(struct rock_ridge, u.ER.data) > rr->len)
+ ['319037'] found nothing! 
+fix/CVE-2014-9584:			if (rr->u.ER.len_id + offsetof(struct rock_ridge, u.ER.data) > rr->len)
+ ['319038'] found nothing! 
+fix/CVE-2014-9584:			if (rr->u.ER.len_id + offsetof(struct rock_ridge, u.ER.data) > rr->len)
+ ['319039'] found nothing! 
+fix/CVE-2014-9584:			if (rr->u.ER.len_id + offsetof(struct rock_ridge, u.ER.data) > rr->len)
+ ['319040'] found nothing! 
+fix/CVE-2014-9584:			if (rr->u.ER.len_id + offsetof(struct rock_ridge, u.ER.data) > rr->len)
+ ['319041'] found nothing! 
+fix/CVE-2014-9584:			if (rr->u.ER.len_id + offsetof(struct rock_ridge, u.ER.data) > rr->len)
+ ['319042'] found nothing! 
+fix/CVE-2014-9584:			if (rr->u.ER.len_id + offsetof(struct rock_ridge, u.ER.data) > rr->len)
+ ['319043'] found nothing! 
+fix/CVE-2014-9584:			if (rr->u.ER.len_id + offsetof(struct rock_ridge, u.ER.data) > rr->len)
+ ['319044'] found nothing! 
+fix/CVE-2014-9584:			if (rr->u.ER.len_id + offsetof(struct rock_ridge, u.ER.data) > rr->len)
+ ['319045'] found nothing! 
+fix/CVE-2014-9584:			if (rr->u.ER.len_id + offsetof(struct rock_ridge, u.ER.data) > rr->len)
+ ['319046'] found nothing! 
+fix/CVE-2014-9584:			if (rr->u.ER.len_id + offsetof(struct rock_ridge, u.ER.data) > rr->len)
+ ['319047'] found nothing! 
+fix/CVE-2014-9584:			if (rr->u.ER.len_id + offsetof(struct rock_ridge, u.ER.data) > rr->len)
+ ['319048'] found nothing! 
+fix/CVE-2014-9584:			if (rr->u.ER.len_id + offsetof(struct rock_ridge, u.ER.data) > rr->len)
+ ['319049'] found nothing! 
+fix/CVE-2014-9584:			if (rr->u.ER.len_id + offsetof(struct rock_ridge, u.ER.data) > rr->len)
+ ['319050'] found nothing! 
+fix/CVE-2014-9584:			if (rr->u.ER.len_id + offsetof(struct rock_ridge, u.ER.data) > rr->len)
+ ['319051'] found nothing! 
+fix/CVE-2014-9584:			if (rr->u.ER.len_id + offsetof(struct rock_ridge, u.ER.data) > rr->len)
+ ['320240'] found nothing! 
+fix/CVE-2014-9584:			if (rr->u.ER.len_id + offsetof(struct rock_ridge, u.ER.data) > rr->len)
+ ['320241'] found nothing! 
+fix/CVE-2014-9584:			if (rr->u.ER.len_id + offsetof(struct rock_ridge, u.ER.data) > rr->len)
+ ['320242'] found nothing! 
+fix/CVE-2014-9584:			if (rr->u.ER.len_id + offsetof(struct rock_ridge, u.ER.data) > rr->len)
+ ['320243'] found nothing! 
+fix/CVE-2014-9584:			if (rr->u.ER.len_id + offsetof(struct rock_ridge, u.ER.data) > rr->len)
+ ['320244'] found nothing! 
+fix/CVE-2014-9584:			if (rr->u.ER.len_id + offsetof(struct rock_ridge, u.ER.data) > rr->len)
+ ['320245'] found nothing! 
+fix/CVE-2014-9584:			if (rr->u.ER.len_id + offsetof(struct rock_ridge, u.ER.data) > rr->len)
+ ['320246'] found nothing! 
+fix/CVE-2014-9584:			if (rr->u.ER.len_id + offsetof(struct rock_ridge, u.ER.data) > rr->len)
+ ['320247'] found nothing! 
+fix/CVE-2014-9584:			if (rr->u.ER.len_id + offsetof(struct rock_ridge, u.ER.data) > rr->len)
+ ['320248'] found nothing! 
+fix/CVE-2014-9584:			if (rr->u.ER.len_id + offsetof(struct rock_ridge, u.ER.data) > rr->len)
+ ['320249'] found nothing! 
+fix/CVE-2014-9584:			if (rr->u.ER.len_id + offsetof(struct rock_ridge, u.ER.data) > rr->len)
+ ['320250'] found nothing! 
+fix/CVE-2014-9584:			if (rr->u.ER.len_id + offsetof(struct rock_ridge, u.ER.data) > rr->len)
+ ['320251'] found nothing! 
+fix/CVE-2014-9584:			if (rr->u.ER.len_id + offsetof(struct rock_ridge, u.ER.data) > rr->len)
+ ['320252'] found nothing! 
+fix/CVE-2014-9584:			if (rr->u.ER.len_id + offsetof(struct rock_ridge, u.ER.data) > rr->len)
+ ['320253'] found nothing! 
+fix/CVE-2014-9584:			if (rr->u.ER.len_id + offsetof(struct rock_ridge, u.ER.data) > rr->len)
+ ['320254'] found nothing! 
+fix/CVE-2014-9584:			if (rr->u.ER.len_id + offsetof(struct rock_ridge, u.ER.data) > rr->len)
+ ['320255'] found nothing! 
+fix/CVE-2014-9584:			if (rr->u.ER.len_id + offsetof(struct rock_ridge, u.ER.data) > rr->len)
+ ['320256'] found nothing! 
+fix/CVE-2014-9584:			if (rr->u.ER.len_id + offsetof(struct rock_ridge, u.ER.data) > rr->len)
+ ['320257'] found nothing! 
+fix/CVE-2014-9584:			if (rr->u.ER.len_id + offsetof(struct rock_ridge, u.ER.data) > rr->len)
+ ['320258'] found nothing! 
+fix/CVE-2014-9584:			if (rr->u.ER.len_id + offsetof(struct rock_ridge, u.ER.data) > rr->len)
+ ['320259'] found nothing! 
+fix/CVE-2014-9584:			if (rr->u.ER.len_id + offsetof(struct rock_ridge, u.ER.data) > rr->len)
+ ['320260'] found nothing! 
+fix/CVE-2014-9584:			if (rr->u.ER.len_id + offsetof(struct rock_ridge, u.ER.data) > rr->len)
+ ['320261'] found nothing! 
+fix/CVE-2014-9584:			if (rr->u.ER.len_id + offsetof(struct rock_ridge, u.ER.data) > rr->len)
+ ['320262'] found nothing! 
+fix/CVE-2014-9584:			if (rr->u.ER.len_id + offsetof(struct rock_ridge, u.ER.data) > rr->len)
+ ['320263'] found nothing! 
+fix/CVE-2014-9584:			if (rr->u.ER.len_id + offsetof(struct rock_ridge, u.ER.data) > rr->len)
+ ['320264'] found nothing! 
+fix/CVE-2014-9584:			if (rr->u.ER.len_id + offsetof(struct rock_ridge, u.ER.data) > rr->len)
+ ['320265'] found nothing! 
+vul/CVE-2009-3638:	case KVM_GET_SUPPORTED_CPUID: {
+ ['378904'] found nothing! 
+vul/CVE-2009-3638:	case KVM_GET_SUPPORTED_CPUID: {
+ ['379223'] found nothing! 
+vul/CVE-2009-3638:	case KVM_GET_SUPPORTED_CPUID: {
+ ['379542'] found nothing! 
+fix/CVE-2011-1927:	if ((qp->last_in&FIRST_IN) && qp->fragments != NULL) {
+ ['224745'] found nothing! 
+fix/CVE-2011-1927:	if ((qp->last_in&FIRST_IN) && qp->fragments != NULL) {
+ ['224907'] found nothing! 
+fix/CVE-2011-1927:	if ((qp->last_in&FIRST_IN) && qp->fragments != NULL) {
+ ['225071'] found nothing! 

@@ -622,7 +622,7 @@ def getFuncPDGByNameAndtestID_noctrl(func_name, testID, slice_id):
     return pdg
 
 
-def isNewOrDelOp(node, testID):
+def isNewOrDelOp(node, testID,slice_id):
     if node['code'].find(' = new ') != -1:
 
         tempvalue = node['code'].split(' = new ')[1].replace('*', '')
@@ -640,7 +640,7 @@ def isNewOrDelOp(node, testID):
         objectname = node['code'].split('delete ')[1].replace(';', '').strip()
         list_s = []
         functionID = node['functionId']
-        pdg = getFuncPDGByfuncIDAndtestID(functionID, testID)
+        pdg = getFuncPDGByfuncIDAndtestID(functionID, testID,slice_id=slice_id)
         for n in pdg.vs:
 
             if n['name'] == node['name']:
